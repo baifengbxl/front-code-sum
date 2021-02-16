@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+<script type="text/javascript">
+	/*
+	 * 对象属性名的表示法
+	 * ['属性名']
+	 * 		- ：属性名为特殊字符    content 
+	 * 		- ：属性名为一个变量
+	 */
+	
+	
+  // 创建对象
+  var p = {
+    name: 'Tom',
+    age: 12,
+    setName: function (name) {
+      this.name = name
+    },
+    setAge: function (age) {
+      this.age = age
+    }
+  }
+
+  // 访问对象内部数据
+  console.log(p.name, p.age)
+  p.setName('Jack')
+  p['age'] = 23
+  console.log(p['name'], p.age)
+
+</script>
+	</body>
+</html>

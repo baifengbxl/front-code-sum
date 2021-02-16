@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color:#bfa;
+            /*  */
+            overflow: auto;
+        }
+
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color:red;
+            margin-top: 100px;
+        }
+
+
+        .box3{
+            /* height: 200px;
+            width: 200px; */
+            border: 10px red solid;
+            margin-top: 100px;
+            overflow: auto;
+        }
+
+        .box4{
+            height: 200px;
+            width: 200px;
+            background-color:#bfa;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        
+        相邻的上外边距重叠的父子元素 
+                -子元素的属性会传递个父元素
+                解决方法：
+                    1.父元素设置上内边距padding，并且父元素减去这个长度
+                    2.父元素设置border
+
+       相邻的上外边距重叠的兄弟元素 
+            -会去其中的最大值（都为正值）
+
+    -->
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <!-- 高度塌陷问题 
+            当父元素里的子元素脱离文档流后，会使父元素高度丢失
+                解决方法：
+                    -BFC：块级格式化，css的一个隐藏属性
+                        BFC特点：
+                            开启BFC的元素不会被浮动元素所覆盖
+                            开启BFC的元素子元素和父元素的外边距不会重叠
+                            开启BFC的元素会包含浮动的子元素
+                        开启方法：
+                            1，设置元素的浮动
+                            2，将元素设置为行内块元素
+                            3.overflow：auto；副总用比较小
+       
+    -->
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+
+
+</body>
+ 

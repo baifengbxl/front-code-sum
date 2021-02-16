@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px auto;
+				padding: 0 ;
+			}
+			#outer{
+				height: 333px;
+				width: 520px;
+				background-color: greenyellow;
+				margin: 50px auto;
+				padding: 10px 0px;
+				position: relative;
+				/*裁剪溢出的内容*/
+				overflow: hidden;
+			}
+			#imgList{
+				/*取消点*/ 
+				list-style: none;
+				/*设置相对定位,使图片可以移动*/
+				position: absolute;
+			}
+			
+			#imgList li{
+				float: left;
+				margin: 0 10px;
+			}
+			
+			#navList{
+				/*使导航div也脱离文档流*/
+				position: absolute;
+				bottom: 15px;
+			}
+			
+			#navList a{
+				/*设置为块元素*/
+				float: left;
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				/*设置透明*/
+				opacity: 0.5;
+				/*设置IE8的透明*/
+				filter: alpha(opacity = 50);
+				margin: 0 10px;
+				
+			}
+			/*设置鼠标的移入样式*/
+			#navList a:hover{
+				background-color: black;
+			}
+		</style>
+		<!--引入外部的样式-->
+		<script type="text/javascript" src = "js/tools.js"></script>
+		<script type="text/javascript" >
+			window.onload = function (){
+				
+				var outer = document.getElementById("outer")
+				var imgList = document.getElementById("imgList")
+				var imgArr = document.getElementsByTagName("img")
+				var navList  =document.getElementById("navList")
+				//获取所有的超链接
+				var allA = document.getElementsByTagName("a")
+				//设置图片列表的宽度
+				imgList.style.width = 520*imgArr.length + "px"
+				//设置超链接块的居中
+				navList.style.left = (outer.offsetWidth - navList.offsetWidth)/2 + "px"
+				//设置索引
+				var index = 0
+				allA[index].style.backgroundColor = "black"
+				
+				/*
+				 * 给所有的超链接设置一个点击函数
+				 */
+				for(var  i=0; i<allA.length; i++){
+					/*
+					 * 给所有的超链接添加一个属性，来使其返回他的索引
+					 */
+					allA[i].num = i
+					allA[i].onclick = function(){
+						//关闭自动播放的动画
+						clearInterval(timer)
+						index = this.num
+						//设置图片的移动
+//						imgList.style.left = -520*index + "px"
+
+						//修改A
+						setA();
+						//点击动画
+						move(imgList, "left", -520*index , 30, function(){
+							//开启自动切换函数
+							autoChange()
+						})
+					}
+				}
+				
+				//自动播放
+				autoChange()
+				
+				/*
+				 * 修改a的颜色
+				 */
+				function  setA (){
+					
+					if(index >= imgArr.length - 1){
+						index = 0
+						//同时将第六张换为第一张
+						imgList.style.left = 0
+					}
+					
+					for(var  i = 0; i<allA.length; i++){
+						//获取样式表样式
+						allA[i].style.backgroundColor = ""
+					};
+					//使当前筛选中的超链接的颜色为黑色
+					allA[index].style.backgroundColor = "black"
+				};
+				
+				/*
+				 * 设置图片自动切换
+				 */
+				var timer
+				function autoChange (){
+					//定时器
+					timer = setInterval(function(){
+						//索引自增
+						index++
+						//判断
+						index %= imgArr.length 
+						move(imgList, "left", -520*index , 30, function(){
+							setA()
+						})
+					},2000)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			<ul id = "imgList">
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+				<li><img src="img/5.jpg"/></li>
+				<li><img src="img/1.jpg"/></li>
+			</ul>
+			<div id="navList">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</body>
+</html>

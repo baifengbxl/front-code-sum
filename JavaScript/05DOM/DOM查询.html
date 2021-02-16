@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			#div {
+			  border-style: solid;
+			  border-color: black;
+			}
+		</style>
+		<script>
+			
+			window.onload = function (){
+				
+				<!--获取北京-->
+				var btn1 = document.getElementById("btn1")
+				btn1.onclick = function (){
+					alert(document.getElementById("bj").innerHTML)
+				}
+				//获取所有的LI内容
+				var btn2 = document.getElementById("btn2")
+				btn2.onclick = function (){
+					//getElementsByTagName获取的是一个类数组对象，将获取的对象值封装在一个数组中
+					//alert (document.getElementsByTagName("li").length)
+					var lis = document.getElementsByTagName("li")
+					for(var  i = 0 ; i<lis.length;i++){
+						alert (lis[i].innerHTML)
+					}
+				}
+				//获取name标签
+				var btn3 = document.getElementById("btn3")
+				btn3.onclick = function (){
+					var ns = document.getElementsByName("gender")
+					for (i = 0; i<ns.length; i++ ){
+						//由于innerHTMl是获取元素内的文本值，对自结束标签没有意义，所以一般用
+						//元素.id   元素.value ...来进行定义
+						
+						alert(ns[i].value)
+					}
+					
+					
+				}
+				
+				
+				
+			
+			}
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<div id="div">
+			<p>你喜欢的城市</p>
+			<ul>
+				<li id = "bj" >北京</li>
+				<li>上海</li>
+				<li>深圳</li>
+			</ul>
+		</div>
+		<br />
+		
+		<div id="div">
+			<p>你喜欢的电影</p>
+			<ul>
+				<li>毒液</li>
+				<li>我是隔热</li>
+				<li>深圳</li>
+			</ul>
+		</div>
+		<br />
+		<br />
+	
+	<div id="div">
+		<form>
+			<input type = "radio" name = "gender" value=" male" />male
+			<br />
+			<input  type = "radio" name = "gender" value=" female" />female	
+		</form>
+	</div>
+	<br />
+	<div id="div">
+		<p>测试专区</p>
+		<button id = "btn1">获取北京</button><br />
+		<button id = "btn2">获取所有的li标签</button><br />
+		<button id = "btn3">获取表单里的属性名为name的元素</button><br />
+		
+	</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			function Person(){}
+			Person.prototype.name = "人"
+			Person.prototype.age = 18 
+			Person.prototype.sex = "男"
+			Person.prototype.play = function (){
+				console.log("玩的开心")
+			}
+			/*
+			 * 拷贝继承就是通过循环遍历的方式将一个对象的属性或者是方法继承
+			 * 	到另一个对象里
+			 */
+			var obj2 = {}
+			for (var key in Person.prototype){
+				obj2[key] = Person.prototype[key]
+			}
+			obj2.play()
+		</script>
+	</body>
+	
+</html>

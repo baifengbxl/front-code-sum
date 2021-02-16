@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body> 
+    <script>
+      let arr = [10, 20, 40, 50, 111, 222, 444]
+      let arr1 = [10, 20, 40, 40, 50, 111, 222, 444]
+      
+      let res
+
+      // filter过滤数组 ，参数为一个函数
+      // 返回小于100的值
+      // res = arr.filter( n => n<100)
+
+      // map遍历数组所有元素 参数为一个函数
+      // 数组中所有元素 n * 2 
+      // res = arr.filter(n => n<100).map( n => n*2) 
+
+      // reduce对数组进行一个汇总
+      // 第一个参数为一个回调函数,第二个参数为一个preValue初始化的值,
+      // 回调函数有两个参数,第一个参数为先前的值preValue,由回调函数的返回值决定
+      // 第二个参数为数组中的元素
+      // 数组中所有元素求和
+      // res = arr.filter(n => n<100)
+      //          .map( n => n*2)
+      //          .reduce((preValue, n) => preValue + n ,0)
+
+
+      // includes 判断数组中是否含有某个元素，返回Boolean值
+      // res = arr.includes(10)
+      // res = arr.includes(30)
+
+      // 对数组元素进行查找
+      // res = arr1.find(value => value == 40)
+
+      // 数组元素第一次出现的位置索引
+      // res = arr1.findIndex(value => value == 40)
+
+
+      console.log(res)
+    </script>
+</body>
+</html>

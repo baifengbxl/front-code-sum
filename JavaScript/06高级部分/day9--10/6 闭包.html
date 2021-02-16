@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 闭包：
+			 */
+			
+			//函数模式的闭包
+			function fn (){
+				var num = 2
+				function fn1(){
+					console.log(num)
+				}
+				fn1()
+			}
+			fn()
+			
+			//对象模式的闭包
+			function fn3 (){
+				var num = 3
+				var obj = {
+					age : num
+				}
+				console.log(obj.age)
+			}
+			fn3()
+			
+		</script>
+	</body>
+</html>

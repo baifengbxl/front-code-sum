@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			
+			/*在子元素脱离文档流的时候，父元素会发生高度塌陷，是页面布局混乱
+			 解决方法：
+			 
+			    1.将父元素高度写死
+			    2。根据W3C标准，有一个block formation contex  简称BFC属性，系统默认是关闭的
+					        当一个元素开启bfc属性后会有以下的效果
+					         1.父元素垂直外边距不会和子元素重叠
+					         2.不会被浮动元素所覆盖
+					         3.开启bfc的父元素会包含子元素
+					        如何开启bfc
+					     1，设置元素浮动	
+					     2.设置元素绝对定位
+					     3.设置inline-block
+					         -宽度会损失
+					     4.将overflow设置为为非visible
+						         一般设置为auto
+						 *推荐：将overflo设置为hidden是副作用最低的一中方式
+						 *但是ie6不支持此方式但还有另外引种解决方案可以设置haslayout
+						 * 		语法;  
+						 *      zoom:1;
+						 *
+			    3.通过在高度塌陷的父元素的最后，加一个空白的div
+			            设置clear :both;来解决，而且基本没有副作用
+			            
+			            
+			          	  注意：虽然会解决问题，但会在页面中增加多余的结构 html
+			          	   
+			    4.  可一通过after伪类来实现，类似于HTML中增加box，而且几乎没有副作用，但是ie6中不支持
+			         
+				 * */
+				
+			.clearfix:after{
+				
+				/*设置内容*/
+				content: "";
+				/*设置为块元素*/
+				display: block;
+				/*设置清楚样式*/
+				clear: both;
+			}
+			
+			.clearfix{
+				zoom:1:;
+			}
+			
+			.box1{
+				border: 10px dashed darkgoldenrod ;
+				/*float: left;*/
+				/*display: inline-block;*/
+				overflow: auto;
+			}
+			
+			/*为子元素设置属性*/
+			.box2{
+				
+				height: 100px;
+				width: 100px;
+				background-color: blueviolet;
+				/*设置浮动*/
+				/*float: left;*/
+			}
+			
+			.box3 {
+				height: 100px;
+				background-color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1  clearfix">
+			<div class="box2"></div>
+		</div>
+		<div class="box3"></div>
+	</body>
+</html>

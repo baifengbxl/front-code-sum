@@ -1,0 +1,110 @@
+
+/**************************************************************
+现在有如下类Color，定义一个新类Circle，使其能体现Color类的属性和功能。 
+class Colar
+{
+public:
+	Colar (string col);
+	string getColar() const;
+protected:
+	void setColar(string col);
+private:
+	string  colar;
+};
+class Circle……;//根据要求和main中的使用方式来定义Circle类
+void main(){
+	double length = 2.5;
+	Circle redCircle("red", length);
+	redCircle.print();//打印该对象的颜色和面积
+}
+要求：使用两种方式完成上述任务，第一种方式：让Circle继承Colar，
+第二种方式：让Circle包含Colar类型的数据成员。
+提示：设计两个类Circle1和Circle2，分别实现上面的两种方式。
+**************************************************************/
+#if 1
+#include<iostream>
+#include<string>
+using namespace std;
+const double PI=3.14;
+class Colar
+{
+public:
+	Colar (string col);
+	string getColar() const;
+protected:
+	void setColar(string col);
+private:
+	string  colar;
+};
+	Colar::Colar (string col)
+	{
+		colar=col;
+	}
+	string Colar::getColar()const
+	{
+		return colar;
+	}
+	void Colar::setColar(string col)
+	{
+		colar=col;
+	}
+class Circle:public Colar//根据要求和main中的使用方式来定义Circle类
+{
+public:
+	Circle(string str, double length):Colar(str),len(length){}
+	void print(){cout<<getColar()<<endl;
+	cout<<PI*len*len<<endl;
+	}
+private:
+	double len;
+};
+
+void main(){
+	double length = 2.5;
+	Circle redCircle("red", length);
+	redCircle.print();//打印该对象的颜色和面积
+}
+#else
+#include<iostream>
+#include<string>
+using namespace std;
+const double PI=3.14;
+class Colar
+{
+public:
+	Colar (string col);
+	string getColar() const;
+protected:
+	void setColar(string col);
+private:
+	string  colar;
+};
+	Colar::Colar (string col)
+	{
+		colar=col;
+	}
+	string Colar::getColar()const
+	{
+		return colar;
+	}
+	void Colar::setColar(string col)
+	{
+		colar=col;
+	}
+class Circle//根据要求和main中的使用方式来定义Circle类
+{
+public:
+	Circle(string str, double length):a(str),len(length){}
+	void print(){cout<<a.getColar()<<endl;
+	cout<<PI*len*len<<endl;
+	}
+private:
+	double len;
+	Colar a;
+};
+void main(){
+	double length = 2.5;
+	Circle redCircle("red", length);
+	redCircle.print();//打印该对象的颜色和面积
+}
+#endif

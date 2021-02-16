@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let name = 'kobe'
+        let age = 18
+        let gender = 'male'
+
+        // es5写法
+        const obj = {
+            name: name,
+            age: age,
+            gender: gender,
+            // 函数写法
+            eat: function () {
+                console.log("我可以吃东西")
+            }
+        }
+        console.log(obj)
+        obj.eat()
+
+        // es6增强写法
+        const obj2 = {
+            name,
+            age,
+            gender,
+            // 函数增强
+            eat(){
+                console.log("我可以吃东西")
+            }
+        }
+        console.log(obj2)
+        obj2.eat()
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type = "text/javascript">
+			
+			var  arr = [1,2,2,3,5,1,1,3,4,5];
+			/**
+			 * 剔除数组中的重复元素，
+			 */
+			
+			
+			//遍历数组，
+			for(var i=0;i<arr.length; i++){
+//				console.log(arr[i]);
+				//获取当前元素后的所有元素
+				for(var j=i+1; j<arr.length; j++){
+//					console.log("------>" + arr[j]);
+					//判断相同的元素
+					if(arr[j] == arr[i]){
+						//删除相同的元素
+						arr.splice(j,1);
+						//但是，当两个紧挨着的数组元素值相等时，它只会比较一次，导致算法出现问题
+						j--;
+					}
+				}
+				
+			}
+			
+			//输出数组
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

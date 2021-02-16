@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		  <meta charset="UTF-8">
+		  <title>04_执行上下文栈2</title>
+	</head>
+	<body>
+		<!--
+		1. 依次输出什么?
+		[Web浏览器] "global begin: undefined"	/day9--10/3 执行上下文栈题目.html (14)
+		[Web浏览器] "foo() begin:1"	/day9--10/3 执行上下文栈题目.html (22)
+		[Web浏览器] "foo() begin:2"	/day9--10/3 执行上下文栈题目.html (22)
+		[Web浏览器] "foo() begin:3"	/day9--10/3 执行上下文栈题目.html (22)
+		[Web浏览器] "foo() end:3"	/day9--10/3 执行上下文栈题目.html (26)
+		[Web浏览器] "foo() end:2"	/day9--10/3 执行上下文栈题目.html (26)
+		[Web浏览器] "foo() end:1"	/day9--10/3 执行上下文栈题目.html (26)
+		[Web浏览器] "global end: 1"	/day9--10/3 执行上下文栈题目.html (29)
+
+		2. 整个过程中产生了几个执行上下文?
+		
+		 5个
+		-->
+		<script type="text/javascript">
+			//
+		  console.log('global begin: '+ i)  //global begin: undefined
+		  var i = 1
+		  //函数调用
+		  foo(1);	// 1
+		  function foo(i) {
+		    if (i == 4) {
+		      return;
+		  	}
+		    console.log('foo() begin:' + i);    // foo() begin: 1 2 3 
+		    //不断调用foo上下文
+		    foo(i + 1);
+		    //4 次出栈
+		    console.log('foo() end:' + i);		// foo() end:  3 2 1
+		  }
+		  
+		  console.log('global end: ' + i)		//global end:  1
+		</script>
+		
+	</body>
+</html>

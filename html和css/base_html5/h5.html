@@ -1,0 +1,632 @@
+<!-- 
+1.h5的相关改变：
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" manifest="demo_html.appcache">
+<head>
+	<meta charset="UTF-8">
+	<title>我的第一个h5程序</title>
+
+	<script type="text/javascript">
+     document.createElement("myhero")
+
+// 实现图形的拖拽
+// 组织默认，允许元素可拖拽
+	     function allowDrop(ev)
+	{
+		ev.preventDefault();
+	}
+//获得可拖拽元素的ID
+	function drag(ev)
+	{
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+//设置拖拽的位置
+	function drop(ev)
+	{
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+
+//按钮点击技术标签
+	function clickCounter()
+	{
+		if(typeof(Storage)!=="undefined")
+		{
+			if (localStorage.clickcount)
+			{
+				localStorage.clickcount=Number(localStorage.clickcount)+1;
+			}
+			else
+			{
+				localStorage.clickcount=1;
+			}
+			document.getElementById("result").innerHTML=" 你已经点击了按钮 " + localStorage.clickcount + " 次 ";
+		}
+		else
+		{
+			document.getElementById("result").innerHTML="对不起，您的浏览器不支持 web 存储。";
+		}
+	}
+
+//数据库的相关注意事项
+
+         var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+         var msg;
+         
+         db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "菜鸟教程")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "www.runoob.com")');
+            msg = '<p>数据表已创建，且插入了两条数据。</p>';
+            document.querySelector('#status').innerHTML =  msg;    //用来替换div的内容
+         });
+
+         db.transaction(function (tx) {
+              tx.executeSql('DELETE FROM LOGS  WHERE id=1');
+              msg = '<p>删除 id 为 1 的记录。</p>';
+              document.querySelector('#status').innerHTML =  msg;
+         });
+
+         db.transaction(function (tx) {
+             tx.executeSql('UPDATE LOGS SET log=\'runoob.com\' WHERE id=2');
+              msg = '<p>更新 id 为 2 的记录。</p>';
+              document.querySelector('#status').innerHTML =  msg;
+         });
+
+         db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+               var len = results.rows.length, i;
+               msg = "<p>查询记录条数: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+               
+               for (i = 0; i < len; i++){
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";      //row为行
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+         });
+
+
+</script>
+
+<style type="text/css">
+		myhero {
+
+			display: block;
+			background-color: #ddd;
+			padding: 50px;
+			font-size: 30px;
+		}
+/*设置拖拽标签的div
+*/	#div1 , #div2 {width:100px;height:100px;padding:10px;border:1px solid #aaaaaa;background-color:red; }
+</style>
+</head>
+
+<body >
+
+<h1 style="text-align:center;">我的第一个H5文件</h1>
+<hr/>
+
+<h2>创建一个新的html</h2>
+
+	<p>我的第一个段落。</p>
+	<myHero>我的第一个新元素</myHero>
+	<hr>
+<h2>h5新增元素的列举</h2>
+	<pre>
+		article>  定义页面独立的内容区域。  
+		aside>  定义页面的侧边栏内容。  
+		bdi>  允许您设置一段文本，使其脱离其父元素的文本方向设置。  
+		command>  定义命令按钮，比如单选按钮、复选框或按钮  
+		details>  用于描述文档或文档某个部分的细节  
+		dialog>  定义对话框，比如提示框  
+		summary>  标签包含 details 元素的标题  
+		figure>  规定独立的流内容（图像、图表、照片、代码等等）。  
+		figcaption>  定义figure> 元素的标题  
+		footer>  定义 section 或 document 的页脚。  
+		header>  定义了文档的头部区域  
+		mark>  定义带有记号的文本。  
+		meter>  定义度量衡。仅用于已知最大和最小值的度量。  
+		nav>  定义导航链接的部分。  
+		progress>  定义任何类型的任务的进度。  
+		ruby>  定义 ruby 注释（中文注音或字符）。  
+		rt>  定义字符（中文注音或字符）的解释或发音。  
+		rp>  在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容。  
+		section>  定义文档中的节（section、区段）。  
+		time>  定义日期或时间。  
+		wbr>  规定在文本中的何处适合添加换行符。  
+	</pre>
+	<hr>
+<h2>绘制图形标签canvas</h2>
+	<pre>注意: 标签通常需要指定一个id属性 (脚本中经常引用), width 和 height 属性定义的画布的大小.
+	     canvas 元素用于图形的绘制，通过脚本 (通常是JavaScript)来完成.
+	     canvas 标签只是图形容器，您必须使用脚本来绘制图形。
+	</pre>
+	<canvas id="myCanvas" width="200" height="100"
+	        style="border:1px solid #000000;">你的浏览器不支持 HTML5 canvas 标签。</canvas>
+
+	<script>
+	var c=document.getElementById('myCanvas');
+	var ctx=c.getContext('2d');
+	ctx.fillStyle='#FF0000';
+	ctx.fillRect(0,0,200,100);
+	// 绘制线条，moveTo(x,y) 定义线条开始坐标，lineTo(x,y) 定义线条结束坐标
+	ctx.moveTo(0,0);
+	ctx.lineTo(200,100);
+	ctx.stroke();
+	//画圆型，arc(x,y,r,start,stop)
+	ctx.beginPath();
+	ctx.arc(95,50,40,0,2*Math.PI);
+	ctx.stroke();
+	//绘制字体
+	ctx.font="30px Arial";
+	ctx.strokeText("Hello World",10,50);
+	// 渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。
+	// 以下有两种不同的方式来设置Canvas渐变：
+	// createLinearGradient(x,y,x1,y1) - 创建线条渐变
+	// createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变
+	// 当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+	// addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+	// 使用渐变，设置fillStyle或strokeStyle的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+	// 使用 createLinearGradient():
+
+
+	// Create gradient
+	// var grd=ctx.createLinearGradient(0,0,200,0);
+	// grd.addColorStop(0,"red");
+	// grd.addColorStop(1,"white");
+	// // Fill with gradient
+	// ctx.fillStyle=grd;
+	// ctx.fillRect(0,0,200,100);
+	</script>
+	<hr>
+
+<h2>svg可拉伸矢量图形</h2>
+	<pre>SVG 是一种使用 XML 描述 2D 图形的语言。
+	Canvas 通过 JavaScript 来绘制 2D 图形。
+	SVG 基于 XML，这意味着 SVG DOM 中的每个元素都是可用的。您可以为某个元素附加 JavaScript 事件处理器。
+	在 SVG 中，每个被绘制的图形均被视为对象。如果 SVG 对象的属性发生变化，那么浏览器能够自动重现图形。
+	Canvas 是逐像素进行渲染的。在 canvas 中，一旦图形被绘制完成，它就不会继续得到浏览器的关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象。
+	</pre>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+	   <polygon points="100,10 40,180 190,60 10,60 160,180"
+	   style="fill:lime;
+	   stroke:purple;
+	   stroke-width:5;
+	   fill-rule:evenodd;"/>
+	</svg>
+	<hr>
+
+<h2>Math标签</h2>
+ <math xmlns="http://www.w3.org/1998/Math/MathML">       
+         <mrow>
+            <msup><mi>a</mi><mn>2</mn></msup>
+            <mo>+</mo>                
+            <msup><mi>b</mi><mn>2</mn></msup>
+            <mo>=</mo>          
+            <msup><mi>c</mi><mn>2</mn></msup>
+         </mrow>            
+      </math>
+	<hr>
+<h2>drag拖放标签</h2>
+
+	<p>拖动 RUNOOB.COM 图片到矩形框中:</p>
+
+	<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	<img id="drag1"  alt= "地鼠" src="image/mole.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
+	</div>
+	<br>
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<hr>
+
+<h2>HTML5 Geolocation（地理定位）用于定位用户的位置。</h2>
+	<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+	<button onclick="getLocation()">点我</button>
+	<script>
+	var x=document.getElementById("demo");
+	function getLocation()
+	{
+		if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(showPosition,showError);
+		}
+		else
+		{
+			x.innerHTML="该浏览器不支持定位。";
+		}
+	}
+	function showPosition(position)
+	{
+		x.innerHTML="纬度: " + position.coords.latitude + 
+		"<br>经度: " + position.coords.longitude;	
+	}
+	function showError(error)
+	{
+		switch(error.code) 
+		{
+			case error.PERMISSION_DENIED:
+				x.innerHTML="用户拒绝对获取地理位置的请求。"
+				break;
+			case error.POSITION_UNAVAILABLE:
+				x.innerHTML="位置信息是不可用的。"
+				break;
+			case error.TIMEOUT:
+				x.innerHTML="请求用户地理位置超时。"
+				break;
+			case error.UNKNOWN_ERROR:
+				x.innerHTML="未知错误。"
+				break;
+		}
+	}
+	</script>
+	<hr>
+
+<h2>表单元素form的各种输入类型</h2>
+	<pre>
+	这是h5新增的一些输入类型
+	color
+	date
+	datetime
+	datetime-local
+	email
+	month
+	number
+	range
+	search
+	tel
+	time
+	url
+	week
+	</pre>
+	<hr>
+
+<h2>新增的表单元素</h2>
+
+	<pre>
+	datalist标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。 
+	keygen标签规定用于表单的密钥对生成器字段。 
+	output标签定义不同类型的输出，比如脚本的输出。 
+	</pre>
+
+	<p>这是Keygen标签</p>
+	<form action="demo_keygen.php" method="get">
+	  用户名: <input type="text" name="usr_name">
+	  加密: <keygen name="security">
+	  <input type="submit">
+	</form>
+
+	<p>这是利用output标签进行的输出</p>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+	<input type="range" id="a" value="50">100
+	+<input type="number" id="b" value="50">
+	=<output name="x" for="a b"></output>
+	</form>
+	<hr>
+
+<h2>h5表单属性</h2>
+
+	<form action="demo-form.php" autocomplete="on">
+	  First name:<input type="text" name="fname"><br>
+	  Last name: <input type="text" name="lname"><br>
+	  E-mail: <input type="email" name="email" autocomplete="off"><br>
+	  <input type="submit">
+	</form>
+
+	<p>form 属性规定输入域所属的一个或多个表单。
+	提示:如需引用一个以上的表单，请使用空格分隔的列表。
+	</p>
+	<form action="demo-form.php" id="form1">
+	First name: <input type="text" name="fname"><br>
+	<input type="submit" value="提交">
+	</form>
+	<p> "Last name" 字段没有在 form 表单之内，但它也是 form 表单的一部分。</p>
+	Last name: <input type="text" name="lname" form="form1">
+
+	<br>
+	<pre>
+	The formaction 属性用于描述表单提交的URL地址.
+	The formaction 属性会覆盖form元素中的action属性.
+	注意: The formaction 属性用于 type="submit" 和 type="image".
+	</pre>
+	<form action="demo-form.php">
+	  First name: <input type="text" name="fname"><br>
+	  Last name: <input type="text" name="lname"><br>
+	  <input type="submit" value="提交"><br>
+	  <input type="submit" formaction="demo-admin.php" value="提交">
+	</form><br>
+
+	<pre>
+	height 和 width 属性规定用于 image 类型的 input标签的图像高度和宽度。
+	注意: height 和 width 属性只适用于 image 类型的input 标签。
+	</pre>
+	<form action="demo-form.php">
+	  First name: <input type="text" name="fname"><br>
+	  Last name: <input type="text" name="lname"><br>
+	  <input type="image" src="image/mole.jpg"  alt="Submit" width="48" height="48">
+	</form><br>
+
+	<p>datelist标签的使用，预览要填入的内容</p>
+
+	<form action="demo-form.php" method="get">
+	<input list="browsers" name="browser">
+
+	<datalist id="browsers">
+	  <option value="Internet Explorer">
+	  <option value="Firefox">
+	  <option value="Chrome">
+	  <option value="Opera">
+	  <option value="Safari">
+	</datalist>
+
+	<input type="submit">
+	</form>
+
+	<pre>
+	multiple 属性是一个 boolean 属性.
+	multiple 属性规定input元素中可选择多个值。
+	注意: multiple 属性适用于以下类型的 input标签：email 和 file: 
+
+	</pre>
+	<form action="demo-form.php">
+	  选择图片: <input type="file" name="img" multiple>
+	  <input type="submit">
+	</form>
+	<p>尝试选取一张或者多种图片。</p>
+
+	<h3>pattern标签，限制输入框内的内容和字长</h3>
+	<form action="demo-form.php">
+	  Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+	  <input type="submit">
+	</form>
+
+	<h3>placehoider预输入标签</h3>
+	<form action="demo-form.php">
+	  <input type="text" name="fname" placeholder="First name"><br>
+	  <input type="text" name="lname" placeholder="Last name"><br>
+	  <input type="submit" value="提交">
+	</form>
+	<hr>
+
+<h2>语义元素</h2>
+	<pre>
+	header
+	nav
+	section
+	article
+	aside
+	figcaption
+	figure
+	footer
+
+	nav 标签定义导航链接的部分。
+	nav元素用于定义页面的导航链接部分区域，但是，不是所有的链接都需要包含在 <nav> 元素中! 
+
+	article 标签定义独立的内容。
+
+	aside> 标签定义页面主区域内容之外的内容（比如侧边栏）。
+	aside 标签的内容应与主区域的内容相关
+
+	figure>标签规定独立的流内容（图像、图表、照片、代码等等）。
+	figure> 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。
+	figcaption> 标签定义 figure> 元素的标题.
+	figcaption>元素应该被置于 "figure" 元素的第一个或最后一个子元素的位置。
+
+	</pre>
+
+	<h3>section 用来定义一段文字</h3>
+	<section>
+	  <h3>WWF</h3>
+	  <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+	</section>
+
+	<section>
+	  <h3>WWF's Panda symbol</h3>
+	  <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+	</section>
+	<p>导航栏</p> 
+	<nav>
+	<a href="/html/">HTML</a> |
+	<a href="/css/">CSS</a> |
+	<a href="/js/">JavaScript</a> |
+	<a href="/jquery/">jQuery</a>
+	</nav>
+	<p>侧边栏 </p>
+	<aside>
+	<h4>Epcot Center</h4>
+	<p>The Epcot Center is a theme park in Disney World, Florida.</p>
+	</aside>
+	<p>figure标签用来定义一个流内容</p>
+	<p>The Pulpit Rock is a massive cliff 604 metres (1982 feet) above Lysefjorden, opposite the Kjerag plateau, in Forsand, Ryfylke, Norway. The top of the cliff is approximately 25 by 25 metres (82 by 82 feet) square and almost flat, and is a famous tourist attraction in Norway.</p>
+
+	<figure>
+	  <img src="image/mole.jpg" alt="The Pulpit Rock" width="304" height="228">
+	  <figcaption>Fig.1 - A view of the pulpit rock in Norway.</figcaption>
+	</figure>
+	<hr>
+
+<h2>html中的web 存储</h2>
+
+<h3>localstorage标签</h3>
+<p><button onclick="clickCounter()" type="button">点我！</button></p>
+<div id="result"></div>
+<p>点击该按钮查看计数器的增加。</p>
+<p>关闭浏览器选项卡(或窗口),重新打开此页面,计数器将继续计数(不是重置)。</p><br>
+
+<pre>
+不管是 localStorage，还是 sessionStorage，可使用的API都相同，常用的有如下几个（以localStorage为例）：
+保存数据：localStorage.setItem(key,value);
+读取数据：localStorage.getItem(key);
+删除单个数据：localStorage.removeItem(key);
+删除所有数据：localStorage.clear();
+得到某个索引的key：localStorage.key(index);
+</pre>
+    <div style="border: 2px dashed #ccc;width:320px;text-align:center;">     
+        <label for="sitename">网站名(key)：</label>  
+        <input type="text" id="sitename" name="sitename" class="text"/>  
+        <br/>  
+        <label for="siteurl">网 址(value)：</label>  
+        <input type="text" id="siteurl" name="siteurl"/>  
+        <br/>  
+        <input type="button" onclick="save()" value="新增记录"/>  
+        <hr/>
+
+        <label for="search_phone">输入网站名：</label>  
+        <input type="text" id="search_site" name="search_site"/>  
+        <input type="button" onclick="find()" value="查找网站"/>  
+        <p id="find_result"><br/></p>  
+    </div>  
+    <br/>  
+    <div id="list">  
+    </div>  
+   
+    <script>
+	// 载入所有存储在localStorage的数据
+	loadAll(); 	
+		
+    //保存数据  
+    function save(){  
+        var siteurl = document.getElementById("siteurl").value;  
+        var sitename = document.getElementById("sitename").value;  
+        localStorage.setItem(sitename, siteurl);
+        alert("添加成功");
+    }
+    //查找数据  
+    function find(){  
+        var search_site = document.getElementById("search_site").value;  
+        var siteurl = localStorage.getItem(search_site);  
+        var find_result = document.getElementById("find_result");  
+        find_result.innerHTML = search_site + "的网址是：" + siteurl;  
+    }
+    //将所有存储在localStorage中的对象提取出来，并展现到界面上
+    // function loadAll(){  
+    //     var list = document.getElementById("list");  
+    //     if(localStorage.length>0){  
+    //         var result = "<table border='1'>";  
+    //         result += "<tr><td>key</td><td>value</td></tr>";  
+    //         for(var i=0;i<localStorage.length;i++){  
+    //             var sitename = localStorage.key(i);  
+    //             var siteurl = localStorage.getItem(sitename);  
+    //             result += "<tr><td>"+sitename+"</td><td>"+siteurl+"</td></tr>";  
+    //         }  
+    //         result += "</table>";  
+    //         list.innerHTML = result;  
+    //     }else{  
+    //         list.innerHTML = "数据为空……";  
+    //     }  
+    // }
+    </script>
+<hr>
+<h2>html数据库</h2>
+	<pre>
+	openDatabase：这个方法使用现有的数据库或者新建的数据库创建一个数据库对象。
+	transaction：这个方法让我们能够控制一个事务，以及基于这种情况执行提交或者回滚。
+	executeSql：这个方法用于执行实际的 SQL 查询。
+	</pre>
+
+	<div id="status" name="status">状态信息</div>
+	<hr>
+
+<h2>HTML5应用程序缓存</h2>
+<pre>
+Cache Manifest 基础
+如需启用应用程序缓存，请在文档的<html> 标签中包含 manifest 属性： 
+<pre>
+!DOCTYPE HTML>
+html manifest="demo.appcache">
+...
+/html>
+
+</pre>
+每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。
+manifest 文件的建议的文件扩展名是：".appcache"。
+Remark 请注意，manifest 文件需要配置正确的 MIME-type，即 "text/cache-manifest"。必须在 web 服务器上进行配置。
+Manifest 文件
+manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。
+
+
+manifest 文件可分为三个部分：
+CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存
+NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存
+FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）
+
+	CACHE MANIFEST
+	第一行，CACHE MANIFEST，是必需的
+	CACHE MANIFEST
+	 /theme.css
+	 /logo.gif
+	 /main.js 
+	上面的 manifest 文件列出了三个资源：一个 CSS 文件，一个 GIF 图像，以及一个 JavaScript 文件。当 manifest 文件加载后，浏览器会从网站的根目录下载这三个文件。然后，无论用户何时与因特网断开连接，这些资源依然是可用的。
+
+	NETWORK
+	下面的 NETWORK 小节规定文件 "login.php" 永远不会被缓存，且离线时是不可用的：
+	NETWORK:
+	login.php
+
+	可以使用星号来指示所有其他资源/文件都需要因特网连接：
+	NETWORK:
+	*
+
+	FALLBACK
+	下面的 FALLBACK 小节规定如果无法建立因特网连接，则用 "offline.html" 替代 /html5/ 目录中的所有文件：
+	FALLBACK:
+	/html/ /offline.html
+	注意: 第一个 URI 是资源，第二个是替补。
+
+	</pre>
+
+	<p id="timePara"><button onclick="getDateTime()">获取日期和时间</button></p>
+	<p><img src="image/mole.jpg" width="336" height="169"></p>
+	<p>尝试打开 <a href="tryhtml5_html_manifest.htm" target="_blank">这个页面</a>, 在离线的状态下重新载入这个页面，页面也可以访问。</p>
+	<hr>
+
+<h2>web  worker</h2>
+	<h3>由于这个示例引用了外部("demo_workers.js");文件，这里没有撰写，所以该实例无法运行</h3>
+
+<script>
+//javascript的web worker工作模式
+	var w;
+
+	function startWorker() {
+	    if(typeof(Worker) !== "undefined") {
+	    	//创建新的worker
+	        if(typeof(w) == "undefined") {
+	            w = new Worker("demo_workers.js");
+	        }
+//建立onmessage监听器
+	        w.onmessage = function(event) {
+	            document.getElementById("result").innerHTML = event.data;
+	        };
+	    } else {
+	        document.getElementById("result").innerHTML = "抱歉，你的浏览器不支持 Web Workers...";
+	    }
+	}
+
+	function stopWorker() 
+	{ 
+	    w.terminate();
+	    w = undefined;     //资源释放
+	} 
+</script>
+
+	<p>计数： <output id="result"></output></p>
+	<button onclick="startWorker()">开始工作</button> 
+	<button onclick="stopWorker()">停止工作</button>
+
+
+<hr>
+
+<h2></h2>
+<hr>
+
+<h2></h2>
+<hr>
+
+
+	
+</body>
+</html>

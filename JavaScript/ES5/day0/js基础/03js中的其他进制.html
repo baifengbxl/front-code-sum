@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			/*
+			 
+			 *其他进制
+			 * 	--16进制表示：  0X开头
+			 * 	--8进制---0开头
+			 * 	--2进制---0b开头
+			 * */
+			//16进制
+			var  a=0x64;
+			
+			
+			//8进制，注意：这里有些浏览器会默认为8进制，有些会默认为10进制
+			a = 0125;
+			 //二进制,一般只有火狐和Chrome支持
+		     //a= 0b10;、
+		     
+		    /* 注意：这里有些浏览器会默认为8进制，有些会默认为10进制,
+		      	 可以用parseINt(a,进制)来解决*/
+		     a="070";
+		     a=parseInt(a,8);
+		     
+		     console.log(typeof a );
+			console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

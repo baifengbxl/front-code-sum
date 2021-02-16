@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // async 函数
+         
+        async function fn(){
+            // 非promise对象
+            // return "a"
+
+            // promise对象
+            // return  new Promise((resolved, reject) => {
+
+            //     // resolved("成功的数据")
+            //     reject("失败的数据")
+            // }  )
+
+            // 抛出错误
+            // throw "error"
+
+        }
+
+        console.log(fn())
+        fn().then(value => {
+            console.log(value)
+        }, reason => {
+            console.log(reason)
+        })
+
+
+    </script>
+</body>
+</html>

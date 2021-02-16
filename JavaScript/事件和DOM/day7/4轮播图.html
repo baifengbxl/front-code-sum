@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			window.onload = function (){
+				
+				//设置图片数组集合
+				var imgArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"] 
+				//设置索引
+				var index = 0
+				//设置定时器返回值
+				var  timer
+				var img = document.getElementById("img")
+				//绑定监听事件
+				var btn01 = document.getElementById("btn01")
+				btn01.onclick = function (){
+					clearInterval(timer)
+					timer = setInterval(function(){
+						//关闭上一个计时器
+						index++ 
+						index = index % imgArr.length
+						img.src = imgArr[index]	
+					},1000)
+				}
+				var btn02 = document.getElementById("btn02")
+				btn02.onclick = function(){
+					clearInterval(timer)
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<img  id = "img" src="img/1.jpg"/>
+		<br /><br />
+		<button id = "btn01">开始</button>
+		<button id = "btn02">結束</button>
+	</body>
+	
+</html>

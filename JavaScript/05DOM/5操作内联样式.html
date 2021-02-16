@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				height: 200px;
+				width: 200px;
+				background-color: red;
+			}
+		</style>
+				
+		<script type="text/javascript">
+			window.onload = function (){
+				var btn = document.getElementById("btn")
+				var btn2 = document.getElementById("btn2")
+				var box = document.getElementById("div")			
+				btn.onclick = function(){
+					box.style.width = "300px"
+					box.style.height = "300px"
+					box.style.backgroundColor = "yellow"
+				}
+				
+				btn2.onclick = function (){
+					//style只能获取内联样式，不能获取样式表的样式
+					alert(box.style.height)
+				}
+			}
+		</script>
+			
+	</head>
+	<body>
+		<button id="btn">点我一下</button>
+		<button id="btn2">点我一下2</button>
+		<br />
+		<br />
+		<div id="div"></div>
+	</body>
+</html>

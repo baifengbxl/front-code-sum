@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function F1(age){
+				this.age = age
+			}
+			function F2(age){
+				this.age = age
+			}
+			F2.prototype = new F1(10)
+			function F3(age){
+				this.age = age
+			}
+			F3.prototype = new F2(20)
+			
+			var f3 = new F3(30)
+			console.log(f3.age)	//30
+			
+		</script>
+	</body>
+	
+</html>

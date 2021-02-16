@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+		
+		
+		
+		//switch 函数的应用,
+//		                求分数高于六十则及格
+//				低于60为不及格
+			
+//			var score= 55;
+//			
+//			switch(true){
+//				case score >=60:
+//					console.log("及格");
+//					break;
+//				default:
+//				 	console.log("不及格")
+//			}
+
+
+
+
+
+//求水仙花数
+//
+//	for(i=100; i<1000 ; i++){
+//		
+//		//获取百 十位 个位的数字
+//		
+//		var bai = parseInt(i/100);
+//		
+//		var shi = parseInt((i-bai*100)/10);
+//		
+//		var ge = parseInt( i%10);
+//		
+//		
+//		//判断水仙花数
+//		if( bai *bai*bai +shi*shi*shi +ge*ge*ge == i){
+//			
+//		console.log(i);
+//	     }
+//			
+//	}
+//		
+
+
+
+
+//质数练习
+
+
+////采用逆向思维
+//var flag = true;
+////判断数是否合法
+////判断是否是质数
+//var num = prompt("请输入一个大于1的整数");
+////判断2---num 得数是否能够被num整除
+//for(i=2; i<num ;i++){
+//	//如果这个数能够被除了她和她本身的数向除，则他就不是质数
+//	if(num % i == 0){
+//		flag = false;
+////		console.log("他不是质数");
+//	}
+////	console.log(num+"他不是质数");	
+//}
+//
+//
+//
+//if(flag){
+//	console.log(num+"是质数！！！！");
+//}else{
+//	console.log(num+"不是质数");
+//}
+
+
+
+
+
+
+/*
+ * 打印乘法表
+ * */
+
+////设定第几行
+// for(var i = 1; i<=9;i++){
+//	//设定每行的乘数
+//	for (var j =1; j<=i ;j++) {
+//		document.write(j+"*"+i+"="+(i*j)+"&nbsp&nbsp&nbsp&nbsp");		
+//	}
+//	//换行
+//	document.write("<br />");
+//}
+
+
+
+/*
+ * 
+ * 打印出1-100之间的所有质数，
+ * 		注意对此题目，可以进行两次的算法优化
+ * 		可以用计时器来进行测试
+ * 
+ * 
+ * */
+
+//输出2-100所有数字
+
+//在js里面，可以使用console.time("计时器的名字")来开启一个计时器
+
+console.time("test");
+//var flag = true;
+for (var i=2;i<=100000;i++) {
+	//放在这里会正确输出，放在for循环外面却不能正确输出
+	var flag = true;
+	
+	//由于质数的公因子是成对出现的，所以可以用对所测试的数字进行开根号处理来进行第二次算法优化
+	//可以用Math.sqrt()来对树枝进行开根号计算
+	for (var j=2 ; j<Math.sqrt(i); j++) {
+		if(i%j == 0){			
+			flag=false;
+			//一旦进入判断，就证明他不是质数，可以直接跳出循环来实现算法的第一次优化
+			break;
+		}
+	}
+	
+	if (flag){
+		console.log(i+"是质数");
+		}
+}
+
+	//可以用	Console.timeEnd("计时器的名字")来关闭一个计时器
+	console.timeEnd("test");
+
+
+</script>
+	</head>
+	<body>
+	</body>
+</html>

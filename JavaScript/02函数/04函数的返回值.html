@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			//函数的返回值可以是任何值
+				//可以
+			function  fun2(){
+				
+				function fun1(){
+					
+					alert("我是fun1");
+//					console.log("woshoi")
+				}
+				
+				//返回的是一个函数
+				return fun1;
+			}
+			
+			//可以用一下的两种方法来调用函数fun1并返回该函数的返回值
+			var a=fun2();
+			console.log(a);
+			a();
+			
+			
+			//fun2()();
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

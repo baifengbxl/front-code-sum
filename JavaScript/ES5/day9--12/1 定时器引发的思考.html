@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button id = "btn">开始定时</button>
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementById("btn")
+			btn.onclick = function (){
+				console.log("定时器开始执行")
+				var start = Date.now()
+				setTimeout(function (){
+					console.log("定时器开始执行"+ (Date.now() - start))
+				},200)
+				console.log("定时器执行结束了")
+			
+				//长时间的时间
+				for (var i = 0 ; i < 1000000000; i++) {
+					
+				}
+			}
+		</script>
+	</body>
+</html>

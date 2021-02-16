@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<style>
+			.box{
+				width: 502px;
+				height: 401px;
+				margin: 100px auto;
+				background:url(./img/votebg.jpg);
+				/* 图片没有素材。设置背景色来代替 */
+				/* background-color: #bfa; */
+				/* 消除上外边距重叠，不过不建议使用这种写死的方法 */
+				padding-top: 1px;
+			}
+
+			.bg{
+				/* 设置浮动 */
+				display: block;
+				width: 480px;
+				height: 330px;
+				/* 调整位置 */
+				margin-top: 31px;
+				margin-left: 11px;
+				/* background-color:yellow; */
+				background: url(./img/bg.png);
+
+			}
+
+			/* 关掉按钮 */
+			.close{
+				display: block;
+				/* 设置广澳 */
+				width: 16px;
+				height: 16px;
+				/*  */
+				background: url(./img/close.jpg);
+				margin-top:6px;
+				margin-right:10px ;
+				float: right;
+
+			}
+
+			/* 提交按钮 */
+			.tijiao{
+				display: block;
+				/* 设置广澳 */
+				width: 64px;
+				height: 24px;
+				/*  */
+				background:url(./img/tijiao.jpg);
+			    /* 调整位置 */
+				margin-top:7px;
+				margin-right:9px ;
+				float: right;
+
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="box">
+				<!-- 设置span所在的容器 -->
+			    <!-- 注意：位置不能乱 -->
+				<span class="close"></span>
+				<span class="bg"></span>
+				<span class="tijiao"></span>
+		</div>
+	</body>
+</html>

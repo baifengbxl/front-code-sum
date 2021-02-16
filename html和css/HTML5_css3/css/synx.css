@@ -1,0 +1,31 @@
+.box1 {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  margin: 150px auto;
+}
+.box1 .box2 {
+  height: 50px;
+  width: 50px;
+  background-color: yellow;
+}
+.box1 .box2 .box3 {
+  height: 25px;
+  width: 25px;
+  background-color: blue;
+}
+.box5 {
+  width: 200px;
+  color: #bfa;
+}
+.box6 {
+  width: 200px;
+  background-image: url("box6/1.png");
+}
+div {
+  width: 115px;
+  height: 335px;
+}
+div {
+  width: 300px;
+}

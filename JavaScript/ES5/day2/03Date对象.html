@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			
+			var d = new Date();
+//			console.log(d);
+			
+			/*
+			 * 
+			 * Date对象
+			 * 	时间也是一个对象
+			 * 	-当直接定义一个Date对象的实例时，返回的是当前的时间
+			 * 
+			 */
+			
+			//创建指定的时间对象,必须符合格式，否则会返回Invalid Date
+			
+//			d = new  Date("12/17/2017 11:12:34");
+			console.log(d);
+			/*
+			 * 
+			 * getDate() 从 Date 对象返回一个月中的某一天 (1 ~ 31)。 
+			 * 
+			   getDay() 从 Date 对象返回一周中的某一天 (0 ~ 6)。 
+			   	-0为星期天
+					
+				getMonth
+			 */
+			
+			date = d.getDate();
+			date = d.getDay();
+			//getTime() 返回 1970 年 1 月 1 日至今的毫秒数。
+			//时间戳： 格林尼治时间1970 年 1 月 1 日至今的毫秒数
+			//注意：这里的时间是指格林尼治时间
+			//计算机底层使用的都是时间戳
+			date = d.getTime();
+			//
+			console.log("date = " + date )
+			
+			//获取当前的时间戳
+			var time = Date.now();
+			console.log(time)
+			
+			//可以用时间戳来测试代码的性能
+			var time = Date.now()
+			for(var i= 0;i<100;i++){
+				console.log(i);
+			}
+			var time1 = Date.now()
+			
+			console.log("代码的执行时间为：" + (time1 - time))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

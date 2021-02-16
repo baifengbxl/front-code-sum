@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type ="button" value="按钮1" />
+		<input type ="button" value="按钮2" />
+		<input type ="button" value="按钮3" />
+		<script type="text/javascript">
+			var btn = document.getElementsByTagName("input")
+			for(var i=0; i<btn.length; i++){
+				(function(i){
+					btn[i].onclick = function (){
+						alert(i+1)
+					}
+				})(i)
+			}
+		</script>
+	</body>
+</html>

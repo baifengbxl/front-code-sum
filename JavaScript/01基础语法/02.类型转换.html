@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			
+			/*
+			 * 
+			 * 强制类型转换：
+			 * 		强制类型转换时讲其他类型的数据转换为
+			 * 		string number bool类型
+			 * 
+			 * 
+			 * 
+			 
+			 * */
+			
+			
+			/*
+			 1,将其他类型的数据转为string类型
+			     -tostring（）方法
+			               他不会改变原变量，会返回转换后的值
+			      	但是注意：null和undefined方法没有tostring方法
+			     -String()函数
+			     	bool和number其实都是调用tostring（）方法
+			     	  但是null其实是将null变为“null”
+			 * */
+			
+			//tostring方法
+			var a=123;
+			a=a.toString();
+			console.log(typeof a);
+			console.log(a);
+			//String（）函数
+			a=true;
+			a=String(a);
+			console.log(typeof a);
+			console.log(a);
+			
+			
+			
+			
+			
+			
+			/*将数值类型转为number
+			 * 	-Number（）函数
+			 * 		字符串---数字
+			 * 			纯数字转为数值为纯数字
+			 * 			字符串中有非数字类型，转为NaN
+			 * 			如果是空格，转为0
+			 * 		bool数值---数字
+			 * 			false---0
+			 * 			true---1
+			 * parseInt（）方法只针对string类型
+			 * 		parseInt方法可以字符中的有效整数提取出来
+			 * 		然后转为number，后面的值都去掉，如：123a45----123
+			 * 	同理的还有
+			 * parseFloat（）方法将字符串数字转为小数
+			 * 
+			 * 
+			 *  但是注意：应用此方法转换时，非String类型数值回先转为String类型，然后调用
+			 *  parseInt/Float（）方法
+			 * 
+			 * 
+			 * 
+			 * 		
+			 
+			 
+			 * 
+			 * */
+			
+			var b=true;
+			b=parseInt(b);
+			
+			console.log(typeof b);
+			console.log(b);
+			
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

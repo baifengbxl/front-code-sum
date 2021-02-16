@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			/*
+			 
+			 * 可以用对象字面量来创建一个对象，比new object（）的结构更加简单方便，建议使用
+			 * 
+			 * 可以在后面的{}直接对对象的属性进行定义：
+			 * 	语法：
+			 * 		{
+			 * 			  属性名：属性值，
+					 *   属性名：属性值，
+					 *   属性名：属性值，
+					 *   属性名：属性值
+					 * }
+					 * 
+					 * 
+					 * 注意：在对象字面量里面定义的属性名和属性值是以名值对的结构来保存的
+					 *      每个名值对之间用逗号（ ，）隔开，最后一个名值对不加逗号（，）
+			 * */
+			
+			var obj={
+				
+				name:"沙和尚",
+				gender:"男",
+				test:{
+						name:"孙悟空",
+						age:"22"
+				}
+			};
+			
+			console.log(obj.test.age);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

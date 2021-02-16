@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">		
+			
+			var obj=new Object();		
+			obj.name="swk";
+			
+			/*
+			 
+			 * 注意：栈里面值保存的是对象的地址，
+			 * 		当把这个对象赋值给另外一个对象时，另一个对象获取的时当前对象的地址
+			 * 		两个对象指向同一个地址空间，当改变一个对象的属性值时，另外一对象的值也会改变
+			 * 
+			 * */
+			var obj2=obj;
+//			obj2.name="shs";
+			obj.name="Tom";
+			
+			
+			
+			
+			//检查两个对象是否相等
+			console.log(obj2.name);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

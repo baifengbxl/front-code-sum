@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type = "text/javascript">
+			
+				var arr = ["猪八戒", "孙悟空", "沙和尚","唐僧","玉兔精"];
+				
+				/*
+				 * slice（）方法：
+				 * 	-该方法截取数组中的元素
+				 * 	-他的返回值是一个新的数组，不会对原数组产生修改
+				 * 	-语法：
+				 * 		arrObject.slice(参数一，参数二);
+				 * 		arr.slice(0,2);
+				 * 
+				 * 参数介绍
+				 * 	-第一个参数：截取的开始位置(包含)，
+				 * 		如果是负数，那么它规定从数组尾部开始算起的位置。、
+				 * 		也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。
+				 * 	-第二个参数：截取的结束位置(不包含)，
+				 *		如果没有定该参数，则默认截取到数组结束
+				 * 		如果为负值。同理，从数组的末尾算起为第一个元素
+				 *      如果参数值end > arr.length-1 ,则也截取到数组的末尾
+				 *
+				 * 如果都没有指定，则截取整个数组
+				 * 
+				 */		
+				
+				//截取数组中的第一个，第二个元素
+				
+//				var result = arr.slice(-2);
+//				var result = arr.slice();
+//				var result = arr.slice(10,10);
+//				var result = arr.slice(-2,10);
+
+//				console.log(result);
+				
+				
+				/*
+				 * splice方法：
+				 * 	-删除数组中的一个或者多个元素，并往数组中添加新值
+				 * 	-他会修改原数组
+				 * 	-他的返回值是一个包含被删除元素的新数组，
+				 * 	语法：
+				 * 		arrObject.splice(index,howmany, element1,element2,.......)
+				 * 
+				 * 参数介绍
+				 * 第一个参数：
+				 * 第二个参数：
+				 * 第三个及以后参数：
+				 *
+				 */
+				
+				
+				//原数组
+				console.log(arr);
+				//调用splice方法,删除第一个，第二个元素
+//				var result = arr.splice(0,2);
+				//返回值为数组中被删除的元素
+//				console.log(result);
+				//判断返回值的类型
+//				console.log(typeof result);
+				
+				var result = arr.splice(0,1,"牛魔王","贴扇公主");
+				result = arr.splice(0,2,"牛魔王");
+				console.log(result);
+				//删除后的数组
+				console.log(arr);
+				
+				
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

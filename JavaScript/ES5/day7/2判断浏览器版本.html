@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			 * BOM对象
+			 */
+			var ua = window.navigator.userAgent
+			console.log(ua)
+			if(/firefox/i.test(ua)){
+				alert("我是火狐")
+			}else if(/chrome/i.test(ua)){
+				alert("我是Chrome")
+			}else if(/msie/i.test(ua)){
+				alert("我是IE")
+			}else if("ActiveXObject" in window){
+				alert("我是IE11")
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

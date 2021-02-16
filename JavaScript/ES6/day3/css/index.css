@@ -1,0 +1,70 @@
+/* 清除默认样式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置游戏盒子 */
+#main{
+    margin: 100px 230px ;
+    /* border : 1px solid red; */
+    position: relative;
+    /* overflow: auto; */
+    /* background-image: url('/day3/img/11.jpg
+    bcco'); */
+    background-color: rgb(224, 186, 186);
+    
+}
+/* 盒子 */
+#box{
+    /* float: left; */
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+/* 分数 */
+h2{
+    color:rgb(240, 102, 11);
+}
+#score{
+    /* background-color: rgb(39, 124, 163); */
+    float: left;
+    margin-left: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+/* 设置按钮 */
+#button{
+    /* background-color: rgb(197, 48, 48);   */
+    float: left;
+    margin-left: 50px;
+
+}
+#btn{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(109, 217, 236);
+    border-radius: 10%;
+
+}
+/* 暂停按钮 */
+.pause{
+    margin-left: 30px;
+}
+/* 标题 */
+h1{
+    text-align: center;
+    color: saddlebrown;
+}
+
+/* 关 */
+.gtitle{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 130px;
+}
+
+#gnum{
+    color:  rgb(226, 108, 11);
+}

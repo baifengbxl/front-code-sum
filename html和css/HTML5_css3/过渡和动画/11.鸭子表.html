@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸭子表</title>
+    <style>
+        .box{
+            height: 500px;
+            width: 500px;
+            /* background-color: #bfa; */
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+            /* border:10px solid black; */
+            background:url(./img/timg.png);
+        }
+        /* 秒针 */
+        .box .secwrapper{
+            /* background-color:red; */
+            height: 80%;
+            width: 80%;
+            border-radius: 50%;
+            /*社盒子居中 */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+
+            /* 转动 */
+            animation: ball 60s steps(60) infinite;
+
+
+        }
+        .secwrapper .sec{
+            height:50% ;
+            width: 1px;
+            background-color: rgb(252, 2, 2);
+            margin: 0px auto;
+        }
+
+        /* 分针 */
+        .box .minwrapper{
+            /* background-color:red; */
+            height: 60%;
+            width: 60%;
+            border-radius: 50%;
+            /*社盒子居中 */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+
+            /* 转动 */
+            animation: ball 3600s steps(60) infinite;
+
+        }
+        .minwrapper .min{
+            height:50% ;
+            width: 2px;
+            background-color: black;
+            margin: 0px auto;
+        }
+        /* 时钟 */
+        .box .hourwrapper{
+            /* background-color:red; */
+            height: 40%;
+            width: 40%;
+            border-radius: 50%;
+            /*社盒子居中 */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+
+            /* 转动 */
+            animation: ball 216000s linear infinite;
+
+        }
+        .hourwrapper .hour{
+            height:50% ;
+            width: 5px;
+            background-color: black;
+            margin: 0px auto;
+        }
+
+
+        @keyframes ball {
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(1turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="secwrapper">  <div class="sec"></div></div>
+        <div class="minwrapper"><div class="min"></div></div>
+        <div class="hourwrapper"><div class="hour"></div></div>  
+        </div>
+   
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript" >
+        // father
+        function Phone(brand, price){
+            this.brand = brand
+            this.price = price
+        }
+        // father.method
+        Phone.prototype.call = function (){
+            console.log("我可以打电话")
+        }
+
+
+        // son
+        function SmartPhone (brand, price, color, size){
+            // 继承父类的属性
+            Phone.call(this, brand, price)
+            this.color = color
+            this.size = size
+        }
+
+        // 父类方法的继承 一定要在子类的方法声明之前来继承父类的方法
+        SmartPhone.prototype = new Phone()
+        SmartPhone.prototype.constructor = SmartPhone
+
+        //子类的方法
+        SmartPhone.prototype.playGame = function (){
+            console.log("我可以玩游戏")
+        }
+        SmartPhone.prototype.photo = function (){
+            console.log("我可以拍照")
+        }
+
+
+        // 实例化对象
+        let huawei = new SmartPhone("华为", 1234 , "black" , "5,5 inch")
+        console.log(huawei)
+        huawei.call()
+        huawei.playGame()
+        huawei.photo()
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type= "text/javascript">
+			
+			/**
+			 * 内建对象
+			 * 宿主对象
+			 * 自定义对象
+			 * 
+			 * 
+			 * 
+			 *数组（Array）：也是一个对象，它是由浏览器定义的
+			 *	-他也可以用来存储一些数值
+			 * 	-数组的组成：
+			 * 		索引：索引是数字，从0开始的整数
+			 * 		元素：每个索引所对应的值  Arr[0] = "one"
+			 *	-数组的存储性能比较优越
+			 * 
+			 * **/
+			
+			
+			//创建一个对象
+			var arr = new Array();
+			
+			//数组也是一个对象
+			//使用它 
+//			console.log(typeof arr);
+
+
+
+
+			/**
+			 * 向数组中添加元素
+			 * 	语法：
+			 * 		 arr[索引] = 值
+			 * 
+			 * **/
+			
+			arr[0] = "one";
+			arr[1] = "two";
+			arr[2] = 11;
+			arr[3] = 22;
+			arr[4] = 33;
+			arr[5] = 44;
+//			arr[10] = 99;
+			
+			
+			
+			/**
+				读取数组中的元素
+					语法：arr[索引]
+			 * 	如果，要读取数组中没有定义的元素，会返回undefined
+			 * ***/
+			
+			console.log(arr);
+			
+//			console.log("数组中的第一个元素为：" +arr[0]);
+//			console.log("数组中的第四个元素为：" +arr[3]);
+			
+			
+			
+			/**
+			 * 读取数组长度：（元素的个数）
+			 * 	语法：
+			 * 		数组名.length
+			 * 
+			 * 对于连续数组，使用length可以获取数组的长度【元素的个数】
+			 * 对于非连续的数组，使用length会返回  【数组最大索引值】+1
+			 * 
+			 * ***/
+			
+			
+			 //读取数组长度
+//			 console.log(arr.length);
+			
+			/**
+			 * 修改length
+			 *  修改length > 原数组长度，多的部分会空出来
+			 *  修改length < 原数组长度，多的部分会溢出
+			 * 
+			 * **/
+				
+//				arr.length = 10;
+//				console.log(arr);
+				
+				
+			/*
+			 * 往数组的最后一个位置添加元素
+			 * 	语法：
+			 * 		数组【数组.length】 = 值
+			 * 		arr[arr.length] = 12;	
+			 */
+			arr[arr.length] = 10;
+			arr[arr.length] = 1;
+			arr[arr.length] = 12;
+			arr[arr.length] = 13;
+			console.log(arr);
+				
+			
+		
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

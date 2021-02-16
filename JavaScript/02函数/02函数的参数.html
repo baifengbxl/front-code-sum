@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+	
+	<script type="text/javascript">
+		/*
+		 
+		 * 函数可以调用参数，
+		 * */
+		function fun(a,b){
+			
+			console.log(a+b);
+		}
+		
+		
+		//调用函数时，不会检查函数的实参的类型
+		
+		fun(123,214);
+		fun(true,false );
+		fun(123,"hellos");
+		
+		
+		
+		//调用函数时，同时也不会检查实参的数量
+			//如果实参的数量多于形参,则后面的参数不会被赋值
+			//如果少于形参,形参的参数此时是undefined，则会输出NaN
+			
+			
+		fun(123);
+		fun(123,354,24354);
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

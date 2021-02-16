@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<!--/*
+	 *	
+	 * 	原型继承：
+	 * 		改变原型的指向
+	 * 		子类.prototype = new 父类的构造函数()
+	 * 	借用构造函数继承
+	 * 		子类使用call方法来调用父类构造函数
+	 *      父类.call( 子类(this) , 父类的属性 ,  父类的属性 ,`·····)
+	 *  组合继承：
+	 * 		-使用原型继承 =========》 方法的继承
+	 * 		-使用借用构造函数继承 =========》 属性的继承
+	 * 	 
+	 */-->
+		<script type="text/javascript">
+			
+			//父类的构造函数
+			function Person (name, age , sex , weight){
+				this.name = name
+				this.age = age
+				this.sex = sex
+				this.weight = weight
+			}
+			Person.prototype.sayHello = function (){
+				console.log("这是------"+ this.name +"--------调用的父类方法")
+			}
+			
+			function Student (name, age , sex , weight,score){
+				//借用构造函数 ------> 实现了属性的继承
+				Person.call( this,name, age , sex , weight)
+				this.score = score
+			}
+			
+			//使用原型继承 ----> 实现了方法的继承
+			Student.prototype = new Person()
+			
+			//创建一个Student的实例对象
+			var  stu = new Student("小明", 22 , "男" , "100kg" , "100分")
+			console.log(stu)
+			console.log(stu.name , stu.age , stu.sex , stu.weight ,stu.score )
+			stu.sayHello()
+			
+			var  stu2 = new Student("小黑", 2 , "女" , "10kg" , "120分")
+			console.log(stu2)
+			console.log(stu2.name , stu2.age , stu2.sex , stu2.weight ,stu2.score )
+			stu2.sayHello()
+			
+			var  stu3 = new Student("小花", 222 , "人妖" , "50kg" , "300分")
+			console.log(stu3)
+			console.log(stu3.name , stu3.age , stu3.sex , stu3.weight ,stu3.score )
+			stu3.sayHello()
+			
+		</script>
+	<body>
+		
+	</body>
+</html>

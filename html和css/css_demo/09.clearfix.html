@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				/*由于父子元素的垂直外边距相邻，所以子元素的边距会传递给父元素
+				 使用空的table元素可是隔离相邻外边距的父子元素，实现外边距的不重叠
+				 *注意：
+				 * 	空的div不能隔离边距， 
+				 * */
+			
+				margin-top: 100px;
+			}
+			
+			
+			.box3{
+				border: 5px #bfa solid;
+				}
+				
+				
+				/*解决父子元素的外边距重叠*/
+			/*.box1:before{
+				content: "";
+				/*设置空的属性为table*/
+				/*display: table;*/
+		
+			/*}*/
+			/*解决父子元素高度塌陷问题*/
+			/*.clearfix:after{
+				content:"";
+				display: block;
+				clear: both;
+			}*/
+			
+			
+			
+			.clearfix:before,
+			.clearfix:after{
+				/*经过修改的clearfix是多功能的
+				 * 可以同时解决父子元素高度塌陷和外边距重叠的问题*/
+				content: "";
+				display: table;
+				clear: both;
+			
+			}
+			.clearfix{
+				
+				zoom:1;
+			}
+				
+			.box4{
+				width: 100px;
+				height: 100px;
+				background-color:blue;
+				
+				float: left;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box3 clearfix">
+			<div class="box4"></div>
+		</div>
+		
+		<div class="box1 clearfix">
+			<div class="box2"></div>
+		</div>
+		
+		
+	</body>
+</html>

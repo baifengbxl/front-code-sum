@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .box1{
+            width: 600px;
+            height: 600px;
+            background-color: #bfa;
+            overflow:auto;
+        }
+        /* 设置box1里面所有盒子的大小 */
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            /* margin-top: 50px; */
+        }
+
+        .box2{
+            background-color: red;
+            /* 设置box2的过渡效果 */
+            transition-property: all;
+            /* 过渡时间 */
+            transition-duration: 3s;
+            /* 过渡的速度 */
+            /* 表示时间结束或开始时执行 */
+           transition-timing-function:steps(5,start);
+        }
+
+        .box1:hover div{
+
+            /* width: 200px;
+            height: 200px; */
+            margin-left: 500px;
+            /* 设置过渡 */
+            /* transition: all .2s; */
+
+            /* 过渡效果来实现动画 ：
+                    -他的相关属性
+
+                    */
+             /* 谁知过渡的属性 */
+            /* transition-property: all; */
+            /* 过渡时间 */
+            /* transition-duration: 3s; */
+            /* 过渡的速度 */
+            /* 表示时间结束或开始时执行 */
+           /* transition-timing-function:steps(5,start); */
+
+           
+           /* 延迟时间 */
+           /* transition-delay: 2s; */
+
+        }
+        
+        .box3{
+            margin-top: 50px;
+            background-color:orange;
+
+            transition-duration: 3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+
+    </div>
+  
+</body>
+</html>

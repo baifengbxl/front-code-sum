@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+  // 1. 字符组[xyz]: xyz 中任意一个
+  // 中括号字符组用来匹配括号内的字符之一
+  // let tmp = 'fasfagxfasdfyfasfz'.split(/[xyz]/)  // ["fasfag", "fasdf", "fasf", ""]
+
+  // 去除字符串中的一些字符 
+  // tmp = 'xaxbycz'.split(/[^xyz]/) //["x", "x", "y", "z"
+
+
+  // 2. 括号分组(xxx)：xxx看做整体
+  // (cd){1,} 可以匹配cdcd..等, 其中cd便是一个分组。
+  //  tmp = /(cd){1,}$/.test('cdcd') //true
+  //  tmp = /(cd){1,}$/.test('ccad') //false
+
+  // 3. 默认情况下，所有的限定词都是贪婪模式，表示尽可能多的去捕获字符。
+  // 而在限定词后增加“?”，则是非贪婪模式，表示尽可能少的去捕获字符。
+  // tmp = 'ccccccd'.match(/c+/) //["ccccc"]， 贪婪模式, 捕获所有
+  // tmp =  'ccccccd'.match(/c+？/) // null ， 非贪婪模式, 只捕获到第一个
+
+  // 4. 捕获性分组: 会创建反向引用，
+  // js中可以通过 $+number ($1) 或者 "反斜杠"+number" ( \1 )表示法进行引用。
+  // tmp = "万里碧空飘着朵朵白云".replace(/(万里碧空)飘着朵朵白云/, '$1没有一朵白云')
+
+  // 反斜杠+number这种引用可以在正则表达式中使用，
+  // 可用于匹配不同位置的相同子串，例如：
+  // tmp = 'www.bai.bai.com'.replace(/([a-z]+)\.\1/, '$1') // www.bai.com
+
+  //  ===========================、
+  // 下面是正则表达式的方法
+
+  // 5. test:检索字符串中的指定子串，返回布尔值
+  // tmp = /^\d[a-zA-Z]{3}$/.test('1aa') // false
+  // tmp = /^\d[a-zA-Z]{3}$/.test('1aac') // true
+
+
+  // 6. exec
+  // 返回一个数组，数组中的第一个条目是第一个匹配
+  // tmp = /^\d[a-zA-Z]{3}$/.exec('1aac') 
+  // 结果： ["1aac", index: 0, input: "1aac", groups: undefined]
+
+  //-----------------------------------------
+  // 下面是字符串的方法
+
+  // 7.search
+  // 返回子串的开始位置： 注意：索引从0 开始
+  // tmp = 'a12b2334c34'.search(/\d{4}/) // 4
+
+
+  // 8.match
+  // 返回匹配到的子串 ： 
+  // tmp = 'a12b2334c34'.match(/\d{4}/) // ["2334"]  undefined
+
+
+  // 9. replace
+  // 替换匹配到的子串
+  // tmp = 'a12b2334c34'.replace(/\d{4}/, 'cccc') // "a12bccccc34"
+
+  // 10. 正向先行断言 (?=exp)
+  // 代表字符串中的一个位置，紧接该位置之后的字符序列能够匹配 exp
+  // tmp = /f(?=234)/.test('123abcf234acd') //true
+
+
+  // 负向先行断言(?!exp)
+  // 代表字符串中的一个位置，紧接该位置之后的字符序列不能匹配 exp
+  // tmp = /f(?!234)/.test('123abcf234acd') //false
+
+
+  console.log(tmp )
+  console.log(typeof number)
+  </script>
+</body>
+</html>

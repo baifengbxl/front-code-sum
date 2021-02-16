@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type = "text/JavaScript"> 
+		
+		var arr = ["猪八戒", "孙悟空", "沙和尚"];
+		
+		/*
+		 * push（）方法：
+		 *  	往数组中添加一个或者多个元素，
+		 * 		返回值为 数组的新长度
+		 * 	注意：他是直接对数组本身进行修改，不创建新的数组
+		 * 
+		 * 语法：
+		 * 数组.push( element1，element2 。。。。。。。)
+		 * arr.push("唐僧");
+		 *  
+		 */
+		
+		var  result = arr.push("唐僧","玉兔精");
+		console.log(arr);
+//		console.log(result);
+		
+		
+		/*
+		 * pop（）方法：
+		 * 	删除数组的最后一个元素并返回他的值
+		 * 	语法：
+		 * 		数组.pop（）
+		 * 	
+		 * 注意：若数组已经为空，则返回undefined
+		 */
+		
+		var result = arr.pop();
+		console.log(arr);
+		//判断该方法的返回值
+		console.log(result);
+		
+		
+		
+		/*
+		 * unshift()方法
+		 * 	直接往数组的开头添加一个或者多个元素，他直接修改原有数组
+		 * 语法：
+		 * 	数组.unshift(element1,element2,..........)
+		 * 
+		 * 	-他的返回值为数组的新长度
+		 * 	-unshift() 方法无法在 Internet Explorer 中正确地工作！
+		 * 
+		 * 
+		 */
+		
+		result = arr.unshift("二郎神");
+		console.log(arr);
+		//判断该方法的返回值
+//		console.log(result);
+		
+		
+		
+		/*
+		 * shift（）方法：
+		 * 		删除数组的第一个元素，并返回它的值，他直接修改数组
+		 * 语法：
+		 * 		数组.shift ()
+		 * 
+		 * 注意：若数组为空，则返回undefined
+		 * 
+		 */
+		
+		result = arr.shift();
+		console.log(arr);
+		//判断该方法的返回值
+		console.log(result);
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

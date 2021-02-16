@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>const</title>
+</head>
+<body>
+    <script>
+        /*
+            const 常量 
+        */
+
+        const SCHOOL = "尚硅谷"
+
+        //常量一定要初始化
+        // const PI
+
+        //常量一般大写
+        // const PI = 3.1415
+
+        // 常量的值不能修改
+        // SCHOOL = 100
+
+        //常量也有自己的块级作用域
+        // {
+        //     const TEAM = "dd"
+        // }
+        // console.log(TEAM)
+
+
+        //对于数组和对象类型的修改，不算是对常量的修改
+        const TEAM = ["a", "b", "c", "d", 4 ]
+        TEAM.push("你看我报不报错")
+        for (let index = 0; index < TEAM.length; index++) {
+           console.log(TEAM[index])           
+        }
+        
+    </script>
+</body>
+</html>

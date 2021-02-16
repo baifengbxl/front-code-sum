@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 
+			 * RegExp正则表达式
+			 * 用来对字符串进行模式匹配的方式，我们计算机可以 通过正则表达式来识别字符串是否符合某种规则
+			 * 将某些符合规则的字符串提取出来
+			 * 
+			 */
+			
+			/*
+			 * 正则表达式的语法
+			 * var reg = new RegExp("正则表达式","匹配模式")
+			 * 匹配模式：g m i
+			 * g:全局变量，在全局里面找
+			 * i：忽略大小写
+			 * m：多行匹配
+			 * 
+			 */
+			var reg = new RegExp("a","i")
+			console.log(typeof reg)
+			var str = "a"
+			/*
+			 * 正则表达式的方法
+			 * test（）方法：
+			 * 用来测试字符串中是否含有该正则对象，
+			 * 若符合，则返回ｔｒｕｅ，不符合返回ｆａｌｓｅ
+			 * 注意：该方法严格区分大小写
+			 * 
+			 */
+			var result = reg.test(str)
+//			console.log(result)
+			console.log(reg.test("Abb"))
+			
+			</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			 * 当我们调用函数时，会传递2个隐含的参数给函数
+			 * 	1.this指向函数的上下文对象
+			 * 	2.arguments是一个类数组对象，用来保存函数的实参，
+			 * 		-也具有索引和长度
+			 * 		-我们即使不定义形参，也可以用arguments来传递实参
+			 * 			只不过比较麻烦
+			 * 			arguments【0】         第一个形参
+			 * 			arguments【1】         第二个形参
+			 * 			。。。。。。。。。。。。。。。。。
+			 * 		-arguments具有一个属性callee，他的返回值是当前正在执行的函数
+			 */
+			
+			function  fun(){
+				
+//				console.log(this);
+				
+//				console.log( arguments);
+				//判断是不是数组对象
+//				console.log(arguments  instanceof Array)	//argument不是数组对象
+				//输出实参的第一个值
+//				console.log(arguments[0]); 		//hello
+				//实参的长度
+//				console.log(arguments.length);	//实参的长度为2
+				//callee属性
+				console.log(arguments.callee);
+				
+				
+			}
+			
+			
+			fun("hello",1);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

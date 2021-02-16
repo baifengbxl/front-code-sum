@@ -1,0 +1,418 @@
+
+
+/*在这里设置页面样式*/
+
+
+/*设置body*/
+body{
+	background-image: url(../img/bg-bd.png);
+	/*设置水平方向平铺*/
+	background-repeat: repeat-x; 
+/*	width: 100%;*/
+	/*height: 3000px;*/
+	/*position: fixed;*/
+	
+	/*background-color: #bfa;*/
+}
+
+
+/*解决高度塌陷问题*/
+
+.clearfix:before,
+.clearfix:after{
+
+	content: "";
+	display: table;
+	clear: both;
+			
+	}
+
+	
+/*设置内容宽度和居中*/
+.w{
+	margin: 0 auto;
+	width: 940px;
+}
+
+.head{
+	/*background-color: #bfa;*/ 
+	/*设置上内边距*/
+	padding-top: 37px;
+	/*设置下内边距*/
+	padding-bottom: 46px; 
+	/*设置居中*/
+	/*width: 940px;*/
+	
+	
+}
+
+.logo{
+	/*设置logo外边距*/
+	margin-left: 15px;
+}
+
+/*设置ul向右浮动*/
+.nav{
+	/*设置项有浮动*/
+	float: right;
+	/*设置上下外边距*/
+	margin-top:22px ;
+}
+/*导航条向左浮动*/
+.nav li{
+	float: left;
+	/*设置左右内边距*/
+	padding: 0px 10px 8px;
+	border-left: 1px #b6b6b6  dashed;
+}
+
+/*设置导航条的超链接*/
+.nav a{
+	/*去除下划线*/
+	text-decoration: none;
+	font: bold 14px "Georgia";
+	color: #666;
+}
+
+/*设置超链接的移入效果\n*/
+.nav a:hover{
+	background-color: #a1a1a1;
+	text-decoration: underline;
+}
+/*设置导航中的小标题
+ 
+ * 在chrome中的字题最小支持12px
+ * */
+.nav p{
+	color: #b7b7b7;
+	font:11px tahoma;
+}
+
+/*设置banner样式*/
+.banner{
+	height: 351px;
+	/*设置背景图片，展示阴影效果*/
+	background:url(../img/banner/banner_bg.png) no-repeat bottom center ;
+	
+	/*background-color: #bfa;*/
+	/*width: 940px;*/
+	
+
+}
+
+
+
+/*设置content
+ * 注意：不给他外部套一个盒子
+ *      后面的盒子会参照他的属性，
+ *      需要给他单独外面在套一个盒子
+ * */
+
+.content{
+	/*background-color: powderblue;*/
+	/*width: 940px;*/
+	
+
+}
+.content h1{
+	/*设置标题字体和颜色*/
+	font: bold 24px/1 georgia ;
+	/*居中*/
+	text-align: center;
+	/*设置上内边距*/
+	padding-top: 16px;
+	/*背景tup*/
+	background: url(../img/line.png) no-repeat  bottom center;
+	/*设置下内边距*/
+	padding-bottom: 16px;
+	/*设置下外边距*/
+	margin-bottom: 35px;
+}
+
+/*设置内容的div*/
+
+.content .pl, .content  .cs, .content .uc,
+.contact .sc, .contact .co , .contact .nu{
+ 	
+ 	width: 300px;
+	/*height: 100px;*/
+	/*background-color: yellow;*/
+	/*设置向左浮动*/
+	float: left;
+	/*margin: 0 auto;*/
+}
+
+.content .cs ,
+.contact .co{
+	/*设置左右外边距*/
+	margin: 0px 20px;
+}
+
+.content h2{
+	
+	font: 21px georgia;
+	color: #11719e;
+	text-align: center;
+}
+
+.content .p1{
+	font: 12px helvetica;
+	color: #c9c9c9;
+	/*是文字居中*/
+	text-align: center;
+	/*设置下外边距*/
+	margin-bottom: 15px;
+}
+/*调整图片的大小*/
+.content .pic{
+	
+	width: 300px;
+	height: 200px;
+	
+}
+
+/*設置第二個p標籤*/
+.content .p2{
+	/*使文字高度一致*/
+	
+	height: 93px;
+	color: #3e3e3e ;
+	font:13px helvetica ;
+	/*上外边距*/
+	margin-top: 14px;
+	/*单词间距*/
+	word-spacing: 5px;
+}
+
+/*设置文本中的超链接\n*/
+.content .lm{
+	/*块元素*/
+	display: block;
+	
+	width: 164px;
+	height: 34px;
+	
+	background: url(../img/btn1.png) no-repeat ;
+	text-decoration: none;
+	color: #016999;
+	/*设置字体样式和行高
+	 使其垂直居中
+	 * */
+	font: 12px/34px helvetica;
+	/*缩进一个字符*/
+	text-indent: 1em;
+	
+	/*下外边距*/
+	margin-bottom: 34px;
+	/*左外边距*/
+	margin-left: 6px;
+	
+}
+
+
+.contact{
+	/*background-color: red;*/
+	/*设置居中*/
+	/*float: left;*/
+	background: url(../img/line.png)   no-repeat  top ;
+	
+}
+/*联系栏*/
+ .contact .sc, .contact .co , .contact .nu{
+ 	/*height: 600px;*/
+ 	/*background-color: yellow;*/
+ 	/*float: left;*/
+ }
+ /*设置标题*/
+ .contact h2{
+ 	font: 18px georgia;
+	color: #444;
+	/*text-align: center;*/
+	/*
+	 
+	 * 设置下边框
+	 * 
+	 * */
+	border-bottom:1px dashed #d3d3d3 ;
+	/*设置上下外边距*/
+	margin: 42px 0px 15px;
+	
+	/*设置padding*，调整下划线的位置*/
+	padding-bottom: 9px;
+	
+	
+ }
+ 
+/*设置表单*/ 
+.contact .input{
+	/*由于表单元素是为内联元素的行内快元素，所以可以设置宽高*/
+	width: 278px;
+	height: 34px;
+	/*背景图片*/
+	background: url(../img/input.png) no-repeat;
+	
+	/*单独设置IE6 不随元素滚动
+	 使用hack
+	 * */
+	_background-attachment: fixed;
+	
+	/*去掉边框*/
+	border: none;
+	
+	/*去掉默认样式
+	 * 
+		由于加padding会导致文本框内容发生变化,所以要减去padding
+	 * */
+	padding: 0px 10px 0px ;
+	margin: 0px 0px 16px ;
+	
+	/*设置下外距*/
+	
+}
+/*文本域*/
+.contact .tarea{
+	width: 278px;
+	height: 116px;
+	background: url(../img/tara.png) no-repeat;
+	/*去掉边框*/
+	border: none;
+	/*使文本域的大小固定*/
+	resize: none;
+	/*设置文本域去除滚动条*/
+	overflow: auto;
+	
+	/*去掉默认样式*/
+	padding: 10px 10px ;
+	margin: 0;	
+}
+ /*按钮*/
+.contact .btn{
+	width: 164px;
+	height: 33px;
+	background: url(../img/btn.png) no-repeat ;
+	/*去掉边框*/
+	border: none;
+	/*字体*/
+	font: 12px helvetica ;
+	color: white;
+	text-align: left;
+	text-indent: 1em;
+	/*设置上外边距*/
+	margin-top: 12px;	
+	
+	/*cursor用来设置鼠标移入上的样式*/
+	cursor: pointer;
+}
+ 
+ 
+ /*段落*/
+.sc .p1{
+	font: 12px/1 helvetica;
+	color: #444;
+	text-align: left;
+	/*设置下外边距来调整小图标的位置*/
+	margin-bottom: 6px;
+	margin-top: 10px;	
+}
+
+/*小图标*/
+.icon{
+	/*去除空格*/
+	font-size: 0px;
+	margin-top: 4px;
+}
+.icon a{
+	/*使得图片隔离开来*/
+	margin-right:7px ;
+		
+}
+/*设置单独的标题*/
+.contact .nl{
+	
+    color: #444;
+    /*设置文字行高，消除不同浏览器的差距*/
+    font: bold 18px Gill Sans MT;
+    /*设置上内边距*/
+   
+   /*调整位置*/
+    padding: 30px 0px 10px ;
+    margin:0px;
+    
+}
+/* 设置左侧的txt边距 */
+.sc .input{
+    margin-top: 17px;
+    margin-bottom: 1px;
+}
+
+
+/*设置联系栏的右侧*/
+
+.nu img{
+	/*使文字和图片同行*/
+	float: left;
+	
+	/*有外边距*/
+	margin-right: 8px;
+}
+
+.nu p{
+	font: 12px/1 helvetica;
+	color: #444;
+	/*消除浮动带来的影响*/
+	height: 58px;
+	
+	/**设置边框*/
+	border-bottom:1px dashed #d3d3d3 ;	
+	
+	/*设置外边距*/
+	margin-top: 15px;
+	padding-bottom: 10px;
+}
+
+
+/*设置底部样式*/
+
+.footer{
+	height: 183px;
+	/*width: 100%;*/
+	background-color: #333;
+	
+	/*边框设计*/
+	border-top: 10px solid #4c4c4c;
+	/*position: relative;*/
+	/*z-index: 2;*/
+	/*float: right;*/
+	/*box-sizing: initial;*/
+	/*display: inline;*/
+	
+	margin-top: 20px;
+}
+
+
+/*超链接样式*/
+.footer a, .footer p {
+	color: #999999;
+    font: 11px Myriad Pro;
+    text-decoration: none;
+    /*margin-bottom: 10px;*/
+    
+	
+}
+
+/*设置浮动*/
+.footer .pr{
+    float: right;
+}
+.footer p{
+	margin-left: 8px;
+	margin-right: 23px;
+	margin-bottom: 10px;
+	margin-top: 8px;
+}
+.footer a:hover{
+    color: #cacaca;
+    text-decoration: underline;
+}
+
+

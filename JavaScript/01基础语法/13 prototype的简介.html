@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" >
+		
+		
+			/**
+			 * 原型prototype是对象的一个隐含属性
+			 * 		-每创建一个函数，我们的解析器都会给这个函数创建一个默认的原型对象，
+			 * 			prototype他所指向的是一个对象
+			 * 		-当调用 普通函数的prototype时，他没有任何的作用，
+			 * 		-当他作为构造函数调用时，构造函数会有一个隐含的属性指向
+			 * 			他的原型对象，我们可以通过__proto__来访问他的原型对象
+			 * 			语法：
+			 * 				构造函数的实例.__proto__   ==   构造函数.prototype 
+			 * 				console.log(mc2.__proto__ == Myclass.prototype);
+			 * 		
+			 * -原型对象相当于一个公共区域，同一个类的实例都可以通过__proto__访问到他的原型对象
+			 * 		当他的方法或者属性在它本身中没有的话，会到他的原型中去找
+			 * 		如果有的话，直接调用它本身中的属性			
+			 * 
+			 * -我们可以将一个对象中的公共属性放在他的原型中，这样可以节省空间
+			 * 
+			 * */
+		
+		//构造函数的定义
+		 function Myclass (){	
+		 	
+		 }
+		
+		//创建构造函数的对象
+		var mc = new Myclass();	
+		var mc2 = new Myclass();
+		
+//		console.log( typeof Myclass.prototype);  //构造函数的原型是一个对象
+//		console.log(mc2.__proto__ == Myclass.prototype);    //
+		
+//		mc.a = "我是Myclass中的属性a";
+		//向Myclass构造函数中添加原型属性a
+		Myclass.prototype.a = "我是原型对象中的属性a";
+		
+		console.log(mc.a);
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

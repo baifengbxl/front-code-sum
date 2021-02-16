@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        
+        // 生成器其实也是一个函数
+        // 他实现了异步编程
+        // function * gen(){
+        //     console.log("我是一段测试代码")
+        // }
+
+        // // 生成器函数的返回值是一个迭代器对象
+        // let iterator = gen()
+        // console.log(iterator)
+        // // 需要使用next()方法来实现函数的执行
+        // iterator.next()
+
+        // yield 是分隔符，将函数里面的代码分成一块一块
+        // 通过遍历来执行 yield 后面的代码
+        function * gen(){
+            console.log(1)
+            yield '我是第一个分隔符'
+            console.log(2)
+            yield '我是第二个分隔符'
+            console.log(3)
+            yield '我是第三个分隔符'
+            console.log(4)
+        }
+
+        let iterator = gen()
+
+        // 可以通过next（）方法来执行由yield分隔开的一段一段的代码块
+        // iterator.next() //输出代码块之间的内容
+
+        // 输出代码块之间的和yield分隔符后面字符串里面的内容
+        // console.log(iterator.next())    
+        // console.log(iterator.next())
+        // console.log(iterator.next())
+        // console.log(iterator.next())
+        
+        // 遍历
+        // for (const v of iterator) {
+        //     console.log(v)
+        // }
+
+    </script>
+</body>
+</html>

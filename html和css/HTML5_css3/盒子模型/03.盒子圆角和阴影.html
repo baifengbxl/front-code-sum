@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子外边距重叠的问题</title>
+		<style type="text/css">
+
+
+			.box1{
+				width: 200px;
+				height: 199px;
+				background-color:yellowgreen;
+				/*当去掉外边距以后，会发生相邻元素的外边距重叠的问题
+				
+				     1，兄弟元素
+					 	-取其中的最大值(同为正值)
+
+					 2.父子元素
+					   
+					 	当父子元素发生上外边距重叠，会使子元素的属性继承给父元素
+						 解决方法：
+						 	-clearfix
+					     
+				 */
+				/* border: 10px solid red; */
+				margin: 100px auto;
+				/* position: relative; */
+				border-top: solid 1px yellowgreen;
+			}
+
+			/* 解决高度塌陷的问题 */
+            /* .cleafix:before
+			.cleafix:after{
+				content: "";
+				display: table;
+				clear: both;
+			} */
+			.box2{
+				width: 50%;
+				height: 50%;
+				background-color: yellow;
+				/* position: absolute  center  center; */
+				margin-top: 50px;
+				margin-left: 50px;
+			}
+
+
+			.box3{
+				height: 200px;
+				width: 200px;
+				background-color:blue;
+				margin: 50px auto;
+				/* 为盒子设置外部阴影
+				       
+					   -第三个值是模糊半径
+					   */
+				box-shadow: 10px 10px 10px rgb(122, 122, 121);
+			}
+
+			.box4{
+				background-color:yellow;
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+
+				/* 设置圆角 */
+				border-radius: 50%;
+				box-shadow: 5px 5px 5px rgb(122, 122, 121, .6);
+
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1 ">
+			<div class="box2 "></div>
+		</div>
+
+		<div class="box3"></div>
+		<div class="box4"></div>
+	</body>
+</html>

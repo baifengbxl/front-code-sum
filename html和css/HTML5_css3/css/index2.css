@@ -1,0 +1,178 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    /* overflow: hidden; */
+
+}
+/* 高度塌陷和上外边距重叠 */
+.clearfix::after,
+.clearfix::before {
+
+    content: "";
+    display: table;
+    clear: both
+}
+
+.wrapper {
+    background-color: #9acd32;
+    width: 810px;
+    margin: 0px auto;
+    padding-bottom: 20px;
+
+
+}
+
+/* 头部div */
+.header {
+    background-color: #000;
+
+}
+
+/* 标题 */
+h1 {
+    color: #9acd32;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 20px;
+}
+
+/* 右面的li */
+.header li {
+
+    float: right;
+    line-height: 80px;
+    margin-right: 20px;
+
+
+}
+
+/* 超链接 */ 
+ li a {
+    color: #fff;
+    text-decoration: none;
+    font: 14px;
+} 
+
+a:hover {
+    color: #9acd32;
+    text-decoration: underline;
+}
+
+
+/* 外部容器 */
+.box {
+    width: 760px;
+    /* height: 1000px; */
+    background-color: rgb(255, 255, 255);
+    margin: 8px auto;
+    /* 外边距重叠 */
+    /* overflow: hidden; */
+}
+
+/* 图片 */
+.banner {
+    margin: 20px auto;
+    /* margin-top: 100px; */
+    width: 710px;
+    height: 182px;
+    /* background-color: rgb(190, 27, 27); */
+    background: url("/img/实验四.jpg") no-repeat;
+    margin-bottom: 0px;
+
+}
+
+h2 {
+    line-height: 124px;
+    /* text-align: center; */
+    padding: 30px;
+}
+
+
+/* 设置内容区 */
+.content {
+    margin-top: 5px;
+    /* height: 700px; */
+    /* width: 750px; */
+    /* background-color: rgb(252, 214, 0); */
+    /* overflow: hidden; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+/* 左面的内容 */
+.left {
+    background-color: #fff;
+    height: 100%;
+    width: 530px;
+    float: left;
+    /* margin-right: 10px; */
+    padding-left: 10px;
+}
+
+h3{
+    border-bottom: 2px solid #9acd32;
+    padding-bottom: 5px;
+}
+
+p{
+    margin-top: 5px;
+    text-indent: 2em;
+    font-size:14px;
+    line-height: 28px;
+}
+
+/* 右面的内容 */
+.right {
+    /* background-color: rgb(255, 255, 255); */
+    height: 100%;
+    width: 200px;
+    float: right;
+    /* padding-right: 10px; */
+    /* padding-left: 10px; */
+}
+
+.list1{
+    /* margin-top: 6px; */
+    margin-bottom: 25px;
+}
+
+.list1 li{
+    margin-top: 4px;
+
+}
+
+.list1 li a{
+
+    color: rgb(173, 71, 204);
+    text-decoration: none;
+    font: 14px;
+    list-style: none;
+/* margin-bottom: 1px; */
+
+}
+
+.list-right{
+    float: right;
+}
+
+.list1 a:hover {
+    color: #9acd32;
+    text-decoration: underline;
+}
+
+.input{
+    margin-top: 10px;
+    width: 140px;
+}
+/* 底部 */
+.footer{
+    height: 50px;
+    width: auto;
+    background-color: #4a4a4a;
+    color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			var  obj = '{"name" : "白小龙", "age" : 18, "gender" : "男" }'
+//			var o = eval("(" +obj+ ")")
+//			console.log(o)
+			
+			/*
+			 * parse
+			 */
+			var o1 = JSON.parse( obj, fun);
+			function fun(name,value){
+				console.log( name + ":" + value );			   		
+				//修改age属性
+				if ( name == "age"){
+					value = 10
+				}
+				//返回值    =   当前对象
+				//而且返回值是必须的
+				return value;   
+			}
+			console.log(o1);
+			
+		</script>
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

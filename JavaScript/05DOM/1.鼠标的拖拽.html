@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#box1{
+				height: 100px;
+				width: 100px;
+				background-color: #bfa;
+				position: absolute;
+			}
+			
+			#box2{
+				height: 100px;
+				width: 100px;
+				background-color: red;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function (){
+				
+				//设置鼠标绑定事件
+				var box1 = document.getElementById("box1");
+				//当鼠标按下时，开始拖拽
+				box1.onmousedown = function (event){
+					
+					event = event || window.event
+					//设置捕获
+					//该方法Chrome不支持
+					box1.setCapture() && box1.setCapture();
+
+					//设置鼠标的偏移量
+					var ol = event.clientX - box1.offsetLeft				
+					var ot = event.clientY - box1.offsetTop
+					
+					//鼠标移动
+					document.onmousemove = function (event){
+						event = event || window.event
+						//获取鼠标的坐标
+						var x = event.clientX - ol;
+						var y = event.clientY - ot;
+						
+						//设置div的坐标
+						box1.style.left = x+"px";
+						box1.style.top = y+"px";
+					}
+					
+					//鼠标停止移动
+					document.onmouseup = function (){
+						//取消鼠标的移动
+						document.onmousemove = null;
+						//设置事件只触发一次
+						box1.onmouseup = null;
+						//取消捕获
+						box1.releaseCapture() && box1.releaseCapture();
+					}
+					
+					//取消浏览器会自动搜索的的默认行为，
+					//但是IE8及以下不支持这个行为
+					return false
+				}
+				
+		}
+			
+			 
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

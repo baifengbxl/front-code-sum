@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0px;
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				left: 0px;
+				top: 200px;
+			}
+		</style>
+		<script type="text/javascript" src = "js/tools.js"></script>
+		<script type="text/javascript">
+			window.onload = function (){
+				
+				//获取元素的id
+				var box = document.getElementById("box")
+				var box2 = document.getElementById("box2")
+				var btn = document.getElementById("btn")
+				btn.onclick = function (){					
+					move(box , "left" , 800 , 10)
+				}
+				var btn02 = document.getElementById("btn02")
+				btn02.onclick = function (){
+					move(box , "left" , 0 , 10)
+				}
+				var btn03 = document.getElementById("btn03")
+				btn03.onclick = function (){					
+					move(box2 , "left" , 800 , 10)
+				}
+				var btn04 = document.getElementById("btn04")
+				btn04.onclick = function (){					
+					move(box2 , "width" , 800 , 10 , function(){
+						move(box2 , "height" , 400 , 10 , function(){
+							move(box2 , "height" , 100 , 10 , function(){
+								move(box2 , "width" , 100 , 10 , function(){
+									alert("惊不惊喜，意不意外·····")
+								})
+							})
+						})
+					})
+				}
+				 
+			}	
+			
+		</script>
+	</head>
+	<body>
+		<button id = "btn">点我一下，盒子1向右移动</button>
+		<button id = "btn02">点我一下，盒子1向左移动</button>
+		<button id = "btn03">点我一下，盒子2向右有移动</button>
+		<button id = "btn04">测试按钮</button>
+		<br /><br />
+		<div id="box"></div>
+		<div id="box2"></div>
+		<div id="box1" style = "width: 0;
+			height: 1000px; 
+			border-left: 1px black solid ; 
+			position: absolute; 
+			left: 800px; 
+			top: 0px;">
+			
+		</div>
+	</body>
+</html>

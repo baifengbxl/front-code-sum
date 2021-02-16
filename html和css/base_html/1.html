@@ -1,0 +1,351 @@
+<!-- 
+1.html输出提醒：
+对于 HTML，您无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML代码中的所有连续的空行（换行）也被显示为一个空格。
+2.文本格式化
+通常标签 <strong> 替换加粗标签 <b> 来使用, <em> 替换 <i>标签使用。
+然而，这些标签的含义是不同的：
+<b> 与<i> 定义粗体或斜体文本。
+<strong> 或者 <em>意味着你要呈现的文本是重要的，所以要突出显示。现今所有主要浏览器都能渲染各种效果的字体。不过，未来浏览器可能会支持更好的渲染效果。 
+3.head中的base标签
+使用 <base> 定义页面中所有链接默认的链接目标地址。
+4.样式表的设置
+  a.外部样式表：<link rel="stylesheet" type="text/css" href="mystyle.css">
+  b.内联样式表：<style type="text/css">
+					body {background-color:yellow}
+					p {color:blue}
+				</style>
+  c.对于大部分标签，以上两种方法均可，且修改父级标签，子级标签特性也会改变。但某些标签确无法通过修改父级标签 
+    来改变子级标签特性，如a标签，修改其颜色特性，必须直接修改 a 标签的特性才可。
+    <a href="#" style="color:red;" rel="nofollow">只能使用"内联"方式</a>
+   d.三种的优先级：style >>  style type="text/css"  >>  link
+5.<meta>标签的相关设置
+	meta标签描述了一些基本的元数据。
+	<meta> 标签提供了元数据.元数据也不显示在页面上，但会被浏览器解析。
+	META 元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。
+	元数据可以使用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他Web服务。
+	<meta> 一般放置于 <head> 区域
+
+6.script标签
+	<script> 标签用于定义客户端脚本，比如 JavaScript。
+	<script> 元素既可包含脚本语句，也可以通过 "src" 属性指向外部脚本文件。
+	JavaScript 通常用于图像操作、表单验证以及动态内容更改。
+7.img图像的相关设置
+   a.alt属性：alt 属性用来为图像定义一串预备的可替换的文本。在浏览器无法载入图像时，替换文本属性告诉读者她们
+     失去的信息。此时，浏览器将显示这个替代性的文本而不是图像
+   b.创建图像影像注意事项：
+		<map name="planetmap">
+		  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+		  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+		  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+		</map>
+
+		该段代码中的shape指的是点击区域的形状，coords指的应该是链接区域在图片中的坐标（像素为单位）
+8.URL 字符编码
+	URL 只能使用 ASCII 字符集.
+	来通过因特网进行发送。由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。
+	URL 编码使用 "%" 其后跟随两位的十六进制数来替换非 ASCII 字符。
+	URL 不能包含空格。URL 编码通常使用 + 来替换空格。
+	
+9.xHTML的好处和与 HTML 相比最重要的区别：
+	文档结构
+	XHTML DOCTYPE 是强制性的
+	<html> 中的 XML namespace 属性是强制性的
+	<html>、<head>、<title> 以及 <body> 也是强制性的
+
+	元素语法
+	XHTML 元素必须正确嵌套
+	XHTML 元素必须始终关闭
+	XHTML 元素必须小写
+	XHTML 文档必须有一个根元素
+
+	属性语法
+	XHTML 属性必须使用小写
+	XHTML 属性值必须用引号包围
+	XHTML 属性最小化也是禁止的
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的第一个HTML文件</title>
+	<!-- <base href="C:/Users/18793/Desktop/html/base_biaoqian/image/"> -->
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<style type="text/css">
+		h1 {color:red;}
+		/*p  {color:blue;}*/
+        body{/*text-align:center;*/
+			 background-color:green; 
+			/*这里说明了三种样式设定的优先级*/
+               }
+    </style>
+</head>
+<body  
+ 	style="background-color:yellow;"
+>
+<!--这是我的第一个标题-->
+<!-- HTML 标题 标签只用于标题。不要仅仅是为了生成粗体或大号的文本而使用标题 -->
+<h1  style="text-align:center;">我的第一个HTML文件</h1>
+<hr/>
+<!-- hr用来显示一条分割线，以便分割内容 -->
+<h2>这是一个h2标题</h2>
+
+<!-- 1到6号标题与1到6号字体逆序对应，比如1号字体对应6号标题，2号字体对应5号标题。 -->
+<!-- <font size="4" id="chunxiao">春晓<font> -->
+<p style="font-size: 30px;"> <i> <b>春晓</b> </i> </p>
+<p style="font-family:arial;color:red;font-size:20px;">春眠不觉晓</p>
+<p>处处闻啼鸟</p>
+<p>夜来风雨声</p>
+<p>花落知多少</p>
+
+<!-- 使用 target 属性，你可以定义被链接的文档在何处显示。
+ --><a href="https://www.runoob.com/" target="blank" 
+       style="text-decoration:none;">这是一个菜鸟教程的链接，而且已经去除了下划线</a><br>
+
+<br/>  <!-- br标签代表换行， 在开始标签中添加斜杠，比如 <br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。即使 <br> 在所有浏览器中都是有效的，但使用 <br/> 其实是更长远的保障 -->
+
+<!-- 地址标签用来在文本中写入字体 -->
+<address>
+Written by <a href="mailto:webmaster@example.com">Jon Doe</a> 
+
+<!-- pre元素是块级元素，但是只能包含文本或行内元素。也就是说，任何块级元素（常见为可以导致段落断开的标签）都不能位于pre元素中。
+pre元素中允许的文本可以包含物理样式和基于内容的样式变化.
+如果希望使用<pre>标签来定义计算机源代码，
+如果想要把某一段规定好的文本格式放在HTML中，那么就要利用pre元素的特性。
+ -->
+<pre>
+Visit us at:
+Example.com
+Box 564, Disneyland<br>
+USA
+</pre>
+
+</address>
+
+<a href="#chunxiao" style="text-decoration:none;" ><p>通过设置ID来直接链接到ID所在的位置,但是由于设置了base 标签设置了所有标签的默认URL，所以该链接无法使用
+</p>
+</a>
+
+<img src="image/mole.jpg"  
+      border="2" 
+      width="320" 
+      height="320" 
+      >
+<!--  图像的名称和尺寸是以属性的形式提供的 -->
+
+<p>以下显示的图片为使用base标签设置的图片超链接</p>
+<p>这是将图片穿插在文本中，对图片进行处理的一个案例 图片将显示在文本的左侧
+<img src="image/timg.jpg"
+ width="30" 
+ height="30"
+ style="float:left;"
+ >
+</p>
+<p style="color: black;">注意：在这里我们使用了 CSS "float" 属性，在HTML 4中 align 属性已废弃，HTML5 已不支持该属性，可以使用 CSS 代替。</p>
+
+
+<p>这是一个脚本输出的文字显示</p>
+<script>
+document.write("hello world!")
+</script>
+<hr>
+
+<!-- 这是一个表格 -->
+<table border="2"
+       cellpadding="10"
+       cellspacing="0">  
+       <!-- cellpadding设置了表格的侧边距
+			cellspacing设置了表格的单元格边距
+        -->
+		<colgroup>
+		    <col span="2" style="background-color:red">
+		    <col style="background-color:yellow">
+		</colgroup>
+		<caption>表格的标题</caption>
+		    <tr>
+		        <th>Header 1</th>      
+		        <th colspan="2">Header 2</th>
+		    </tr>
+		    <tr>
+		        <td>row 1, cell 1</td>
+		        <td>row 1, cell 2</td>
+		        <td>row 1, cell 2</td>
+		    </tr>
+		    <tr>
+		        <td>row 2, cell 1</td>
+		        <td>row 2, cell 2</td>
+		        <td>row 1, cell 2</td>
+		    </tr>
+</table>
+<hr>
+<h4>无序列表:</h4>
+	<ul  style="list-style-type:disc">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Milk</li>
+	</ul>
+<h4>有序列表</h4>
+	<ol type="A">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Milk</li>
+	</ol>
+<h4>这是一个自定义列表</h4>
+	<dl>
+	 <dt>Coffee</dt>
+	 <dd>- black hot drink</dd>
+	 <dt>Milk</dt>
+	 <dd>- white cold drink</dd>
+	 </dl>
+	 <p>tips:自定义列表以dl标签开始。每个自定义列表项以dt开始。每个自定义列表项的定义以dd开始。</p>
+	 <hr>
+<h4>HTML布局</h4>
+	<p>HTML 可以通过div和span将元素组合起来。大多数 HTML元素被定义为块级元素或内联元素。块级元素在浏览器显示时，通常会以新行来开始（和结束）。内联元素在显示时通常不会以新行开始。</p>
+	<div style="background-color: white">
+	<p>这是块内的一个段落,</p>
+	<p>这是块内的另一个段落，来体现span标签</p>
+	<!-- span> 用于对文档中的行内元素进行组合。span标签没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化。如果不对 span> 应用样式，那么 span元素中的文本与其他文本不会任何视觉上的差异span标签提供了一种将文本的一部分或者文档的一部分独立出来的方式。 -->
+	<p>
+	   我的母亲有 <span style="color:blue;font-weight:bold">蓝色</span> 的眼睛，
+	   我的父亲有 <span style="color:darkolivegreen;font-weight:bold">碧绿色</span> 的眼睛。
+	</p>
+	</div><hr>
+
+<h4>这是利用span和div设计的布局</h4>
+
+<div 
+	id="container" 
+	style="width:500px; 
+	height:450px; ">
+
+	<div 
+		id="header" 
+		style="background-color:#FFA500;">
+		<h1 style="margin-bottom:0;">主要的网页标题</h1>
+	</div>
+
+	<div 
+		id="menu" 
+		style="background-color:#FFD700;
+		height:200px;
+		width:100px;
+		float:left;">
+		<b>菜单</b><br>
+		  HTML<br>
+		  CSS<br>
+		  JavaScript
+	</div>
+
+	<div 
+		id="content"
+		 style="background-color:#EEEEEE;
+		 height:200px;
+		 width:400px;
+		 float:left;">
+		内容在这里
+	</div>
+
+	<div 
+		id="footer" 
+		style="background-color:#FFA500;
+		clear:both;
+		text-align:center;">
+		版权 © runoob.com
+	</div>
+</div>
+<hr>
+<h4>表单设计</h4>
+
+	<form action="">
+	<label for="male">First name:</label>
+	<input type="text" name="firstname" value="tom"><br>
+	Last name: <input type="text" name="last name" value="jerry"><br>
+	Password: <input type="password" name="password" value="124455">
+	<p><b>注意：</b> 密码字段中的字符是隐藏的(显示为星号或圆圈)。</p>
+	</form>
+
+	<p>单选按钮</p>
+	<form>
+	 <input type="radio" name="sex" value="male" checked="checked">Male<br>
+	 <input type="radio" name="sex" value="female">Female
+	</form> 
+
+	<p>多选按钮</p>
+	<form>
+	 <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+	 <input type="checkbox" name="vehicle" value="Car" checked="checked">I have a car 
+	</form>
+
+	<p>提交按钮</p>
+	<form name="input" action="html_form_action.php" method="get">
+	 Username: <input type="text" name="user">
+	 <input type="submit" value="Submit">
+	 </form> 
+	<p>alue的内容为要显示的内容，假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 "html_form_action.php" 的页面。该页面将显示出输入的结果。 </p>
+
+	<h4>下拉列表</h4>
+	<form action="">
+		<select name="cars">
+		<option value="volvo">Volvo</option>
+		<option value="saab" selected>Saab</option>
+		<option value="fiat">Fiat</option>
+		<option value="audi">Audi</option>
+		</select>
+	</form><br>
+
+	<textarea rows="10" cols="30">
+	我是一个文本框。
+	</textarea><br><br>
+
+	<form action="">
+	<input type="button" value="Hello world!">
+	</form>
+    <hr>
+<h4>html框架</h4>
+
+	<iframe 
+		src="http://www.baidu.com"" 
+		name="iframe_a" 
+		width="600px" 
+		height="300px" 
+		frameborder="0"       <!-- 用来消除边框 -->
+		>
+	</iframe>
+	<p><a href="http://www.runoob.com" target="iframe_a">菜鸟教程：runoob.com</a></p>
+	<p><b>注意：</b> 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。</p>
+	<hr>
+<h3>脚本</h3>
+
+	<script>
+	document.write("Hello World!")
+	document.write("<h1>这是一个标题</h1>");
+	</script>
+	<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+	<p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+
+	<!-- 使用函数来实现动态事件的实现 -->
+	<p id="demo">
+	JavaScript 可以触发事件，就像按钮点击。当按钮点击后，该内容会变为hello Javascript！,且颜色变为红色</p>
+	<script>
+	function myFunction()
+	{
+		document.getElementById("demo").innerHTML="Hello JavaScript!";
+		document.getElementById("demo").style.color="red"
+	}
+	</script>
+	<button type="button" onclick="myFunction()">点我</button>
+    <hr>
+<h3>下面是HTML的标签的总结的超链接</h3>
+<a href="https://www.runoob.com/html/html-quicklist.html">点我查看标签总结</a>
+
+
+
+
+
+
+
+
+</body>
+</html>

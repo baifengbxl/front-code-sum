@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //模拟获取  用户数据  订单数据  商品数据 
+        // 实现异步编程
+        
+        function getUser(){
+            setTimeout( () => {
+                let useDate = "用户数据"
+                // 调用next方法，传递参数
+                // 因为next方法传递的参数 是上一个 yield分隔符的返回值
+
+                iterator.next(useDate)
+            } ,1000)
+        }
+
+        function getOrder(){
+            setTimeout( () => {
+                let orderDate = "订单数据"
+                iterator.next(orderDate)
+            } ,1000)
+        }
+
+        function getGoods(){
+            setTimeout( () => {
+                let goodsDate = "商品数据"
+                iterator.next(goodsDate)
+            } ,1000)
+        }
+
+        // 定义生成器函数
+        function * gen(){
+           let use =  yield getUser()
+        //    console.log(use)
+           let order = yield getOrder()
+        //    console.log(order)
+           let goods = yield getGoods()
+        //    console.log(goods)
+        }
+
+        let iterator = gen()
+        iterator.next()
+
+    </script>
+</body>
+</html>

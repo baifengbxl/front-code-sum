@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let p = new Promise((resolve, reject ) => {
+            setTimeout(() => {
+                reject('出错啦！')
+            }, 1000)
+        })
+
+        // p.then (value => {}, reason => {
+        //     console.log(reason)
+        // })
+
+        // catch 方法相当于then 方法的拆分，
+        // 返回的是 失败的语句
+        p.catch(reason => {
+            console.log(reason)
+        })
+    </script>
+</body>
+</html>

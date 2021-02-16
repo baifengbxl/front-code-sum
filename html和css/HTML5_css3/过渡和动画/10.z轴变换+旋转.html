@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z轴变换</title>
+    <style>
+
+        html{
+            /* 设置人眼视距，显示z轴 */
+            perspective: 800px;
+        }
+
+        body{
+            /* height: 1010px; */
+            border:1px solid red;
+            background-color: #bfa;
+        }
+        .box{
+            height: 330px;
+            width: 480px;
+            background-color: rgb(7, 22, 245);
+            margin:100px auto;
+            /* z轴变换
+                但网页一般不默认透视效果
+                注意：火狐没有这个样式
+              */
+            transition-duration: 1s;
+         
+        }
+        body:hover .box{
+              
+        
+
+            /* 先转在移，会将图片转到后面 */
+              /* transform: rotateY(180deg) translateZ(100px); */
+              /* 先移再转，会将图片转到前面 */
+              transform:translateZ(300px) rotateY(180deg) ;
+              /* 是否显示图片的背面 */
+              backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img\bg.png" alt="">
+    </div>
+</body>
+</html>

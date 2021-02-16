@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* width: 500px; */
+             height: 5000px; 
+            background-color: rgb(202, 192, 192);
+            overflow: hidden;
+        }
+        .outer div{
+            width: 100px;
+            height: 120px ;
+            background-color: rgb(255, 255, 255);
+            float: left;
+            margin: 100px 5px;
+            /* margin-left: 20px; */
+            /* 注意
+                translate不会改变元素的布局
+                而且相对于它本身来以移动
+             */
+            transition: transform;
+        }
+
+        .outer div:hover{
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 10px rgb(133, 130, 130);
+        }
+
+
+        .box4{
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            background-color:yellowgreen;
+            transform: translateX(-50%) translateY(-50%) ;
+
+        } 
+    </style>
+</head>
+<body>
+    
+    <div class="outer">
+       <div class="box2"></div>
+       <div class="box3"></div> 
+    </div>
+    
+    <div class="box4">我是div</div>
+    
+</body>
+</html>

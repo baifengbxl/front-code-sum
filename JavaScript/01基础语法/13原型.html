@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//创建一个构造函数
+			function Myclass (){
+				
+			}
+			
+			//创建构造函数的一个实例mc
+			var  mc = new Myclass();
+//			mc.name = "我是Myclass中的name";
+			//创建原型对象中的属性name
+			Myclass.prototype.name = "我是原型中的属性name";
+			
+			
+			/**
+			 * 
+			 *可以使用in来判断一个对象中是否含有该属性
+			 *  	语法：
+			 * 			“属性值” in 对象名 		
+			 * 			console.log("name" in mc)
+			 * 如果在他的原型中也含有该属性，则也会返回true
+			 * 
+			 * ***/
+			
+			//以使用in来判断一个对象中是否含有该属性
+//			console.log("name" in mc);
+			
+			
+			
+			/*可以使用hasownproperty来判断一个对象他自身中有没有包含该属性
+			 * 	语法：
+			 * 		对象的实例名.hasOwnProperty("属性值")
+			 * 		console.log(mc.hasOwnProperty("name"));
+			 * 使用该方法是，只有实例她本身中含有该属性时，才会返回true
+			 * 
+			 *
+			*/
+			mc.age = 18;
+//			console.log(mc.hasOwnProperty("name"));
+			
+			/*当寻找一个属性时，首先在他本身中去寻找，
+			 * 	如果它本身不含有该属性，则到他的原型里面去寻找，
+			       如果原型中没有，则到原型的原型中去寻找（原型本身是一个对象）
+			      直到找到Object的原型，如果也没有，（Object为所有对象的父类，object的原型没有原型）
+			      则返回undefined
+			   
+			  
+		
+			****/
+//			console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+
+			//object的原型为null
+			console.log(mc.__proto__.__proto__.__proto__);
+			//查找mc中是否含有hello属性
+			console.log(mc.hello);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

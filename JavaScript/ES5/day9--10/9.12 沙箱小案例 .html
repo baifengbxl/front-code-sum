@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var str = "小白喜欢小黑"
+			//沙箱
+			/*
+			 * 建立沙箱的意义
+			 * 		不用设置全局变量，占用更少的内存空间，
+			 * 		执行效果和在全局里执行效果一致
+			 * 		
+			 */
+			;(function (){
+				
+				console.log(str)
+				var str = "小明喜欢小红"
+				str = str.substr(2)
+				console.log(str)
+			}())
+			
+			str = str.substr(2)
+			console.log(str)
+			
+		</script>
+	</body>
+</html>

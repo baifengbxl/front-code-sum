@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			
+			var obj=new Object();
+			//定义对象的属性
+			obj.name="bxl";
+			obj.age=18;
+			
+			
+			//函数也可以作为一个对象的属性
+					//当函数作为对象的时候，被称为方法
+					//调用这个函数就是调用对象的方法（method）
+					
+					
+			obj.sayhello=function fun(){
+				
+				console.log(obj.name );
+			};
+			
+			
+			function fun(){
+				console.log("我是函数的调用");
+				
+			}
+			
+			//调用obj的sayhello方法
+			obj.sayhello();
+			//调用函数fun
+			fun();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

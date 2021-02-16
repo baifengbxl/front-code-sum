@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<p>下面是一个斐波拉切数列的获取位数的值的练习</p>
+		<input type="text"  id="num" value="" placeholder="请输入位数" />
+		<button id = "btn">计算</button>
+		<br /><br />
+		<p id = "p"></p>
+		<script type="text/javascript">
+			/*
+			 * 普通方法实现斐波拉切数列
+			 * 1 1 2 3 5 8 13 21 34 ·····
+			 */
+			//递归
+			function f(n){
+				return n <= 2 ? 1 : f(n-1) + f(n-2)
+			}
+			
+			var number = document.getElementById("num")
+			var p = document.getElementById("p")
+			document.getElementById("btn").onclick = function(){
+				var num = number.value
+				var result = f(num)
+				p.innerHTML = "斐波拉切数列的第"+num+"位的数值为：" +result
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+		
+	<body>
+	<!--		
+		 1 .for...in语句以任意顺序遍历一个对象的除Symbol以外的可枚举属性。	
+		 
+	-->
+	<script type="text/javascript">
+		
+		var obj = {
+			name : "小白白" ,
+			age : 18 ,
+			sex : "男"
+		}
+		
+		//使用for in 来枚举 obj对象中的属性
+		var i =0
+		for ( var  n in obj){
+			i++
+			console.log("obj对象中的第"+ i +
+			"个属性:\t {  属性名:\t" + n + "\t属性值:\t" + obj[n] + "\t}")
+		}
+	</script>
+	
+	</body>
+</html>

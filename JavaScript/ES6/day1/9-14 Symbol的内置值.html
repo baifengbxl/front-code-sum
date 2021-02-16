@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol内置属性</title>
+</head>
+<body>
+    <script>
+
+        // symbol有很多自身的属性值，可以作为对象的属性
+
+        // class Person{
+        //     //这里相当于函数的重载
+        //     static [Symbol.hasInstance] (param){
+        //         console.log(param)
+        //         console.log("我被用来检测了")
+        //         return true
+        //     }
+        // }
+        // let o = {}
+        // console.log(o instanceof Person)
+
+
+        const arrA = [ 1, 2, 3 ]
+        const arrB = [ 4, 5, 6 ]
+        console.log(arrA.concat(arrB))
+
+        arrB[Symbol.isConcatSpreadable] = false
+        console.log(arrA.concat(arrB))
+        
+    </script>
+</body>
+</html>

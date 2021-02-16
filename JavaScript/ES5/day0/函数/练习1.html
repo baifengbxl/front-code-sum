@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 判断一个数是不是偶数
+			 * 
+			 * */
+			function  oshu(n){
+					
+				if(n%2 == 0){
+					return (n +"是偶数") ;
+					//return true;
+				}else{
+					
+					return (n + "不是偶数");
+					//return  false;
+				}
+			}
+			
+			//调用oshu函数
+			var result1 = oshu(10);
+			
+			console.log(result1);
+			
+			
+			
+			/*
+			 
+			 * 2,求圆的面积
+			 * 
+			 * */
+			
+			function mianji(r){
+				
+				return ("圆的半径为" + r +"，圆的面积为" +  3.14*r*r );
+			}
+			
+			
+			//调用mianji函数
+			console.log(mianji(10));
+			
+			
+			
+			
+			
+			/**
+			 * 
+			 * 3.输入一个一个人的个人信息
+			 * 
+			 * */
+			
+			
+			
+			//function xinxi(name,age,gender,addr){
+			function xinxi(o){
+				return ("我是"+ o.name +"，我今年"+  o.age+"岁了，我是一个"+ o.gender+"人，我住在" + o.addr);
+			}
+			//函数调用
+			//console.log(xinxi("bxl",19,"男","白家庄"));
+			//console.log(xinxi(obj));
+			
+			
+			//函数的形参也可以是一个对象
+				//当函数有三个以上的形参时，可以将其封装在一个对象里面
+				
+				
+			//注意：对象的定义属性名值结构之间用逗号{ ，}隔开，
+			var obj={	
+				name:"孙悟空",
+				age:19,
+				addr:"白家庄",
+				gender:"男"
+			};
+			
+			var  result2=xinxi(obj);
+			console.log(result2);
+			
+			
+		
+		
+		/**
+		 * 
+		 * 4.函数也可以作为一个函数的参数；
+		 * 
+		 * */
+			
+			function fun (a){
+				
+				
+				//在函数内部也可以给被调用的函数来赋值
+				 //console.log(a(obj));
+				 return a;
+				
+			}
+				
+			//函数的调用
+				//注意，函数也可以作为一个参数，而且作为参数的函数也可以去传递参数
+			
+			
+			/**
+			 * mianji
+			 * 	-函数
+			 * mianji（）
+			 * 	-函数调用
+			 * 
+			 * */
+			//var result=fun(mianji);
+			var result=fun(mianji(10));
+			
+			console.log(result);
+			
+			//fun(xinxi);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

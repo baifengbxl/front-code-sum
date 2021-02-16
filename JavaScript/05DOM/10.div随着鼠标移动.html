@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: #BBFFAA;
+				/*
+				 * 设置绝对定位
+				 * 
+				 */
+				position:absolute;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function (){
+				var box = document.getElementById("box");
+				document.onmousemove = function(event){
+					event = event || window.event;
+					//获取鼠标坐标
+					left = event.clientX;
+					toop = event.clientY;
+					//获取偏移量
+					var st = document.body.scrollTop || document.documentElement.scrollTop;
+					var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+					//设置div偏移量
+					box.style.left = left + st  + "px" ;
+					box.style.top = toop + sl + "px";
+				}
+				
+				//获取box2
+//				var  box2 = document.getElementById("box2")
+//				box2.onmousemove= function (event){
+//					event = event || window.event
+////					event.cancelBubble = true
+//				}
+		};
+		</script> 
+	</head>
+	<body style = "height: 1000px ;  width: 1000px;">
+		<!--<div id="box2" style = "height: 500px ; width :500px ; background-color: red"></div>-->
+		<div id="box"></div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function (){
+				var h = document.getElementById("h1")
+				var num = 1
+				//设置定时器
+				var  timer = setInterval(function(){
+					h.innerHTML = num++	
+					
+					//关闭定时器
+					if( num == 20){
+						clearInterval(timer)
+					}
+				},100)
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id = "h1"></h1>
+	</body>
+</html>

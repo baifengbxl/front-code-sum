@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+
+    <style type="text/css">
+      /*清除页面默认样式*/
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /*统一页面字体，开发室一般使用12像素作为基准*/
+      body {
+        font: 12px/1 宋体;
+      }
+
+      .box {
+        /*height: 473px;*/
+
+        width: 300px;
+        /*设置居中*/
+        margin: 50px auto;
+        /*background-color: #bfa;*/
+      }
+
+      .title {
+        border-top: 2px #019e8b solid;
+        height: 36px;
+        /*没有指定宽度*/
+        /*width: 100%;*/
+        /*设置背景颜色*/
+        background-color: #f5f5f5;
+        /*设置行高使其居中*/
+        line-height: 36px;
+        /*设置左右内边距*/
+        padding: 0 22px 0 16px;
+      }
+      /**/
+      .title a {
+        float: right;
+        /*设置字体颜色
+				 */
+        color: red;
+      }
+
+      .title h3 {
+        /*设置行高，消除默认样式*/
+        font: 16px/36px "微软雅黑";
+      }
+      /*设定内容*/
+      .content {
+        border: 1px solid #deddd9;
+        padding: 0 28px 0 22px;
+      }
+
+      /*设置内容的超链接*/
+      .content a {
+        color: black;
+        /*去除下换线*/
+        text-decoration: none;
+        /*设置内边距*/
+      }
+      /*态为超链接设置动属性*/
+      .content a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      /*设置内容标题外边距*/
+      .content h3 {
+        margin-top: 14px;
+        margin-bottom: 16px;
+      }
+      /*ui样式设计*/
+      .content ul {
+        /*去除项目符号*/
+        list-style: none;
+        /*为ul设置下边框*/
+        border-bottom: 1px dashed #deddd9;
+      }
+
+      .content .no-border {
+        /*去掉最后一个ul的下边框*/
+        border: none;
+      }
+
+      .content .red {
+        color: red;
+        font-weight: bold;
+      }
+      .content li {
+        margin-bottom: 13px;
+      }
+      .content .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <!--开班信息的整个框架-->
+    <div class="box">
+      <!--开班信息的头部-->
+      <div class="title">
+        <a href="">16年面授开班</a>
+        <h3>近期开班</h3>
+      </div>
+      <!--开班信息的内容-->
+      <div class="content">
+        <h3><a href="">javaEE+云计算-全程就业班</a></h3>
+        <ul>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span class="red">预约报名</span> </a>
+            <a href="">开班时间：<span class="red">2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span class="red">无座，名额爆满</span> </a>
+            <a href="">开班时间：<span class="red">2016-4-7</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+        </ul>
+        <!--html就业办-->
+        <h3><a href="">Android+人工智能-全程就业班</a></h3>
+        <ul>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span class="red">预约报名</span> </a>
+            <a href="">开班时间：<span class="red">2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span class="red">预约报名</span> </a>
+            <a href="">开班时间：<span class="red">2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+        </ul>
+
+        <h3><a href="">前端+HTML5-全程就业班</a></h3>
+        <ul class="no-border">
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span class="red">预约报名</span> </a>
+            <a href="">开班时间：<span class="red">2016-4-27</span> </a>
+          </li>
+          <li>
+            <!--为了兼容IE6 将两个超链接调换位置 -->
+            <a class="right"> <span>开班盛况</span> </a>
+            <a href="">开班时间：<span>2016-4-27</span> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

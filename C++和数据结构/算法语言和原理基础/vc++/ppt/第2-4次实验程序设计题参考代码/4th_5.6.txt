@@ -1,0 +1,70 @@
+/**************************************************************
+有一个Point类如下所示，试设计程序，对类Point重载“++”自增、
+“--”自减运算符，要求同时重载前缀和后缀的形式。
+class Point {
+public:
+  Point( double x, double y ); 
+  double getX();
+  double getY();
+private:
+  double x, y;
+}; 
+**************************************************************/
+#include <iostream>
+using namespace std;
+class Point {
+public:
+	Point(double x,double y );
+	double getX(){return x;}
+	double getY(){return y;}
+	Point & operator ++();
+	Point operator ++(int);
+	Point & operator --();
+	Point operator --(int);
+private:
+  double x, y;
+};  
+Point::Point(double x,double y )
+{
+		this->x=x;
+		this->y=y;
+}
+	Point & Point::operator ++()//++point
+	{
+		x++;
+		y++;
+		return *this;
+	}
+	Point Point::operator ++(int)//point++
+	{
+		Point t=*this;
+		x++;
+		y++;
+		return t;
+	}
+	Point & Point::operator --()//--point
+	{
+		x--;
+		y--;
+		return *this;
+	}
+	Point Point::operator --(int)//point--
+	{
+		Point t=*this;
+		x--;
+		y--;
+		return t;
+	}
+	void main()
+	{
+		Point a(0,0);
+		cout<<a.getX()<<" "<<a.getY()<<endl;
+		a++;
+		cout<<a.getX()<<" "<<a.getY()<<endl;
+		++a;
+		cout<<a.getX()<<" "<<a.getY()<<endl;
+		a--;
+		cout<<a.getX()<<" "<<a.getY()<<endl;
+		--a;
+		cout<<a.getX()<<" "<<a.getY()<<endl;
+	}

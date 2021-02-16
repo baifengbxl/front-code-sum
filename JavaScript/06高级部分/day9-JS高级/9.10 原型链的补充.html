@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f (){}
+			//所有函数的原型对象都指向一个空的Object对象（Object除外）
+			console.log( f.prototype )
+			
+			console.log( f.prototype instanceof Object )	//true
+			console.log( f.prototype instanceof Function )	//false
+			console.log( Object.prototype instanceof Object )	//false
+			console.log( Function.prototype instanceof Object )	//true
+			//所有函数都是Function的实例对象（包括Function）
+			console.log( Function.prototype === Function.__proto__)	//true
+			//Object的原型对象是所有原型链的尽头
+			console.log( Object.prototype.__proto__ )	//null
+		</script>
+	</body>
+</html>

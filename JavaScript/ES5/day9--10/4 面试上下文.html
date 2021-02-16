@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		  <meta charset="UTF-8">
+		  <title>05_面试题</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		  /*
+		  测试题1: 先预处理变量, 后预处理函数
+		  */
+		  function a() {}
+		  var a;
+		  console.log(typeof a)	  //function
+		
+		  /*
+		  测试题2: 变量预处理, in操作符
+		   */
+		  
+		  
+		  if (!(b in window)) {	  //b定义了，但是没进入判断
+		    var b = 1;
+		  }
+		  console.log(b)	// undefined
+		
+		  /*
+		  测试题3: 预处理, 顺序执行
+		   */
+		  var c = 1
+		  function c(c) {
+		    console.log(c)  //3
+		    var c = 3
+		  }
+		  //c(2)	//报错
+		  
+//		  /*
+//		   * 实际执行顺序
+//		   * 
+//		   */
+//		  
+//			var c
+//			c = function (){}
+//			c = 1
+
+//			function c(c) {
+//		     	console.log(c)  
+//		    	var c = 3
+//		  	}
+//		  	
+//		  	//这个时候C是一个变量，不能作为函数调用
+//		  	c(2)
+		  	
+		</script>
+	</body>
+</html>

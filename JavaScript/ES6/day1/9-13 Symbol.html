@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Symbol被用来标识唯一的值
+        // 创建Symbol
+        // let s = Symbol()
+        // console.log(s,  typeof s);
+        
+        // Symbol里面可以传值，但是那只是一个标识，并不代表两个Symbol相等
+        // let s1 = Symbol("abc")
+        // let s2 = Symbol("abc")
+        
+        // console.log(s1 === s2)   //false
+
+        // 使用Symbol.for() 来创建Symbol 此时，Symbol相当于是一个对象
+        // let s3 = Symbol.for("abc")
+        // let s4 = Symbol.for("abc")
+
+        // console.log(s3 , typeof s3)
+        // console.log( s3 === s4)
+
+
+        // 2.Symbol 不能进行运算
+        // let result = s + 100;
+        // let result = s > 100;
+        // let result = s + s;
+
+
+        // Js里面的7种数据类型  USONB
+        
+        // u     undefined
+        // s    Symbol String
+        // o    Object
+        // n    null Number   
+        // b    Boolean
+
+    </script>
+</body>
+</html>

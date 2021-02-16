@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,4,3,2,1];
+        //1. 数组去重
+        // let arr1 = [...new Set(arr)]
+        // console.log(arr1);
+
+        //2. 交集
+        let arr2 = [4,5,6,5,6];
+
+        // let arrTest =[...new Set(arr)].filter(item => {
+        //     if ( new Set(arr2).has(item) ){
+        //         return true
+        //     }else{
+        //         return false
+        //     }
+        // })
+        
+        // let arrTest = [...new Set(arr)].filter( (item => new Set(arr2).has(item)) )
+        // console.log(arrTest)
+
+        // 3 并集
+        // let union = [ ...new Set([...arr,...arr2])]
+        // console.log(union)
+
+        // 4 差集
+        // let diffArr = [...new Set(arr)].filter( item => ! (new Set(arr2).has(item)) )
+        // console.log(diffArr)
+
+        let diffArr2 = [...new Set(arr2)].filter( item => ! (new Set(arr).has(item)) )
+        console.log(diffArr2)
+
+
+    </script>
+    
+</body>
+</html>

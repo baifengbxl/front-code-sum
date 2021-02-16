@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_原型链_属性问题</title>
+</head>
+<body>
+<!--
+1. 读取对象的----属性值-----时: 会自动到原型链中查找
+2. 设置对象的----属性值-----时: 不会查找原型链, 如果当前对象中没有此属性, 直接添加此属性并设置其值
+3. --方法--一般定义在--原型--中, --属性--一般通构造函数定义在对象本身上
+-->
+<script type="text/javascript">
+	
+	  function Person(name, age ) {
+	    this.name = name;
+	    this.age = age;
+	    
+	  }
+	  //原型对象中添加方法
+	  Person.prototype.setName = function (name) {
+	    this.name = name;
+	  }
+	  Person.prototype.sex = "我是原型中的sex"
+	  
+	  var p1 = new Person('Tom', 12)
+	  //方法
+	  p1.setName('Jack')
+	  //设置属性
+	  p1.sex = "男"
+	  console.log(p1.name, p1.age , p1.sex)
+	  console.log(p1)
+	
+	  var p2 = new Person('Bob', 23)
+	  console.log(p2.name, p2.age , p2.sex)	// p2.sex = 我是原型中的sex
+	  console.log(p2)
+
+
+</script>
+</body>
+</html>

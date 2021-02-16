@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 自定义遍历数组
+
+        // 原理
+        // a)创建一个指针对象，指向当前数据结构的起始位置
+        // b)第一次调用对象的 next方法，指针自动指向数据结构的第一个成员
+        // c)接下来不断调用 next方法，指针直往后移动， 直到指向最后一个成员
+        // d)每调用next方法返回一个包含value和done属性的对象
+        // 注:需要自定义通历数据的时候，要想到迭代器
+
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+
+            [Symbol.iterator] () {
+                let index = 0
+                let _this = this
+                return{
+                    next : function(){
+
+                        if(index < _this.stus.length){
+                            const result = {
+                                value : _this.stus[index],
+                                done : false
+                            }
+                            index ++
+                            return result 
+                        }else{
+                            return {
+                                value: undefined, 
+                                done: true
+                            }
+                        }
+
+                    }
+                }
+            }
+ 
+        }
+
+        // forEach方法的语法
+        // array.forEach(element => {
+            
+        // });
+
+
+        // banji.stus.forEach(element => console.log(element))
+        // let index = 0
+        // banji.stus.forEach(function (element){
+        //     console.log ("["+index+"]\t\t"+ element)
+        //     index++
+        // })
+
+        for (const v of banji) {
+            console.log(v)
+        }
+        
+    </script>
+</body>
+</html>

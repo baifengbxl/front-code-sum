@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 包装类
+			 * 	将我们的基本数据类型转化为对象
+			 * String（）
+			 * Number()
+			 * Boolean ()
+			 * 
+			 * 	
+			 * 	但是，在实际的开发中，我们不会使用基本数据类型，因为它会产生一些不可预料的结果
+			 * 
+			 */
+			
+//			var a = 1;
+//			var a1 = new Number("hello")
+//			console.log(a == a1)
+			
+//			var b = true
+//			var b1 = new Boolean(true)
+//			//b1是一个对象，可以往它里面添加属性
+//			b1.hello = "你好"
+//			var b2 = new Boolean(true)
+//			
+//			console.log(typeof b)	//boolean
+//			console.log(typeof b1)	//object
+//			console.log(b1.hello)	//你好
+//			//b为基本数据类型，b1为对象，但是却相等，这就是产生了不可预料的结果，所以我们一般不使用基本数据类型
+//			console.log(b == b1)	//	true
+//			//两个对象比较，比较的是他们的内存地址，
+//			console.log(b2 == b1)	//	false
+			
+			
+			//我们的基本数组类型他不能直接调用我们的方法和属性
+			/*
+			 * 但是，我们的浏览器他能临时将基本数据类型转换为对象，
+			 * 		调用结束后，返回基本数据类型
+			 * 
+			 */
+			
+			var s = 132;
+			//这里创建的是s的对象S0，当执行结束后，s转换为基本数据类型
+			s.hello = "hello"
+			
+			//s为基本数据类型，在调用toString方法时，他被临时转换为对象1
+			console.log(  typeof s.toString()); 	//string
+			console.log(  typeof s); 	//number
+			
+			//此时s调用hello时，他创建一个新的对象S2，S2里面没有hello属性，返回undefined
+			console.log(s.hello)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

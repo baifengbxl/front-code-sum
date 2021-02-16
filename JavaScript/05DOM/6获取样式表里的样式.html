@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				height: 200px;
+				width: 200px;
+				background-color: red;
+			}
+		</style>
+				
+		<script type="text/javascript">
+			window.onload = function (){
+				var btn = document.getElementById("btn")
+				var box = document.getElementById("div")			
+				btn.onclick = function (){
+					//style只能获取内联样式，不能获取样式表的样式
+//					alert(box.style.height)
+
+
+					/**
+					 * 
+					 * 这两种方法都只是只读的方法，不能修改样式表的样式
+					 */
+					//IE 8以下的浏览器支持
+//					alert(box.currentStyle.height)
+					//正常浏览器支持
+//					alert(getComputedStyle(box,null).height)
+					//用方法的判断来兼容浏览器
+					alert(getStyle(box , "height"))
+				}
+				
+				//样式表的兼容函数
+				function getStyle (obj , name){
+					if(window.getComputedStyle){
+						return getComputedStyle(obj , null )[name]
+					}else{
+						return obj.currentStyle[name]
+					}
+				}
+			}
+		</script>
+			
+	</head>
+	<body>
+		<button id="btn">点我一下</button>
+		<br />
+		<br />
+		<div id="div"></div>
+	</body>
+</html>

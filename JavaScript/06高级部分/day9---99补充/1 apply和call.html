@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * apply 和 call 都可以改变this 的指向
+			 * 
+			 * 	apply(obj , [参数1,参数2,  ···]  , 返回值)
+			 * 	call(obj , 参数1 , 参数2 , ··· , 返回值)
+			 */
+			
+			function f1(x , y) {
+				console.log("X+Y = "+ (x+y) + "   当前的this为：" + this) 
+				return "我是函数的返回值"
+			}
+			f1(10 , 20)
+			
+			var obj = {
+				name : "线性表",
+				age : 22
+			}
+
+			var r1 = f1.apply(null , [10,20])
+			var r2 = f1.call(null , 10 , 20 )
+			console.log(r1)
+			console.log(r2)
+			
+			var r3 = f1.apply(obj , [10,20])
+			var r4 = f1.call(obj , 10 , 20 )
+			console.log(r3)
+			console.log(r4)
+		</script>
+	</body>
+</html>

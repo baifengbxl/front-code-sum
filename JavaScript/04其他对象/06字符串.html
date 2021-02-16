@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/**
+			 * String对象
+			 * 	用来操作字符串
+			 * 
+			 * 注意：在底层的代码中，字符串是以字符数组的形式存放在内存里面的
+			 *    字符串也有长度，length属性返回的是当前字符串的长度
+			 * 
+			 * -当直接以var的形式来定义字符串时，他的返回值是一个String的对象
+			 * -当以new String 的形式定义字符串时，他的返回值是一个对象
+			 * 
+			 */
+//			var str = "hello guigu"
+//			var str1 = new String("hello guigu1")
+//			
+//			console.log(str)
+//			console.log(str1)
+//			/*
+//			 * 字符串也有长度，length属性返回的是当前字符串的长度
+//			 */
+//			console.log(str.length)
+//			//注意：在底层的代码中，字符串是以字符数组的形式存放在内存里面的，
+//			//所以，可以通过数组的方式来对字符串里的字符来进行访问
+//			console.log(str[0])
+//			console.log(str[1])
+//			
+//			console.log(typeof str)	//string
+//			console.log(typeof str1)	//object
+
+
+
+		var str = "Hello Atguigu"	
+		/*
+		 * charAt方法
+		 * 返回字符串中指定位置的字符，以索引的形式
+		 * 
+		 */
+			
+//		console.log(str.charAt(0))	//H
+		/*
+		 * charCodeAt方法，
+		 * 返回字符串中的指定字符 的unicode编码
+		 */
+		
+//		console.log(str.charCodeAt(0))	//H的unicode编码为72
+		
+		/*
+		 * fromCharCode
+		 * 使用字符串以unicode编码的形式来创建字符串
+		 * 	他的返回值是一个字符串
+		 */
+//		console.log( String.fromCharCode(72))	//H
+//		console.log( typeof String.fromCharCode(72))	//string
+		
+		
+		/*
+		 * 
+		 * slice方法
+		 * 	提取字符串中的元素，并返回一个新的字符串，不会对原字符串产生影响
+		 * 参数设置
+		 * 		-第一个参数：截取的开始位置（包含
+		 * 		-第二个参数：截取的结束位置（不包含）
+		 * 
+		 * 两个参数都可以传递负值，表示从尾部开始截取
+		 * 如果不设置第二个参数，表示从当前位置直接截取到当前字符串结束
+		 * 
+		 * 	
+		 */
+		
+		str = "abcdefg"
+//		var  res = str.slice(1,3)
+//		var  res = str.slice(1)
+//		console.log(str)
+//		console.log(res)
+//		console.log(typeof res)
+
+
+		/*
+		 * substring（）
+		 * 由索引截取字符串中的指定元素，返回一个字符串，不对原字符串产生影响
+		 * 参数设置
+		 * 	-第一个参数： 必须，截取的开始位置（包含）
+		 * 	-第一个参数： 非必须，截取的结束位置（不包含
+		 * 
+		 * 注意：两个参数均不能传递负值
+		 * 		若end< start该方法会自动将区间修改为[end ,start]保证这个区间一定是前面的值小于后面的值
+		 * 		如果两个值相等，会返回一个空串
+		 */
+		
+		str = "abcdefg"
+//		var res = str.substring(1,3)
+//		var res = str.substring(3,1)
+//		var res = str.substring(3,3)
+//		
+//		console.log(res)
+
+		
+		/*
+		 * substr方法
+		 * 按照索引截取字符串中的一段字符，返回一个新的字符串，
+		 * 参数设置：
+		 * 		第一个参数：必需，截取的开始位置（包含
+		 * 		第二个参数：非必须，截取的长度
+		 * 
+		 * 注意：第一个参数可以为负数，-1代表第一个元素
+		 * 		第二个参数可以不设置，此时截取的字符串从开始位置到字符串结束
+		 * 
+		 * ：ECMAscript 没有对该方法进行标准化，因此反对使用它
+			重要事项：在 IE 4 中，参数 start 的值无效。
+				在这个 BUG 中，start 规定的是第 0 个字符的位置。在之后的版本中，此 BUG 已被修正。
+
+		 * 
+		 */
+		
+		str = "abcdefg"
+//		var res = str.substr(1,3)
+//		var res = str.substr(-2,3)
+//		var res = str.substr(1)
+//		
+//		console.log(res)
+		
+		/*
+		 * indexof方法
+		 * 	查找字符串中的子串
+		 * 参数设置
+		 * 	第一个参数：必须，要查找的子字符串
+		 * 	第二个参数：可选，查找的开始位置
+		 * 
+		 * 注意：如果该字符串中有要查找的字符，则返回该字符串第一次出现的位置的索引
+		 * 		如果没有该字符串，则返回-1
+		 * 该方法对大小写比较铭感
+		 * 
+		 * lastindexof方法
+		 * 		类似于indexOf方法，但是是从字符串的末尾开始查找
+		 * 
+		 * 
+		 */
+		
+	
+		str = "abcdefg ABCDEEFG"
+		
+//		var res = str.indexOf("bd",8)
+//		 res = str.indexOf("B",8)	
+//		 res = str.lastIndexOf("AB",7)	//-1
+//		 res = str.lastIndexOf("AB")	//8
+//		
+//		console.log(res)
+		
+		
+		/*
+		 * split方法
+		 * 		将字符串按指定边界分割为字符数组，返回值是一个字符数组
+		 * 		参数设置
+		 * 			第一个参数：字符串的分割边界
+		 * 			
+		 * 注意：如果不设置分割边界，则返回一个长度为1 内容为字符串本身的字符串数组
+		 * 		 如果参数为一个空串“”，则将每个字符都作为字符数组的元素
+		 * 		 参数为一个空格，将一段字符串拆分为若干单词
+		 * 
+		 * 
+		 * 
+		 */
+		 str = "abc,def,ghi"
+		 str = "abcdefghi"
+		 str = "I am your father"
+		 
+		 var  res = str.split(",")
+		 var  res = str.split()
+		 var  res = str.split("")
+		 var  res = str.split(" ")
+		 
+		 //判断方法的返回值是否是一个数组
+//		 console.log( typeof res) 	//object
+//		 console.log( typeof Array)		//function
+//		 console.log( Array.isArray(res))	//true 
+		 
+		 //输出字符串的返回值
+		 console.log(res)
+		 //输出字符串的长度
+		 console.log(res.length)
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

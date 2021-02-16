@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//父类的构造函数
+			function Person (name, age , sex , weight){
+				this.name = name
+				this.age = age
+				this.sex = sex
+				this.weight = weight
+			}
+			Person.prototype.sayHello = function (){
+				console.log("这是"+ this.name +"调用的父类方法")
+			}
+			
+			function Student (name, age , sex , weight,score){
+				//借用构造函数 ------> 实现了属性的继承
+				Person.call( this,name, age , sex , weight)
+				this.score = score
+			}
+			
+			//创建一个Student的实例对象
+			var  stu = new Student("小明", 22 , "男" , "100kg" , "100分")
+			console.log(stu)
+			console.log(stu.name , stu.age , stu.sex , stu.weight ,stu.score )
+			//但是 借用构造函数继承不能访问父类的方法
+			//stu.sayHello()
+			
+			var  stu2 = new Student("小黑", 2 , "女" , "10kg" , "120分")
+			console.log(stu2)
+			console.log(stu2.name , stu2.age , stu2.sex , stu2.weight ,stu2.score )
+			
+			var  stu3 = new Student("小花", 222 , "人妖" , "50kg" , "300分")
+			console.log(stu3)
+			console.log(stu3.name , stu3.age , stu3.sex , stu3.weight ,stu3.score )
+			
+			
+		</script>	
+	</body>
+</html>

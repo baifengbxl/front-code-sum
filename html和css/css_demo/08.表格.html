@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			table{
+				/*設置表格寬度*/
+				width: 300px;
+				/*居中*/
+				margin: 0 auto;
+				/*边框*/
+				/*border: 1px solid red;*/
+				/*设置表格边框之间的间距*/
+				border-spacing: 39px;
+				/*通过设置border-collapse直接对表格津行设置，
+				 * 而且此时 border-spacing不起作用
+				 * 
+				 * 
+				 * */
+				border-collapse: collapse;
+			}
+			
+			
+			td,th{
+				
+				border: 1px solid red;
+			}
+			
+			
+			/*设置表格隔行变色*/
+			
+			tr:nth-child(even){
+				background-color: greenyellow;
+			}
+			
+			/*设置鼠标附上去的动态效果*/
+			tr:hover{
+				
+				background-color: yellow;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<table >
+			
+			<!--table也是一个块元素-->
+			<tr>
+				
+				<!--th用来设置标题-->
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>地址</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td colspan="2" style="background-color: red; text-align: center; ">男</td>
+				<!--<td>高老庄</td>-->
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>孙悟空</td>
+				<td>男</td>
+				<td>花果山</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>猪八戒</td>
+				<td>男</td>
+				<td>高老庄</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>沙和尚</td>
+				<td>男</td>
+				<td>流沙河</td>
+			</tr>
+			
+		</table>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		
+		
+		
+		
+		<!--有時候，需要长表格
+			
+		三个元素
+		 	thead 表头     不管在结构的位置是啥，他一直在表格的头部显示
+		 	tbody 表内容
+		 	tfoot 表尾部   不管在结构的位置是啥，他一直在表格的尾部显示
+		 	
+		 而tr td都写在这三个元素里面
+		 
+		 	
+		-->
+		
+		<table>
+			<!--表格的头部-->
+		<thead>
+			<tr>
+				
+				<td>日期</td>
+				<td>收入</td>
+				<td>支出</td>
+				<td>合计</td>
+			</tr>
+			
+		</thead>
+		<!--表格的尾部-->
+		<tfoot>
+			
+			<tr>
+				
+				<td></td>
+				<td></td>
+				<td>合计</td>
+				<td>200</td>
+			</tr>
+		</tfoot>
+		<!--表格的内容-->
+		<tbody>
+			
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				
+				<td>2020.4.20</td>
+				<td>500</td>
+				<td>300</td>
+				<td>200</td>
+			</tr>
+		</tbody>
+		
+		
+		
+		
+			
+			
+		</table>
+		
+		
+	</body>
+</html>

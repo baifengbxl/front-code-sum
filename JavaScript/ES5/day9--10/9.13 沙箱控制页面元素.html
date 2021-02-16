@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>这是div</div><br />
+		<div>这是div</div><br />
+		<div>这是div</div><br />
+		<br /><br />
+		
+		<p>这是p标签</p>
+		<p>这是p标签</p>
+		<p>这是p标签</p>
+		
+		<script type="text/javascript">
+			
+			//根据标签名来获取ID
+			var divs = document.getElementsByTagName("div")
+			for(var i = 0 ; i < divs.length ; i++){
+				divs[i].style.border = "2px solid black"
+			}
+			//p标签
+			var ps = document.getElementsByTagName("p")
+			for(var i = 0 ; i < ps.length ; i++){
+				ps[i].style.border = "2px solid black"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			// 每个函数都有一个prototype属性, 它默认指向一个对象(即称为: 原型对象)
+//			  console.log(Date.prototype, typeof Date.prototype)
+//			  function fn() {}
+//			  console.log(fn.prototype, typeof fn.prototype)
+//			  // 原型对象中有一个属性constructor, 它指向函数对象
+//			  console.log(Date.prototype.constructor===Date)
+//			  console.log(fn.prototype.constructor===fn)
+			
+			//每个函数都有一个prototype属性, 它默认指向一个对象(即称为: 原型对象)
+			function fun (){}
+			console.log(fun.prototype)
+			console.log( typeof fun.prototype)
+			// 原型对象中有一个属性constructor, 它指向函数对象
+			console.log( fun.prototype.constructor === fun )
+			
+			// 2. 给原型对象添加属性(一般都是方法)
+			function F (){}	//构造函数
+			F.prototype.name = "我是原型中的name"
+			var f = new  F()
+			//f.name = "我是实例中的name"
+			console.log(f.name)
+			
+		</script>
+	</body>
+</html>

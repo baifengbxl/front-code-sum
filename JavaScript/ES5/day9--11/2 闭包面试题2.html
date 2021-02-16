@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function Fn(n, o) {
+			    console.log(o)
+			    return {
+			      fun: function (m) {
+			        return Fn(m, n)
+			      }
+			    }
+		  	}
+			 var a = Fn(0)  //undefined
+			 a.fun(1)	//0
+			 a.fun(2)	//0
+			 a.fun(3)  //0
+			
+			 var b = Fn(0).fun(1).fun(2).fun(3) //undefined, 0 1 2
+			
+			 var c = Fn(0).fun(1) 
+			 c.fun(2) 
+			 c.fun(3) //undefined,  0 1 1
+		</script>
+	</body>
+</html>

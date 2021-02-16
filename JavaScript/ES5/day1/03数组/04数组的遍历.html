@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type= "text/javascript">
+			//创建构造函数
+			function  Person (name ,age){
+				this.name = name;
+				this.age= age;
+				
+			}
+			
+			
+			var per = new Person("孙悟空",18);
+			var per1 = new Person("猪八戒",19);
+			var per2 = new Person("红孩儿",10);
+			var per3 = new Person("玉兔精",8);
+			var per4 = new Person("唐僧",38);
+			
+			
+			//创建数组
+			var  arr = [per,per1, per2, per3, per4];
+//			console.log(arr);
+			
+			
+			//遍历数组，将它的值输出出来
+//			for (var  i=0; i<arr.length; i++ ){
+//				console.log(arr[i]);		
+//			}
+			
+			
+			
+			/*
+			 * 创建一个新的函数，
+			 * 将数组中年龄大于等于18岁的值找出来
+			    并封装在在一个新的数组中
+			   
+			*/
+			
+			function getAdult(arr){
+				//创建新数组
+				var newArr = [];
+				
+				//先遍历数组
+				//找出age 大于18的元素
+				//分装到一个新的数组中
+				
+				
+			    //先遍历数组
+				for (var  i=0; i<arr.length; i++ ){
+//					console.log(arr[i]);		
+					//找出age 大于18的元素
+					if(arr[i].age >= 18 ){
+						//分装到一个新的数组中
+						newArr.push(arr[i])
+					}
+				}
+				//返回新的数组
+				return newArr;
+				
+			}
+			
+
+			
+			var result = getAdult(arr);
+			console.log(result);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

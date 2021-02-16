@@ -1,0 +1,57 @@
+
+/**************************************************************
+已知类A 嵌套了类B，请按照指示和要求完善下面的代码
+(1) 类A 和类B的定义在myClass.h 文件中，它们的成员函数在myClass.cpp 中实现；
+(2) 完成指定的构造和析构函数，其中A 的构造函数要给指针成员pa 动态分配n 个元素的数组；
+(3) 完成类A 的成员函数set, 它的作用是给pa 所指向的数组中第i个元素赋值为val；
+(4) 完成main 中相关的代码。
+class B{
+public:
+(1)普通构造函数
+(2)复制构造函数
+Private:
+   int x;
+};
+class A{
+public:
+(1)构造函数
+(2)析构函数
+void set(int I, double val);
+private:
+B b;
+int n;
+double *pa;
+}; 
+void main(){A aa(……); aa.set(0,50.5);return;}
+**************************************************************/
+//myClass.h
+class B{
+public:
+	B(int x):x(x){}//普通构造函数
+	B(B &b){this->x=b.x;}//复制构造函数
+private:
+   int x;
+};
+class A{
+public:
+	A(int an, int bx):n(an),b(bx){//构造函数
+		pa=new double[n];//给指针成员pa 动态分配n 个元素的数组
+	}
+	~A(){//析构函数
+		delete []pa;
+	}
+void set(int I, double val);
+private:
+B b;
+int n;
+double *pa;
+};
+//myClass.cpp
+//#include"myClass.h"
+void A::set(int i, double val)
+{
+	pa[i]=val;//给pa 所指向的数组中第i个元素赋值为val
+}
+//main.cpp
+//#include"myClass.h"
+void main(){A aa(2,3); aa.set(0,50.5);return;}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function (){
+				
+				/*
+				 * 获取样式表的函数
+				 */
+				function getStyle (obj , name){
+					if(window.getComputedStyle){
+						return getComputedStyle(obj , null )[name]
+					}else{
+						return obj.currentStyle[name]
+					}
+				}
+				//定时器返回值
+				var timer
+				
+				//获取元素的id
+				var box = document.getElementById("box")
+				var btn = document.getElementById("btn")
+				btn.onclick = function (){					
+					//关闭上一个定时器
+					clearInterval(timer)
+					//设置定时器
+					timer = setInterval(function(){
+						//获得当前盒子的宽度
+						//只获得数字，便于计算
+						var  oldValue =  parseInt(getStyle(box , "left"))
+						//获取新的值,使其在原来的基础上增加
+						var newValue = oldValue + 109
+						//判断
+						if(newValue >= 800){
+							newValue = 800
+						}
+						//设置当前值
+						box.style.left = newValue + "px"
+						//设置边界
+						if(newValue === 800 ){
+							//当达到800px是，关闭定时器
+							clearInterval(timer)
+						}
+					} , 10)
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<button id = "btn">点我一下，盒子向右移动</button>
+		<br /><br />
+		<div id="box"></div>
+		<div id="box1" style = "width: 0;
+			height: 1000px; 
+			border-left: 1px black solid ; 
+			position: absolute; 
+			left: 800px; ">
+			
+		</div>
+	</body>
+</html>

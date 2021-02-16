@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			/*
+			  函数：
+			  	函数用来封装一些代码，在被使用的时候可以被调用 
+			 * 
+			 * */
+			
+			//但是我们一般不使用这种方式来定义函数
+			//可以将要封装的代码以字符串的形式传递给构造函数
+//			var fun =new Function("console.log('hell0,这是我的第一个构造函数')");
+			
+			function fun(){
+				
+				console.log(1+1);
+			}
+			
+			
+			
+			//封装的函数他并不会立即执行
+			//只有函数被调用的是时候，他才会执行
+			//	语法：函数对象名（）
+			
+			fun();
+			
+			//当调用函数的时候，封装在函数中的代码会按照自上而下的顺序执行；
+			//函数实际上也是一种对象，它包括对象的所有特性
+			fun.hello="你好";
+			console.log(fun.hello);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

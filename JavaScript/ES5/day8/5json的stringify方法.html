@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			var  obj = {
+				"name" : "白小龙", 
+				"age" : 18,
+				"gender" : "男"
+			}
+			console.log(obj)
+			/*
+			 * obj 要转换的对象
+			 * function(){} / []
+			 * 		-函数；修改属性值value
+			 * 		-数组：只获取 包含 name 的 value
+			 * replacer : 方便排版
+			 * 
+			 */
+			
+			//第二个参数为函数
+//			var o1 = JSON.stringify(obj, fun , "\t");
+//			function fun(name,value){
+//				//console.log( name + ":" + value );			   		
+//				//修改age属性
+//				if ( name == "age"){
+//					value = 10
+//				}
+//				//返回值    =   当前对象
+//				//而且返回值是必须的
+//				return value;   
+//			}
+//			console.log( typeof o1)
+//			console.log(o1)
+			
+			//第二个参数为数组
+			var o2 = JSON.stringify(obj, ["name","age"] , "\t");
+			console.log( typeof o2)
+			console.log(o2)
+		</script>
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

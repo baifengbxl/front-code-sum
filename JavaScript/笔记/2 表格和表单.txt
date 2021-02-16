@@ -1,0 +1,60 @@
+1.表格
+	- 在网页中可以通过表格来表示一些格式化的数据
+	- 表格相关的标签
+		- <table> 用来创建一个表格
+		- <tr> 表示表格中的一行
+		- <th> 表示表头中的单元格
+		- <td> 表示表格中的单元格
+			- 属性：
+				colspan 横向的合并单元格
+				rowspan 纵向的合并单元格
+		- 例子：
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			
+		- 长表格
+			- <thead> 表格的头部
+			- <tbody> 表格的主体
+				- 注意：如果表格中没有写thead tbody tfoot，浏览器会自动向table中添加一个tbody
+					并且将所有的tr都放到tbody中，tr是tbody的子元素，不是table的子元素
+			- <tfoot> 表格的底部
+			
+2.表单
+	- 表单可以将用户的信息提交到服务器中
+	- <form>
+		- 用来创建一个表单
+		- 属性：
+			action:需要一个服务器地址，提交表单时表单中的内容将会被提交到该地址
+	- 表单项
+		- <input />
+			- 它可以根据不同的type属性值，生成不同的表单项
+			- type="text" 文本框 <input type="text" name="" />
+			- type="password" 密码框 <input type="password" name="" />
+			- type="radio" 单选按钮 <input type="radio" name="" value="" checked="checked" />
+			- type="checkbox" 多选框 <input type="checkbox" name="" value="" checked="checked" />
+			- type="submit"  提交按钮 <input type="submit" value="按钮上的文字" />
+			- type="reset"  重置按钮 <input type="reset" value="按钮上的文字" />
+			- type="button" 普通按钮 <input type="button" value="按钮上的文字" /> 
+			
+		- <select>
+			- 下拉列表
+			- <select name="">
+					<option value="" selected="selected"></option>
+					<option value=""> </option>
+					<option value=""></option>
+				</select>
+		
+		- <button>
+			- 按钮功能input那几个按钮一样，但是它们要灵活一些
+				<button type="submit">按钮的文字</button>
+				<button type="reset">按钮的文字</button>
+				<button type="button">按钮的文字</button>
+	

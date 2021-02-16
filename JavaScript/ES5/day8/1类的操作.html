@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box01{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			
+			.box2{
+				/*width: 200px;*/
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function (){
+				var box = document.getElementById("box");
+				var btn = document.getElementById("btn01");
+				btn.onclick = function(){
+					//修改box的class属性为b2
+//					box.className += " box2";
+//					addClass(box , "box2");
+//					hasClass( box, "box2")
+//					removeClass(box , "box2")
+					toggleClass(box , "box2")
+				};
+			};
+			
+			//添加class属性函数
+			function addClass (obj , cn ){
+				//如果没有，就添加class
+				if(!hasClass(obj, cn )){	
+					obj.className += " "+ cn;
+				};
+			};
+			
+			//判断是否含有class函数
+			function hasClass(obj , cn){
+				//动态正则，并设置字母边界
+				var reg = new  RegExp("\\b" + cn + "\\b")
+				return (reg.test(obj.className))
+			};
+			
+			//删除class
+			function removeClass(obj , cn){
+				var reg = new RegExp("\\b" + cn + "\\b")
+				obj.className = obj.className.replace(reg , "")
+			}
+			
+			//toggleClass来切换
+			function toggleClass (obj , cn ){
+				if(hasClass(obj , cn )){
+					removeClass(obj , cn )
+				}else{
+					//没有，则添加
+					addClass(obj , cn )
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id = "btn01">点我一下，box变化</button>
+		<br /><br />
+		<div id="box" class = "box01 box2"></div>
+	</body>
+</html>

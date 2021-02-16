@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //创建一个map对象
+        let m = new Map()
+
+        // 添加
+        m.set( "name", "abc")
+        m.set( "age" ,function (){
+            console.log(" We Can Change you !")
+        })
+
+        let key = {
+            school : "forestry"
+        }
+        m.set(key, "value")
+        m.set(key.school, "abc" )
+
+        // 长度
+        // console.log(m.size)
+
+        // 获取
+        // console.log( m.get('name'))
+        // console.log(m.get('age')
+
+        // 删除
+        // m.delete('name')
+
+        // 清空
+        // m.clear()
+
+        // console.log(m)
+
+
+        // 具有迭代器属性，可以使用for of 遍历
+        for (const v of m) {
+            // 类型是数组对象
+            console.log(v, typeof v)
+        }
+
+
+    </script>
+</body>
+</html>

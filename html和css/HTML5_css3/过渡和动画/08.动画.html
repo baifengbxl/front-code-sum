@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .box1{
+            /* width: 600px; */
+            height: 600px;
+            background-color:black;
+            overflow:auto;
+        }
+        /* 设置box1里面所有盒子的大小 */
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* margin-top: 50px; */
+            float: left;
+            animation:test .5s  infinite forwards alternate;
+
+        }
+
+        div.box2{
+            background-color: red;
+            /* 设置动画效果 */
+            /* animation-name: test;
+            animation-duration: 2s;
+            /* 重复次数 
+                这里是无先执行
+                */
+            /* animation-iteration-count: infinite; */
+            /* 设置动画的执行方向
+                    -noraml
+                    reverse
+                    alternate
+                     */
+            /* animation-direction:normal; */
+            /* 动画执行 */
+            /* animation-play-state:normal; */
+            /* 填充模式 */
+            /* animation-fill-mode:backwards; */ 
+
+             /* animation: test .2s  forwards ease-in infinite alternate; */
+        }
+
+        div.box3{
+            background-color:blue;
+            animation-delay: 0.1s;
+        }
+        div.box4{
+            background-color:rgb(0, 255, 213);
+            animation-delay: .2s;
+        }
+        div.box5{
+            background-color:yellow;
+            animation-delay: .3s;
+        }
+        div.box6{
+            background-color:rgb(255, 166, 0);
+            animation-delay: .4s;
+        }
+        div.box7{
+            background-color:rgb(255, 0, 212);
+            animation-delay: .5s;
+        }
+
+        div.box8{
+            background-color:rgb(0, 255, 76);
+            animation-delay: .6s;
+        }
+
+        div.box9{
+            background-color:rgb(76, 0, 255);
+            animation-delay: .7s;
+        }
+        div.box0{
+            background-color:rgb(62, 44, 102);
+            animation-delay: .8s;
+        }
+        div.box01{
+            background-color:rgb(16, 245, 157);
+            animation-delay: .9s;
+        }
+        div.box19{
+            background-color:rgb(240, 158, 6);
+            animation-delay: 1s;
+        }
+        div.box29{
+            background-color:rgb(255, 0, 149);
+            animation-delay: 1.1s;
+        }
+        div.box39{
+            background-color:rgb(255, 0, 0);
+            animation-delay: 1.2s;
+        }
+        div.box49{
+            background-color:rgb(0, 255, 115);
+            animation-delay: 1.3s;
+        }
+        div.box59{
+            background-color:rgb(43, 255, 0);
+            animation-delay: 1.4s;
+        }
+
+        
+
+        /* 设置关键帧 */
+        @keyframes test{
+
+            from{
+              margin-top: 0px;  
+          }
+
+          /* 33%{
+                margin-top: 100px;
+          }
+
+          77%{
+                margin-top: 300px;
+          }
+
+           20%,60%, */
+
+           to{
+                margin-top: 500px;
+          }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box0"></div>
+        <div class="box01"></div>
+        <div class="box19"></div>
+        <div class="box29"></div>
+        <div class="box39"></div>
+        <div class="box49"></div>
+        <div class="box59"></div>
+
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 闭包产生的条件
+			 * 	1.函数嵌套
+			 * 	2.内部函数引用了外部函数的变量
+			 *  3.调用外部函数
+			 */
+      
+       let num = 10
+			function fn1(){
+				var num = 1
+				function fn2 (){
+					num++
+					console.log("a = " + num )
+				}
+				return fn2
+			}
+			
+			var f = fn1()
+			console.log(f())
+		</script>
+	</body>
+	
+</html>

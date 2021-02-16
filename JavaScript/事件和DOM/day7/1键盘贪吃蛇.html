@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				height: 100px;
+				width: 100px;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			window.onload = function (){
+				//为键盘绑定事件
+				var box = document.getElementById("box")
+				document.onkeydown = function (event){
+					event = event || window.event;
+					
+					//设置速度
+					var speed = 50	
+					if(event.shiftKey){
+						speed = 200
+					}
+//					console.log(event.keyCode)
+					//键盘按下
+					switch(event.keyCode){
+						/*
+						 * 65: 左
+						 * 68： 右
+						 * 87： 上
+						 * 83： 下
+						 */
+						case 65 :
+						box.style.left = box.offsetLeft - speed +"px";
+						break;
+						case 68 :
+						box.style.left = box.offsetLeft + speed +"px";
+						break;
+						case 87 :
+						box.style.top = box.offsetTop -speed +"px";
+						break;
+						case 83 :
+						box.style.top = box.offsetTop + speed +"px";
+						break;	
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

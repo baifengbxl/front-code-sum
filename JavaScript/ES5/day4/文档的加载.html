@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type = "text/javascript" >
+			
+			
+			//绑定widow全局属性来实现页面加载后对事件函数的处理
+			window.onload = function(){
+				
+				var btn = document.getElementById("btn")
+				btn.onclick = function(){
+					alert ("你点我干嘛")
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<button id = "btn">我是一个按钮</button>
+	</body>
+</html>

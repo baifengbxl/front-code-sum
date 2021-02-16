@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // function Phone(){}
+        // //  创建构造函数的属性，
+        // //  他属于构造函数对象本身，他的实例化对象不能调用该对象的属性或者是方法
+        // Phone.name = "hauwei"
+        // Phone.price = 12345
+        // Phone.call = function (){
+        //     console.log("we can change the world!")
+        // }
+
+        // // 创建实例化对象的方法
+        // Phone.prototype.size = "5.5iche"
+
+
+        // 创建实例化对象
+        // let huawei = new Phone()
+        // console.log( huawei.name )      // undefined
+        // console.log( huawei.size )
+
+
+        class Shouji{
+
+            // static 关键字声明类的静态变量，外部的实例化对象不能访问
+            static name = "hauwei"
+            static call(){
+                console.log("we can change the world!")
+            }
+            constructor(size){
+                this.size = size
+            }         
+        }
+
+        // 实例化对象
+        let shouji = new Shouji("5.5 inch")
+        console.log(shouji.size)
+
+        // 构造函数的类属性
+        console.log(Shouji.name)
+        Shouji.call()
+
+    </script>
+</body>
+</html>

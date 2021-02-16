@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type = "text/javascript">
+			
+		
+			var arr = ["猪八戒", "孙悟空", "沙和尚","唐僧","玉兔精"];
+			
+			/*
+			 * 
+			 * forEach方法 ：
+			 * 	-IE只支持IE9及以上的版本
+			 * 	-需要定义一个函数作为参数
+			 * 		-由我们创建，但不由我们调用的函数叫做回调函数
+			 * 		   回调函数一般有浏览器来调用
+			 * 		-数组有几个元素，他就执行几次
+			 * 
+			 * 	回调函数会含有三个参数
+			 * 	-第一个参数：
+			 * 		它的值为当前遍历数组元素的值
+			 * 	-第二个参数：
+			 * 		它的值为当前遍历数组元素的索引
+			 *  -第三个参数：
+			 * 		它的值当前遍历的数组
+			 */
+			
+			
+			arr.forEach(function (value, index, arr){
+				console.log("value = " +value);
+				console.log("index = " +index);
+				console.log("arr = " +arr);
+				//判断第三个参数是否为当前遍历的数组
+//				console.log(arr == arr);
+			});
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

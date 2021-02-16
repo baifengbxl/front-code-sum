@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>赞(1)</button>
+		<button>赞(1)</button>
+		<button>赞(1)</button>
+		<script type="text/javascript">
+			
+			//获取btn
+			var btns = document.getElementsByTagName("button")
+			//为所有的按钮设置监听事件
+			for(var i = 0 ; i < btns.length ; i++){
+				var btn = btns[i]
+				//设置索引
+				btn.index = i+2
+				btn.onclick = function (){
+					this.innerHTML = "赞("+ (this.index++) +")"
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

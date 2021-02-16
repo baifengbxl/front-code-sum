@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+			<script type="text/javascript">
+				/*
+				 * 原型链的继承是通过改变当前对象的prototype属性来实现的
+				 */
+				
+				/*
+				 * 动物 ，名字   性别  吃饭的行为，睡觉的行为
+				 * 狗，	有名字   性别  有毛发的颜色 ，有咬人的行为  吃饭的行为，睡觉的行为
+				 * 二哈  有名字   性别  有毛发的颜色 ，有咬人的行为  吃饭的行为，睡觉的行为、
+				 * 		有逗主人玩的行为
+				 */
+				function Animal(name , sex ){
+					this.name  = name 
+					this.sex = sex
+				}
+				Animal.prototype.eat = function (){
+					console.log("我要恰饭饭")
+				}
+				Animal.prototype.sleep = function (){
+					console.log("我要睡觉觉")
+				}
+				
+				//console.log(new Animal("哮天犬" , 24).name)
+				//狗 ，有毛发的颜色 ，有咬人的行为
+				function Dog (color){
+					this.color = color
+				}
+				Dog.prototype = new Animal("哮天犬" , "男")
+				Dog.prototype.bitePerson = function (){
+					console.log("我是会咬人的，你别过来···")
+				}
+				
+				//二哈 
+				function ErHa (){}
+				ErHa.prototype = new Dog("黑白色")
+				ErHa.prototype.playHost = function (){
+					console.log("嘿嘿。我要拆家，我要遛你 ，气不气")
+				}
+				
+				var erHa = new  ErHa()
+				console.log(erHa)
+				console.log(erHa.name)
+				console.log(erHa.sex)
+				console.log(erHa.color)
+				erHa.eat()
+				erHa.sleep()
+				erHa.bitePerson()
+				erHa.playHost()
+				
+			</script>	
+	</body>
+</html>

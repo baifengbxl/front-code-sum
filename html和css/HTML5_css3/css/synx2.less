@@ -1,0 +1,89 @@
+.box1{
+    color: red;
+    .box2{
+        color: yellow;
+
+    }
+    .box3{
+        // color: palegreen;
+        width: 100px;
+        height: 100px;
+
+    }
+    //给box设置一个hover
+
+
+    // .box1:hover {
+    //     color: blue;
+    // }
+
+
+    // 为父元素设置hover
+    // &表示父元素
+    &:hover{
+        color: yellowgreen;
+    }
+}
+
+
+.p1 {
+    font-weight: 200px;
+    height: 100px;
+}
+
+// 是p2继承p1的样式,相当于直接将p1的样式复制
+// .p2{
+//         .p1()
+
+// }
+
+// 对样式继承并扩展
+.p2:extend(.box1 .box3){
+   color: red;
+    
+
+}
+
+// p4不显示，但可以被引用
+.p4(){
+    
+    width: 100px;
+    border-end-end-radius: 100px;
+    right: 100px;
+}
+
+// p5这里引用了p4
+.p5{
+    .p4()
+}
+
+// 混合函数，在其中可以直接设置变量
+// 当其他函数引用是，需要给他传递一个参数，而且可以有默认值,这个时候调用函数可以不写参数
+
+.p6(@e:100px,@h:100px){
+    width:@e;
+    height: @h;
+    border: 10px solid red;
+}
+
+// 传递参数时被调用函数有几个参数，他就必须传递几个参数，而且顺序不能乱
+.p8{
+    .p6();
+}
+
+
+
+html{
+    width: 100%;
+    height: 100%; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #bfa;
+}
+
+body:hover{
+    background-color: darken(#bfa,50%);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: blueviolet;
+				
+				/*为box2设置相对定位*/
+				position:relative ;
+				left: 100px;
+				top: 200px;
+				
+				
+			/*
+			 给元素设置定位position
+			    relative相对定位：元素“相对于”它的起点进行移动
+			          1，相对定位不会脱离文档流，他原本的位置系统还给保留
+			          2.相对定位只是相对于他自身的位置进行移动
+			          3.相对定位会给元素提高一个层级
+			          4.通常只要两个方向的偏移量给元素进行定位：水平和垂直
+			          5.相对定位不会改变元素的性质
+			          
+			 * 
+			 * */
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: greenyellow;
+			}
+			
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
+</html>

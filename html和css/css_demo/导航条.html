@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			/*清楚所有的样式*/
+			*{
+				margin: 0;
+				padding:   0;
+			}
+			
+			.nav{
+				/*清除列表之前的符号*/
+				list-style: none;
+				/*设置背景颜色*/
+				background-color:dodgerblue ;
+				/*设置居中*/
+				margin: 50px auto;
+				width: 1000px;
+				/*解决高度塌陷*/
+				overflow: hidden;
+			}
+			
+			
+			/*设置li*/
+		.nav li{
+			/*设置浮动*/
+			float: left;
+			width:25%;
+			
+		}
+		/*设置宽度*/
+		.nav a{
+			
+			/*由于a标签是内联元素，所以设置块元素*/
+			display: block; 
+			width: 100%;
+			/*去掉下划线*/
+			text-decoration: none;
+			/*是字体居中*/
+			text-align: center;
+			/*设置内边距*/
+			padding: 10px auto;
+			/*字体颜色*/
+			color:white;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		
+		a:hover{
+			
+			background-color: #c00  ;
+		}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<ul class="nav">
+			<li><a href="">首页</a>	</li>
+			<li><a href="">新闻</a>	</li>
+			<li><a href="">联系</a>	</li>
+			<li><a href="">关于</a>	</li>
+	
+		</ul>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterator</title>
+</head>
+<body>
+    <script>
+
+        // 迭代器iterator
+
+        //包含有迭代器属性的数据类型，可以使用for ···of 循环来遍历
+        const xiyou = ['唐僧' , "孙悟空" , "猪八戒" , "沙僧" ]  
+        // console.log(xiyou)
+        // // for ...in 输出的数组的索引（key）index
+        // for (key in xiyou){
+        //     console.log(key)
+        // }
+        // // for···of 输出的是数组的值value
+        // for (value of xiyou){
+        //     console.log(value)
+        // }
+
+        // 原理
+        // a)创建一个指针对象，指向当前数据结构的起始位置
+        // b)第一次调用对象的 next方法，指针自动指向数据结构的第一个成员
+        // c)接下来不断调用 next方法，指针直往后移动， 直到指向最后一个成员
+        // d)每调用next方法返回一个包含value和done属性的对象
+        // 注:需要自定义通历数据的时候，要想到迭代器
+
+        console.log(xiyou)
+        // 创建一个指针对象
+        let iterator = xiyou[Symbol.iterator]()
+        // console.log(iterator)    //该对象是一个函数
+        
+        // 使用next方法遍历数组
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        
+    </script>
+</body>
+</html>

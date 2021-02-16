@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			/*
+			 * call()和apply（）方法：
+			 * 		-这两个方法都是函数对象的方法
+			 * 			注意：函数对象   -----》 fun
+			 * 			           函数的返回值 ------》 fun（）
+			 * 		-可以通过call和apply这两种方法来调用函数
+			 * 			这个时候可以将一个对象作为call 和apply的第一个参数
+			 * 			此时函数的this为参数所传进去的对象
+			 * 		-两者的区别
+			 * 			call方法可以将实参放在第一个参数之后传递
+			 * 			apply方法必须将实参封装在一个数组里面来进行传递
+			 * 			
+			 */
+			
+			
+			
+			/*
+			 * 
+			 * this 方法的总结
+			 * 	-当以函数的方法调用时，this永远是window
+			 * 	-当以方法的形式调用时，this是调用该方法的对象
+			 *  -当以构造函数的形式调用时，this是新创建的对象
+			 * 	-当以call和apply方法调用时，this是我们指定的对象
+			 */
+			
+			function fun(a,b ){
+//				alert("我是fun函数");
+				alert(this);
+				console.log("a = " + a)
+				console.log("b = " + b)
+			}
+		
+			//创建对象
+			var obj = {
+				name : "obj",
+				sayHello : function (){
+					alert(this.name)
+				}
+			};
+			
+			var obj2 = {
+				name : "obj2"
+			};
+			
+			//函数调用
+//			fun.call();
+//			fun.apply();
+//			fun();
+
+			
+//			fun.call();     //window
+//			fun.call(obj);	//object
+//			obj.sayHello.call(obj);   //obj
+//			obj.sayHello.call(obj2);  //obj2
+//			obj.sayHello.apply(obj2);  //obj2
+
+
+
+//			fun();
+//			fun.call(obj, 2,3);
+//			fun.call( 2,3);
+			fun.apply(obj, [2,3]);
+			  
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

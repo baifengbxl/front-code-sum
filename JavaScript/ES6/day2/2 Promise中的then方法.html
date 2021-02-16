@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        // 创建一个promise对象
+        let p = new Promise((resolve , reject ) => {
+            setTimeout (() => {
+                resolve("successed")
+                // reject("fail")
+            }, 1000)
+        })
+
+
+        // 调用then方法
+        // let result = p.then(value => {
+
+        //     console.log(value)
+        //     // 1 非promise对象属性, 返回值为 return后面的值 ,返回状态为成功
+        //     // return "12"
+            
+        //     // 2 是promise对对象 ,返回值的状态由返回的对象决定
+        //     // return new Promise( (resolve , reject ) => {
+        //     //     // resolve("ok")
+        //     //     // reject("err")
+        //     // })
+
+            
+        //     // 3 抛出异常   [[PromiseState]]: "rejected"  
+        //                 // [[PromiseResult]]: "出错啦 ！"
+        //     // throw new Error('出错啦！')
+        //     // throw '出错啦 ！'
+
+        //     // 4 没有返回值     [[PromiseState]]: "fulfilled"
+        //                     // [[PromiseResult]]: undefined
+        // } , reason => {
+        //     console.log(reason)
+        // })
+
+        // then 方法的返回值是一个Promise对象，
+        // 返回值的状态和值由then方法的回调函数的返回值决定
+        // 所以可以实现链式调用
+        // console.log(result)
+
+
+        // 链式调用
+        // 避免了回调地狱
+        p.then(value => {}, reason => {}).
+          then(value => {}, reason => {})
+
+    </script>
+</body>
+</html>

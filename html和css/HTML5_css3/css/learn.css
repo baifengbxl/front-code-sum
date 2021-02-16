@@ -1,0 +1,36 @@
+* {
+  margin: 0px auto;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  height: 30px;
+  width: 400px;
+  background: #bfa;
+  border: 2px solid red;
+  display: flex;
+}
+.header .hleft {
+  width: 50px;
+  height: 100%;
+  background-color: rgb(230, 13, 13);
+  line-height: 30px;
+  text-align: center;
+}
+.header .hmid {
+  /* line-height: 30px; */
+  line-height: 30px;
+  text-align: center;
+  background-color: rgb(76, 99, 231);
+}
+
+.header .hright {
+  line-height: 30px;
+  text-align: center;
+  width: 50px;
+  background-color: rgb(221, 0, 241);
+}
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			*{
+				margin :0px;
+				padding:0px;
+			}
+			#div{
+				margin: 50px 0px;
+				text-align: center;
+				background-color: aquamarine;
+			}
+		</style>
+		<!--//设置js监听-->
+		<script type="text/javascript">
+			
+			window.onload = function (){
+				
+				//为两个按钮设置监听
+				var btn1 = document.getElementById("btn1")
+				var btn2 = document.getElementById("btn2")
+				//获取图片监听绑定事件
+				var img = document.getElementsByTagName("img")[0]
+				//设置变量实现循环轮播
+				var index = 0
+				var  arr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"]
+				//设置文字轮播
+				var p = document.getElementById("info")
+					p.innerHTML = "共有"+arr.length+"张图片，"+"这里是第"+(index+1)+"张图片"
+				
+				//设置监听单机绑定函数
+				btn1.onclick = function(){
+					
+					//修改图片信息
+					index--
+					if(index<0){
+						index = arr.length-1
+					}
+					img.src = arr[index]
+					//设置文字信息
+					p.innerHTML = "共有"+arr.length+"张图片，"+"这里是第"+(index+1)+"张图片"
+				}
+				
+				btn2.onclick = function(){
+					//修改图片信息
+					index++
+					if(index>arr.length-1){
+						index = 0
+					}
+					
+					img.src = arr[index]
+					//设置文字信息
+					p.innerHTML = "共有"+arr.length+"张图片，"+"这里是第"+(index+1)+"张图片"
+				}
+				
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<div id = "div">
+			
+			<p id = "info"></p>
+			<img src="img/1.jpg"  alt="冰棍"/>
+			<br />
+			<button id = "btn1">上一张</button>
+			<button id = "btn2">下一张</button>
+		</div>
+	</body>
+</html>

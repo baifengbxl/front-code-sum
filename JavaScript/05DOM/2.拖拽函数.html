@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#box1{
+				height: 100px;
+				width: 100px;
+				background-color: #bfa;
+				position: absolute;
+			}
+			
+			#box2{
+				height: 100px;
+				width: 100px;
+				background-color: red;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function (){
+				//设置鼠标绑定事件
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+				var img = document.getElementsByTagName("img")[0]
+				drag(box1)
+				drag(box2)
+				drag(img)
+				/*
+				 * 设置拖拽函数
+				 */
+				function drag(obj) {
+					obj.onmousedown = function (event){
+						event = event || window.event
+						obj.setCapture() && obj.setCapture();
+						var ol = event.clientX - obj.offsetLeft				
+						var ot = event.clientY - obj.offsetTop
+						document.onmousemove = function (event){
+							event = event || window.event
+							var x = event.clientX - ol;
+							var y = event.clientY - ot;
+							obj.style.left = x+"px";
+							obj.style.top = y+"px";
+						}
+						document.onmouseup = function (){
+							document.onmousemove = null;
+							obj.onmouseup = null;
+							obj.releaseCapture() && obj.releaseCapture();
+						}
+						return false;
+					}	
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<img src = "img/3png.png"  style="height: 100px; width:100px ; position: absolute;"/>
+	</body>
+</html>

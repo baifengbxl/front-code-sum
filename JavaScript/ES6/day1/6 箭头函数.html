@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        /*
+            箭头函数
+        */
+
+        // function fn (){
+        //     console.log("我是ES5里面的函数")
+        // }
+
+        // let fn2 = () => {
+        //     console.log("我是箭头函数")
+        // }
+
+        // fn()
+        // fn2()
+
+
+        //1.this是静态的，this始终指向该函数声明时该作用域下的this的值
+        // function fn (){
+        //     let name = "fn1 name"
+        //     console.log(this.name)
+        // }
+
+        // let fn2 = () => {
+        //     console.log(this.name)
+        // }
+
+        // //定义window中的name
+        // window.name = "我是window中的name"
+        // // 定义obj
+        // let obj = {
+        //     name : "我是obj中的name"
+        // }
+
+        // //调用函数
+        // // fn()
+        // // fn2()
+
+        // //call
+        // fn.call(obj)    //我是obj中的name
+        // fn2.call(obj)   //我是window中的name
+
+
+        //2.不能作为构造实例化对象
+        // function Person (name ,age ){
+        //    this.name = name
+        //    this.age = age
+        // }
+        // let  me = new Person("小白" , 12)
+        // console.log(me)
+        
+
+        // let Person = (name ,age ) => {
+        //    this.name = name
+        //    this.age = age
+        // }
+        // let  me = new Person("小白" , 12)
+        // console.log(me)
+
+
+        // 3.不能使用arguments变量
+        // function fn (a,b){
+        //     console.log(arguments)    
+        // }
+        // fn(1,2)
+
+        // fn = (a,b) => {
+        //     console.log(arguments)
+        // }
+        // fn(1,2)
+
+
+        // 4. 箭头函数的简写
+        //  1,省略小括号 ：当形参有且只有一个的时候
+        // let  fn = n => {
+        //     n += n
+        //     console.log(n)
+        // }
+        // fn(4)
+        //  2，省略花括号：当函数体语句只有一行时，return必须省略
+                // 而且语句值的执行结果就是返回值
+        // let fn = n =>  console.log( n * n )  
+        // fn(6)
+        
+        
+    
+    </script>
+</body>
+</html>

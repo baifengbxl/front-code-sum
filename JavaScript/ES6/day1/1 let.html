@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <!-- 
+        let 变量  相当于var,但是不同于var 
+            有四个以下的特性
+
+     -->
+   
+   <script>
+     
+     
+    //  let a = 2
+    //  let b = 3 , c = "abc", d = []
+
+
+     //不能重复申明
+    //  let a = 2
+    //  let a = 3
+    //  console.log(a)  
+
+
+    //有块级作用域
+    // {
+    //     let  a = 10
+    // }
+    // console.log(a)
+
+
+    //不能变量提升
+    // console.log(a)
+    // let a = 5       //报错
+    // var a = 5       //undefined
+
+
+    // 不影响作用域链
+    {
+        let  a = 5 
+        function fn (){
+            console.log("a = " + a)
+        }
+        fn()
+    }
+
+    </script>
+</body>
+</html>

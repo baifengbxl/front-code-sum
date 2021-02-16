@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//沙箱 ====> 小环境
+			;(function () {
+				var num = 10
+				console.log(num)
+			}())
+			
+			//沙箱 ====> 小环境
+			;(function (){
+				var num = 10
+				console.log(num)
+			})()
+			
+		</script>
+	</body>
+</html>

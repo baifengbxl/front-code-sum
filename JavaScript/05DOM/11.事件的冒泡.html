@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				height: 200px;
+				width: 200px;
+				background-color: red;
+			}
+			#s1{
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function (){
+				/*
+				 * 事件的冒泡；
+				 * 
+				 * 	-指的是事件的向上传导，
+				 *   当子元素出现和祖先元素相同的事件函数时，子元素触发时，其祖先元素也会响应
+				 */
+				var box = document.getElementById("box")
+				var s1 = document.getElementById("s1")
+				box.onclick = function (){
+					alert("我是div的响应函数")
+					
+					//取消冒泡
+					event.cancelBubble = true
+				}
+				
+				s1.onclick = function (){
+					alert("我是s1的响应函数")
+				}
+				
+				document.body.onclick = function (){
+					alert("我是body的响应函数")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			我是div
+			<span id="s1">
+				我是span
+			</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+
+        let p = new Promise(function (resolve, reject ){
+
+            // let date = "这是成功的代码"
+            // resolve(date)
+            
+            let date2 = "这是失败的代码"
+            reject(date2)
+        })
+
+        // Promise 对象的then方法，有两个函数参数，
+        // 调用取决于构造函数，代码调用的参数
+        p.then(
+            //当调用right时，访问第一个函数参数
+            function(value){
+                //成功的代码
+                console.log(value)
+            }, 
+            // 当调用reject时，访问第二个函数参数
+            function (reason){
+                console.log(reason)
+            })
+            
+    </script>
+
+</body>
+</html>

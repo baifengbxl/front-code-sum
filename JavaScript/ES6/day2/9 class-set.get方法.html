@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    // set 和 get方法可以对属性绑定方法
+    // get 用来获取属性的值,一般用来存储动态属性
+    // set 用来设置属性的值
+
+    class Phone{
+        //获取属性
+        get price (){
+            console.log('价格被获取了')
+            return "price 被读取了"
+
+        }
+        // 设置属性
+        // set 方法必须要设置一个形参
+        set price (newVal){
+            console.log(newVal)
+            console.log("方法被修改了")
+        }
+    }
+
+    let s = new Phone()
+    // // 调用属性，会执行方法内部的代码
+    // s.price
+
+    // // 方法的返回值
+    // console.log(s.price)
+
+    // 修改属性
+    s.price = "新手机"
+
+
+
+    </script>
+</body>
+</html>

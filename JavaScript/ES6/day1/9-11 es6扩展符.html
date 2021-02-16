@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+         //[...] 扩展运算符能够将数组[]元素 改变为 参数列表
+         let nameArr = ["找", "前", "孙", "李" ]
+         function change (){
+             console.log(arguments)
+         }
+         change(...nameArr)
+         change(nameArr)
+
+        //但是，他不同于rest运算符
+        //  rest运算符是在函数的形参列表里的
+        // function fn ( a,  b, ...args){}
+
+    </script>
+</body>
+</html>

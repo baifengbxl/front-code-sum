@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			var  arr = ["猪八戒","孙悟空","沙和尚"];
+			var  arr2 = ["唐僧","牛魔王","二郎神"];
+			
+			
+			/**
+			 * contact方法
+			 * 	-该方法用来连接一个或者多个数组，不会影响原数组
+			 * 	-他的返回值是一个新的数组
+			 * 	语法：
+			 * 		arr.concat(arr2)
+			 */
+			
+			var result = arr.concat(arr2);
+			console.log(arr);
+			console.log(arr2);
+			console.log(result);
+			
+			
+			/**
+			 * join方法：
+			 * 		将一个数组转换为字符串，之间用指定的分隔符分隔开来
+			 * 		他的返回值是一个字符串
+			 * 语法：
+			 * 	数组.join(separator)
+			 * 
+			 * 参数设置：
+			 * 		当参数没有设置时，默认使用，将数组的每个元素连接起来
+			 * 		
+			 * 
+			 */
+			
+			result = arr.join("@-@");
+			console.log( typeof result);
+			
+			
+			
+			/**
+			 * reverse方法
+			 *  将数组中的元素倒转
+			 * 	
+			 * 语法：
+			 * 	数组.reverse();
+			 * 
+			 * 
+			 */
+			
+			result = arr.reverse();
+			console.log(result);
+			
+			
+			
+			/*
+			 * sort()方法
+			 * 	-对数组中的元素进行排序。默认使用unicode编码进行排序
+			 * 	返回值为数组的引用，直接修改原数组，在原数组的基础上进行排序
+			 * 	
+			 * 语法：
+			 * 	arrObject.sort(参数);
+			 * 
+			 * 参数设置：
+			 * 	-如果不设置参数，默认用Unicode编码排序
+			 * 		所以对数值数组排序是，可能会返回一个错误的结果
+			 * 	-我们一般可以设置一个回调函数作为sort方法的参数，
+			 * 		回调函数中需要两个形参
+			 * 		在使用时我们可以通过回调函数来传递两个实参
+			 * 		传给a,b形参的值不确定，但是a的值一定在b的前面 
+			 * 
+			 * -我们一般使用回调函数的返回值俩决定数组的顺序
+			 * 		若返回一个大于0的值，a，b顺序调换
+			 * 		若返回一个小于0的值，a，b顺序不变
+			 * 		若返回一个等于0的值，a，b顺序不变
+			 * 
+			 * 
+			 */
+			
+			arr = [3,2,3,6,9,1,5,8];
+//			result = arr.sort();
+//			//输出排序结果
+//			console.log(result);
+//			
+			//判断sort方法的返回值类型
+//			console.log( typeof result);
+
+			arr.sort(function (a, b ){
+//				console.log("a = " +a );
+//				console.log("b = " +b );
+//				return -1;
+//				return 0;
+//				return 1;
+
+				//升序排列
+//				if (a>b){
+//					return 1;   //交换位置
+//				}else if(a<b){
+//					return -1;
+//				}else{
+//					return 0;
+//				}
+//				
+				
+//				return  a-b; //升序排列
+				
+				//降序排列
+//				if (a>b){
+//					return -1;   //交换位置
+//				}else if(a<b){
+//					return 1;
+//				}else{
+//					return 0;
+//				}
+				
+				return  b-a; //降序排列
+				
+			});
+			
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

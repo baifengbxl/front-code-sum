@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展符的实践</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+
+        //1,数组和合并
+        // const arrUpper = ["A", "B", "C", "D"]
+        // const arrLower = ["a", "b", "c", "d"]
+
+        // const arrWord = [...arrLower, ...arrUpper ]
+        // console.log(arrUpper)
+        // console.log(arrLower)
+        // console.log(arrWord)
+
+
+        //2. 数组的克隆
+        // const arrA = ["E", "G", "M"]
+        // const arrB = [...arrA]
+        // console.log(arrB)
+
+
+        //3. 将伪数组转化数组 
+        let divs = document.querySelectorAll("div")
+        // 转换之前
+        console.log(divs)
+
+        // 转换之后
+
+        console.log([...divs])
+    </script>
+</body>
+</html>

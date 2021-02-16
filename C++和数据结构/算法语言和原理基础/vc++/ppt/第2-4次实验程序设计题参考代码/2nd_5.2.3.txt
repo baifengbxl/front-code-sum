@@ -1,0 +1,60 @@
+/**************************************************************
+试设计一个Car类型来表示汽车，使得： 
+(1) 可以使用“<”操作符来比较两个Car对象的价格关系； 
+(2) 可以使用“==”操作符来比较两个Car对象的名字是否相等； 
+(3) 编写一个函数findMostExpensive(…)使其可以返回若干个Car对象中最高的价格。 
+最后，编写一个合适的客户代码（main 函数）来完成针对Car对象以及findMostExpensive函数的相应操作。
+**************************************************************/
+#include<iostream>
+#include<string>
+using namespace std;
+class Car {
+public:
+	Car( string n, double p ); // 构造函数
+	bool operator <( const Car & a);//重载运算符<
+	bool operator ==( const Car & a);//重载运算符==
+	string getName ()  const;  //接口获取name
+	double  getPrice() const;//接口获取price
+private:
+	string name;  double price;
+};  
+Car::Car( string n, double p ) {
+	name = n;
+	price = p;
+}
+string Car::getName ()  const
+{
+	return name;
+}
+double  Car::getPrice() const
+{
+	return price;
+}
+
+bool Car::operator < ( const Car & a ) {//重载运算符<
+	if(this->price <a.price )
+		return true;
+	else
+		return false;
+}
+bool Car::operator == ( const Car & a ) {//重载运算符==
+	if(this->name ==a.name)
+		return true;
+	else
+		return false;
+}
+double findMostExpensive(Car &a, Car & b)//比较两个对象的价格，返回最贵的价格
+{
+	if(a<b)//a和b两个对象进行比较
+		return b.getPrice();
+	else
+		return a.getPrice();
+}
+void main()
+{
+	Car audi("Audi", 40);
+	Car benz("Benz", 60);
+
+	cout<<audi.getName()<<"和"<<benz.getName()<<"最贵的价格是："<<findMostExpensive(audi,benz)<<endl;
+
+}

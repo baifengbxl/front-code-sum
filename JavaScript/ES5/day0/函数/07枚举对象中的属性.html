@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			var obj={
+				
+				name:"swk",
+				age:13,
+				gender:"男",
+				adder:"花果山"
+				
+			}
+			
+			/***可以用for....in语句来枚举对象中有多少个属性
+				有几个属性，该语句里面的代码就执行几次
+				
+				其中 变量n可以获得该对象中的属性名 
+				
+				
+				**/
+			for(var n in  obj){
+				//获取属性名
+				console.log("属性名："+n);
+				//获取属性值
+				
+				//由于n可以是obj对型象里面的任何一个属性名，此时n为字符串
+				//所欲尧都区属性名中的属性值，必须要 以     对象名["属性名"]  的形式来获取
+				console.log("属性值:"+obj[n]);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" charset="UTF-8" >
+			
+			//构造函数和普通的函数一样，但是
+			/**
+			 * 构造函数的首字母一般大写，
+			 * 构造函数也可以看成是一个类，
+			 * 当创建他的对象的时候，需要使用new 关键字，而普通函数不需要
+			 * 
+			 * 
+			 * **/
+			
+			
+			//构造函数Person
+			
+			function Person(name, age, gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				
+				this.sayName = function() {	
+					console.log(this.name);
+				}
+				
+			}
+			
+			//构造函数的的实例per1.per2， per3
+			
+			var per = new  Person("孙悟空" , 15, "男");
+			var per2 = new  Person("玉兔精" , 15, "女");
+			var per3 = new  Person("猪八戒" , 35, "男");
+
+		
+			console.log(per.name);
+			console.log(per.sayName());
+			console.log(per2.name);
+			console.log(per3.name);
+			
+			//当创建多个构造函数的实例是，每创建一个实例，都会调用一次构造函数的方法，造成资源的浪费
+			/*
+			 	
+			 * */
+			
+			
+			//构造函数Dog
+			function  Dog(name, age){
+				
+				this.name = name;
+				this.age = age;	
+				this.sayHello = function (){
+					alert("汪汪~~~");
+					//当函数没有返回值时，他会返回一个undefined
+					return "汪汪~~~";
+				}
+			}
+			
+			
+			var dog = new Dog ("旺财", 23);
+			
+			console.log(dog.sayHello());
+			
+			
+			
+			//可以用instanceof方法来判断一个 实例是否属于该对象
+			/**
+			 * 语法：
+			 * 		实例 instanceof 对象
+			 * 
+			 * **/
+			
+			console.log (per instanceof Person);
+			
+			//判断两个类是否相等
+			console.log(dog == per );
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

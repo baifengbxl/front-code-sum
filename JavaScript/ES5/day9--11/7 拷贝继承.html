@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 拷贝继承：将一个对象里的属性和方法，拷贝到另一个对象中
+			 */
+			
+			var obj = {
+				name : "李立超" ,
+				age : 33 ,
+				sayHello : function (){
+					console.log("大家好，我是李立超")
+				}
+			}
+			//将obj里的内容复制到obj2中，
+			//实际上就是将obj里存的地址(obj对象的地址)赋值给了obj2
+			
+			//拷贝继承
+//			var obj2 = obj
+//			console.log(obj2.name)
+//			console.log(obj2.age)
+//			obj2.sayHello()
+
+			//拷贝继承
+			var obj2 = {}
+			for ( key in obj){
+				obj2[key] = obj[key]
+			}
+			obj2.sayHello()
+			
+		</script>
+	</body>
+	
+</html>

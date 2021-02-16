@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--表单元素必须要有action项
+			
+			
+		-->
+		
+		
+		
+		<form action="target.html">
+			<!--用input创建文本框type属性是text
+				如果希望表单的内容提交到服务器中，则还需要一个name标签
+				name表示提交内容的名字
+				
+				有股填写的内容啊会以查询字符串的形式来发送给服务器
+				语法：URL地址？查询字符串地址
+				
+				value也可以用来表示提交内容的默认值
+			-->
+			
+			
+			
+			<!--在h5中，有lable来给设置-
+				
+				有一个for值，来设置id
+				
+			-->
+			
+			
+			<!--可以用fieldset来对表单进行房租-->
+			
+			<fieldset id="">
+				
+				<legend>用户信息</legend>
+		
+						<label for="un">用户名</label>
+						<input type="text" name="username" id="un" value="" />	<br />
+							
+							
+						<!--密码框-->
+						密  码：<input type="password" name="psd" id="" value="" /><br /><br />
+							
+						<!--如果设置默认选中可以使用属性checked-->
+						
+						<!--单选按钮 type为radio
+							通过name属性来分组
+							value为选中的表单值将最终提交给服务器，且必须写
+						-->
+						
+						性别：<input type="radio" name="gender" id="" value="male" checked="checked"/>男
+						      <input type="radio" name="gender" id="" value="female" />女
+						     <br />
+						
+						<!--多选框使用属性checkbox
+							name来分组
+							value的值提交给服务器
+						-->
+						
+			
+			</fieldset>
+			爱好：<input type="checkbox" name="hobby" id="" value="basketball"  checked="checked" />篮球
+			<input type="checkbox" name="hobby" id="" value="footb" />足球
+			<input type="checkbox" name="hobby" id="" value="tennis" />羽毛球
+			<input type="checkbox" name="hobby" id="" value="pingpong" />乒乓球
+			<br />
+			
+			
+			<!--下拉列表使用select
+				
+				下拉列表中的name属性需要指定给select，而value属性需要指定给option项
+				默认选中选项为selected
+				如果设置multipe可以设置多个默认选项
+			-->
+			你喜欢的明星：
+			<select name="star" multiple="multiple">
+				
+				<optgroup label="女明星">
+					
+					<option value="fbb" <!--selected="selected"-->>范冰冰</option>
+				<option value="lxr" >林心如</option>
+				<option value="zw" >赵薇</option>
+					
+				</optgroup>
+				
+				<optgroup label="男明星">
+					
+					<option value="ldh" >刘德华</option>
+				<option value="pcj" >潘长江</option>
+				<option value="zbs">赵本山</option>
+				</optgroup>			 
+			</select>
+			<br /><br />
+			
+			<!--设置文本域
+				textare属性
+			-->
+			自我介绍
+			<textarea name="" rows="4" cols="10">
+				
+			</textarea>
+			
+			<br />
+		
+			<!--input创建提交按钮 type属性是submit
+				
+				在按钮中，可以通过value的值来改变按钮中的文字
+			-->
+			<input type="submit" name="" id="" value="提交" />
+			
+			<!--设置重置-->
+			<input type="reset" name="" id="" value="重置" />
+			
+			<input type="button" name="" id="" value="按钮" />
+			<br />
+			
+			<!--设置单纯按钮 
+				
+				一般联系js使用来设置事件
+				类似于input，不过更加灵活
+			-->
+			<button type="submit">提交</button>
+			<button type="reset">重置</button>
+			<button type="button">按钮</button>
+			
+		</form>
+	</body>
+</html>

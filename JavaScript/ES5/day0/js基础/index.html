@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--外部的js文件-->
+		<script src="js/hellow.js" type="text/javascript" charset="utf-8"></script>
+		<!--内部js文件-->
+		<script type="text/javascript">	
+			alert("我是内部的js");
+			document.write("你看我出不出来");
+			console.log("你猜我在哪里");
+		</script>
+	</head>
+	<body>
+		<!--直接在标签里面创建js文件
+			不建议使用，结构和行为耦合，维护困难
+		-->
+		<button onclick="alert('你点我干嘛')">点我一下</button>
+		<a href="javascript:alert('不要点我');" >不要点我</a>
+	</body>
+</html>

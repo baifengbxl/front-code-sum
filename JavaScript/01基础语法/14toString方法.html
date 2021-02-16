@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//创建构造函数
+			function Person(name ,age,gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				
+			}
+			
+			//创建构造函数的一个实例
+			var per = new Person("白小龙",19,"男");
+			
+			
+			/**
+			 * 注意：
+			 *	当我们在页面中打印一个对象是，我们实际上打印的是他的toString方法
+			 *  如果我们想在页面打印输出对象，可以复写他的toString方法
+			 * **/
+			
+			
+			Person.prototype.toString = function (name, age, gender){
+				return "我是"+this.name+"，我今年"+this.age+"岁了，我是一个"+this.gender+"人" ;
+
+			}
+			
+			
+			//对toSring方法进行重写
+//			per.toString = function (){
+//				return "我是toString方法的复写";
+//
+//			}
+			
+			//toString方法
+//			var result = per.toString();
+//			console.log("result = " + result);
+			
+			//输出per
+			console.log(per);
+			var per2 = new Person("猪八戒",28,"男");
+			console.log(per2);
+			
+			//判断toString方法来源于何处
+//			console.log(per.__proto__.__proto__.hasOwnProperty("toString"));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

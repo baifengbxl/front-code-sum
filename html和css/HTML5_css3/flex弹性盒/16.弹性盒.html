@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            width: 600px;
+            border: 10px solid red ;
+            list-style: none;
+            /* 设置弹性盒子 */
+            display: flex;
+
+            /* 元素的排列方向 */
+            flex-direction: row;
+            /* flex-wrap: wrap;设置在弹性容器里的元素超出父元素大小后是否换行 */
+            /* flex-wrap: wrap; */
+            /*  justify-content设置空白部分的处理 */
+
+            justify-content: space-between;
+
+
+        }
+
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            font-size: 50px;
+            /* 设置行高，使其垂直居中 */
+            line-height: 100px; 
+            /* 水平居中 */
+            text-align: center;
+            /*  flex-grow: 设置元素的缩放 ,按比例将空白的空间进行缩放
+
+        }
+
+
+        li:nth-child(1){
+            /* flex-grow:1 ; */
+        }
+        li:nth-child(2){
+            background-color: rgb(46, 245, 39);
+            /* flex-grow:2 ; */
+        }
+        li:nth-child(3){
+            background-color: #bff;
+            /* flex-grow:3 ; */
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    
+</body>
+</html>

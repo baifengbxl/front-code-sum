@@ -1,0 +1,61 @@
+/**************************************************************
+已知一个全局函数printArea(arg),其中，arg为某一种平面图形，
+该函数的作用是打印参数arg所表示图形的面积。先假设，
+只存在正方形、圆形、正三角形三种平面图形。
+使用继承的方式，设计相关的类，并实现该全局函数的功能。
+提示：设计基类Shape，设计派生类Square，Circle，Triangle
+注意：(1)使用适当类型表示printArea()的参数，使其可以兼容不同的形状类型；
+(2)为派生类提供计算面积的接口；(3)思考如何能在基类中访问派生类计算出来的面积？
+**************************************************************/
+
+#include<iostream>
+#include<string>
+using namespace std;
+const double PI=3.14;
+class Shape
+{
+public:
+	double area;
+	double getArea(){return area;}
+};
+
+class Square:public Shape
+{
+public:
+	Square (double a,double b){height=a;width=b;area=height*width;}
+	//void setArea(){area=height*width;}
+
+private:
+	double height,width;
+};
+class Circle:public Shape
+{
+public:
+	Circle (double a){radius=a;area=PI*radius*radius;}
+	//void setArea(){area=PI*radius*radius;}
+
+private:
+	double radius;
+};
+class Triangle:public Shape
+{
+public:
+	Triangle (double a,double b){height=a;width=b;area=height*width/2.0;}
+	//void setArea(){area=height*width/2.0;}
+
+private:
+	double height,width;
+};
+void printArea(Shape &a)
+{
+	cout<<a.getArea()<<endl;
+}
+void main()
+{
+	Square a(1.0,2.0);
+	Circle b(1.0);
+	Triangle c(1.0,2.0);
+	printArea(a);
+	printArea(b);
+	printArea(c);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.item{
+				border: 1px solid black;
+				height: 50px;
+				width: 100px;
+				margin: 0px 10px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "item"></div>
+		<div class = "item"></div>
+		<div class = "item"></div>
+		<script type="text/javascript">
+			//获取ID
+			items = document.getElementsByClassName("item")
+			//绑定监听事件
+			for(let i = 0; i<items.length; i++){
+				items[i].onclick = function (){
+					//按键使框框变成粉色
+ 					//this.style.backgroundColor = "pink"
+					items[i].style.backgroundColor = "pink"
+				}
+			}
+
+			/*
+			 * let有自己的作用域
+			 */
+//			{
+//				let i= 0
+//				items[i].onclick = function (){
+//					//按键使框框变成粉色
+//					items[i].style.backgroundColor = "pink"
+//				}
+//			}
+//			
+//			{
+//				let i= 1
+//				items[i].onclick = function (){
+//					//按键使框框变成粉色
+//					items[i].style.backgroundColor = "pink"
+//				}
+//			}
+//			
+//			{
+//				let i= 2
+//				items[i].onclick = function (){
+//					//按键使框框变成粉色
+//					items[i].style.backgroundColor = "pink"
+//				}
+//			}
+//			
+	
+		</script>
+	</body>
+</html>

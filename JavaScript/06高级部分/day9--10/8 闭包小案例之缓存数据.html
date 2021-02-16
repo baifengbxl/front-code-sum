@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 作用:
+			 * 		闭包是可以缓存数据的，
+			 * 优点：
+			 * 		可以延长局部变量的作用域
+			 * 缺点
+			 * 		但是该局部变量不能被及时释放，占用了内存空间
+			 */
+			function fn (){
+				//这里存放要缓存的数据
+				var num = parseInt((Math.random()*10 + 1))
+				return (function (){
+						console.log(num)
+					})
+			}
+			//函数调用
+			var fnr = fn()
+			fnr()
+			fnr()
+			fnr()
+		</script>
+	</body>
+</html>

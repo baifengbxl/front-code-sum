@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(img/water.jpg);
+        background-repeat: no-repeat;
+        background-position: top left;
+
+        /*
+				 
+				 * 注意,当背景图片的	background-attachment:设为 fixed时
+				 *    图片的定位永远相对于浏览器窗口
+				 * 
+				 * 
+				 * 不随窗口滚动的图片,一般只设置给body元素
+				 *   
+
+				 * */
+        background-attachment: fixed;
+      }
+
+      .box1 {
+        /*width: 3000px;*/
+        height: 1000px;
+        margin: 0 auto;
+        background-color: #bfa;
+        /*badgroud-image来设置背景图片
+					如果元素小于图片，则会从左上角显示
+					如果元素大于图片，则会平铺展示
+					一般情况下，背景颜色和背景图片会同时设置
+				
+				 * */
+        background-image: url(img/tiger.jpg);
+
+        /*
+				 background-repeat: no-repeat;用来设置元素是否平铺
+				 	属性值
+				 		no-repeat：不会平铺
+				 		repeat：元素双向平铺
+				 		repeat-x：沿水平方向平
+				 		repeat-y：沿垂直方向平
+				 * */
+        background-repeat: no-repeat;
+
+        /*
+				 可以通过background-position:来设置背景图片在元素中的位置 
+				 可选值：
+				 	1.left right bottom  top  center 中的任意两个值来进行定位（水平和垂直）
+				 	  	若果只有一个值，则第二个默认为center
+				 	 2.xpos ypos 
+				 	 	第一个是水平偏移量，第二个是垂直偏移量
+				 	
+				 * */
+        background-position: top left;
+
+        /*可以通过设置background-attachment: 来对图像进行设置，是否碎页面滚动
+				 * 
+				 	可选值：
+				 		scroll：默认值
+				 		fixed：锁定
+				 		
+				 		
+				    注意:一般对body进行设置，
+				 		
+				 * */
+        background-attachment: fixed;
+      }
+
+      .box2 {
+        /*	/*	/*	/*	/*	/*
+					background-color: red;
+					background-image: url(img/tiger.jpg);
+					background-position:center center;
+					background-attachment: fixed;
+					background-repeat: no-repeat;
+					*/
+        /*简写属性
+				 
+				 * 
+				 * 可以通过bankground 来直接对元素位置进行设置
+				 *     而且没有顺序和数量要求
+				 * 
+				 * */
+        background: red no-repeat fixed center url(img/snow.jpeg);
+      }
+    </style>
+  </head>
+  <body style="height: 3000px;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

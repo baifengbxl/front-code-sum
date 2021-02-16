@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" charset="UTF-8" >
+			
+			function Person(name , age , gender){
+				this.name = name;
+				this.age = age ;
+				this.gender = gender;
+			}
+			
+			//创建原型
+			/**
+			 * 原型prototype是对象的一个隐含属性
+			 * 		-每创建一个函数，我们的解析器都会给这个函数创建一个默认的原型对象，
+			 * 			prototype他所指向的是一个对象
+			 * 		-当调用 普通函数的prototype时，他没有任何的作用，
+			 * 		-当他作为构造函数调用时，构造函数所创建的对象会有一个隐含的属性指向
+			 * 			他的原型对象，我们可以通过__proto__来访问他的原型对象
+			 * 		
+			 * */
+			
+			
+			
+			//我们可以将一个对象中的公共属性放在他的原型中，这样可以节省空间
+			//而且也可以避免内存空间的污染
+			Person.prototype.sayHello = function (){
+				
+				console.log("大家好，我是" + this.name);
+			}
+			
+			
+			var per = new Person("孙悟空", 23, "男");
+			var per2= new Person("白骨精", 23, "女");
+			var per3 = new Person("猪八戒", 13, "男");
+			
+			console.log(per.prototype == per.__proto__);
+	
+	
+			console.log(per.sayHello());
+			console.log(per2.sayHello());
+			console.log(per3.sayHello());
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>赞(1)</button>
+		<button>赞(1)</button>
+		<button>赞(1)</button>
+		<script type="text/javascript">
+			
+			//获取btn
+			var btn = document.getElementsByTagName("button")
+			//为所有的按钮设置监听事件
+			for(var i = 0 ; i < btn.length ; i++){
+				btn[i].onclick = fn ()
+			}
+			
+			//闭包
+			function fn (){
+				var value = 2
+				return (function (){
+					var result = value++
+					this.innerHTML = "赞("+ result +")"
+				})
+			}
+			
+		</script>
+	</body>
+</html>

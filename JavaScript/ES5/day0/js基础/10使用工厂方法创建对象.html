@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/*
+			var obj = {
+				
+				name:"孙悟空",
+				age:24,
+				gender:"男",
+				sayhello:function(){
+					
+					console.log(this.name );
+				}
+			};
+			
+			*/
+			
+			
+			
+			/*
+			 注意，当需要创建和上面属性值有很多相同的对象时，如果一个一个复制修改比较麻烦
+			 这个时候我们可以使用工厂方法来创建对象
+			 * 
+			 */
+			
+			function  CreatPerson(name,gender,age){
+				//创建一个对象
+				var obj = new  Object();
+				
+				obj.name=name;
+				obj.age=age;
+				obj.gender=gender;
+				obj.sayhello=function(){
+					alert(this.name);
+				}
+				
+				
+				//返回一个对象
+				return obj;
+			}
+			//
+			
+			//当需要创建多个对象时，我们需要去调用此方法
+			//但是这样调用的话却始终输出的是相同的对象
+			//所以这个时候，我们需要给这个函数设置参数
+				//在函数调用的时候只要传递参数就可以了
+				
+			var obj1 = CreatPerson("孙悟空",18,"男");
+			var obj2 = CreatPerson("沙和尚",22,"男");
+			var obj3 = CreatPerson("白骨精",22,"女");
+			
+			console.log(obj1);
+			console.log(obj2);
+			console.log(obj3);
+			
+			
+			obj1.sayhello();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

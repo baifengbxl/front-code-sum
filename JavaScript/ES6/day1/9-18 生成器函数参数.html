@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function * gen(arg){
+            console.log("AAA")
+            let one =  yield 111
+            console.log(one)
+            let two = yield 111
+            console.log(two)
+            let three = yield 111
+            console.log(three)
+        }
+
+        let iterator = gen()
+        console.log(iterator.next())
+        // next 方法可以传参
+        // 传递的参数是 上一段yield代码块的返回值
+        console.log(iterator.next("BBB"))
+        console.log(iterator.next("CCC"))
+        console.log(iterator.next("DDD"))
+
+    </script>
+</body>
+</html>

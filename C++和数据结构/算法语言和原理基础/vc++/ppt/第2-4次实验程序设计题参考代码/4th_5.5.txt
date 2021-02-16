@@ -1,0 +1,41 @@
+/**************************************************************
+请编写一个抽象类Shape, 在此基础上派生出Rectangle和Circle，
+二者都有GetArea()函数计算对象的面积，GetPerim()函数计算对象的周长。
+**************************************************************/
+#include <iostream>
+using namespace std;
+const double PI=3.14;
+class Shape { 
+public: Shape(){} 
+        virtual double getArea()=0;      
+		virtual double getPerim()=0; 
+}; 
+class Circle: public Shape {
+public:
+	Circle( double r ){radius=r;}
+	double getArea(){return PI*radius*radius;}
+	double getPerim(){return 2*PI*radius;}
+private:
+  double radius;
+}; //派生类
+
+class Rectangle: public Shape {
+public:
+	Rectangle( double wid, double hei ){width=wid;height=hei;}
+	double getArea(){return width*height;}
+	double getPerim(){return 2*(width+height);}
+private:
+  double width;
+  double height;
+}; //派生类
+void main()
+{
+	Shape *ps=new Circle(1.0);
+	cout<<ps->getArea()<<endl;
+	cout<<ps->getPerim()<<endl;
+	delete ps;
+	ps=new Rectangle(1.0,2.0);
+	cout<<ps->getArea()<<endl;
+	cout<<ps->getPerim()<<endl;
+	delete ps;
+}

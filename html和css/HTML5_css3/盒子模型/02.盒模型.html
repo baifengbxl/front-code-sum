@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	<style type="text/css">
+		
+		
+		*{
+			margin: 0px auto;
+			padding: 0px;
+		}
+		.header{
+			height: 200px;
+			
+			background-color: #00FFFF;
+			margin-bottom: 10px;
+		}
+		
+		/*内容区*/
+		.content{
+			height: 400px;
+			width: 920px;
+			background-color: red;
+			
+			/*使盒子居中*/
+			margin: 0px auto ;
+		}
+		/*设置嵌套的盒子*/
+		.content .left , .content .mid , .content .right{
+			/*向左浮动*/
+			float: left;
+			height: 100%;
+			width: 300px;
+			background-color: yellow;
+			
+		}
+		.content .mid{			
+			/*隔开每个元素*/
+			margin: 0px 10px;
+		}
+		
+		.foorter{
+			height: 200px;
+			background-color:#bfa; 
+			margin-top: 10px;
+		}
+		
+		
+	</style>
+	</head>
+	<body>
+		
+		<div class="header"></div>
+		<!--设置内容区-->
+		<div class="content">
+			<div class="left"></div>
+			<div class="mid"></div>
+			<div class="right"></div>
+		</div>
+		<!--设置为布兰-->
+		<div class="foorter"></div>
+		
+	</body>
+</html>

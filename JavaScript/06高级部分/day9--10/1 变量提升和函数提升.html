@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var 申明的变量会在所有代码之前被执行 var a = undefin
+			console.log("a = " + a)
+			var a = 10
+			console.log("赋值之后的 a = " + a)
+			//function fun (){}定义的函数对象会在所有的代码之前被执行
+			fun()
+//			fun2()
+			console.log(fun())
+			console.log(fun)
+			function fun (){
+				console.log("我是fun函数")
+				return "我是fun函数的返回值"
+			}
+			
+			var fun2 = function (){
+				console.log("我是fun2函数")
+			}
+			fun2()
+ 		</script>
+	</body>
+</html>

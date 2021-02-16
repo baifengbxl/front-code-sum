@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+//			function fn (){
+//				var num = 10
+//				num++
+//				console.log(num)
+//			}
+//			fn()	//11
+//			fn()	//11
+//			fn()	//11
+//			
+
+			//闭包可以缓存数据
+			function fn1 (){
+				var num = 10
+				return function (){
+					num++
+					return num
+				}
+			}
+			
+			var fn1_return = fn1()
+			console.log(fn1_return())	//11
+			console.log(fn1_return())	//12
+			console.log(fn1_return())	//13
+		</script>
+	</body>
+</html>
