@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      找出数组中中重复的数组
+    */
+    let arr = [10, 10, 20, 40, 40, 50, 10, 20, 40]
+
+    // 方法1 ： set
+    // let res = []
+    // let s = new Set()
+    // arr.map(item => {
+    //   let cur = s.size
+    //   s.add(item)
+    //   if( s.size == cur){
+    //     res.push(item)
+    //   }
+    // })
+    // console.log([...new Set(res)])
+    // console.log(... new Set(res))
+
+
+    // 方法2 ： 使用indexOf 和lastIndexOf
+    // let res = []
+    // for( var i = 0; i<arr.length; i++){
+    //     if( arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i]) ){
+    //         //  console.log(arr[i])
+    //         res.push(arr[i])
+    //     }
+    // }
+    // console.log([...new Set(res)])
+
+
+    // 方法3； 修改数组原型sor方法
+    // Array.prototype.duplicate=function() {
+    //   var tmp = [];
+    //   this.concat().sort().sort(function(a,b){
+    //     if(a==b && tmp.indexOf(a) === -1) tmp.push(a);
+    //   });
+    //   return tmp;
+    // }
+    // console.log(arr.duplicate())
+    
+
+    // 方法4 
+    // let tmp = []
+    // console.log(arr.concat())
+    // console.log(arr.sort())
+    // arr.concat().sort().sort(function(a, b){
+    //   // a == b 保证重复数组
+    //   if ( a==b && tmp.indexOf(a) == -1){
+    //     tmp.push(a)
+    //   }
+    // })
+
+
+
+    // 方法5 ： 重复的所有数字
+    // let map = {}
+    // for (const i of arr) {
+    //   // if( !map[i] ){
+    //   //   map[i] = 1
+    //   // }else{
+    //   //   map[i]++
+    //   // }
+    //   // 第2种方法
+    //   map[i] = ( map[i] || 0) + 1
+    // }
+    // // console.log(map)
+
+    // // 遍历哈希表
+    // let res = []
+    // for(let i in map){
+    //   if(map[i] > 1 ){
+    //     // res.push(i)
+    //     console.log(i)
+    //   }
+    // }
+    
+
+   
+    //方法6 ：  数组中出现次数最多数字
+    // let map = {}
+    // for (const i of arr) {
+    //  map[i] = ( map[i] || 0) + 1
+    // }
+    // // console.log(map)
+
+    // // 索引，出现次数最多的数字
+    // let res = 0
+    // let index = 0
+    // // 遍历哈希表
+    // for(let i in map){
+    //   if(map[i] > res ){
+    //     res = map[i]
+    //     index = i
+    //   }
+    // // console.log(i)
+    // }
+    // console.log(index)
+
+    
+  </script>
+</body>
+</html>

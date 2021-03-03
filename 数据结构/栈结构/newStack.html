@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script src="./arrStack.js"></script> -->
+  <script src="./objStack.js"></script>
+  <script>
+
+    // 栈的实现
+    // let stack = new Stack()
+    // // true  false
+    // console.log(stack.isEmpty())  // true
+    // stack.push(4)
+    // stack.push(6)
+    // console.log(stack)
+    // // peek 返回栈顶的元素，不对栈做任何修改，
+    // console.log(stack.peek()) // 6
+    // stack.push(11)
+    // console.log(stack)
+    // // size 
+    // console.log(stack.size()) // 3
+    // stack.push(15)
+    // console.log(stack)
+    // // pop
+    // stack.pop()
+    // stack.pop()
+    // // pop 方法返回出栈的那个元素
+    // console.log(stack.pop())
+    // console.log(stack)
+    // // clear
+    // // stack.clear()
+    // console.log(stack)
+
+
+    // const stack = new Stack()
+    // // 证明我们定义的方法和属性是公开的，不是私有的，得不到保护
+    // console.log(Object.getOwnPropertyNames(stack))  // ["count", "items"]
+    // console.log(Object.keys(stack))
+    // console.log(stack.items)
+
+    
+    // 在编程中，我们通常使用_count来表示私有变量
+    // class Stack{
+    //   constructor(){
+    //    // count  items 表示为私有变量
+    //    this._count = 0
+    //    this._items = {}
+    //   }
+    // }
+
+
+    // 十进制转换为二进制
+    // const stack = new Stack()
+    // let number = 10
+    // let rem 
+    // let binaryString = ''
+    // // 余数入栈
+    // while(number > 0){
+    //   rem = Math.floor( number % 2)
+    //   stack.push(rem)
+    //   number = Math.floor(number / 2)
+    // }
+    // // 余数出栈
+    // while(! stack.isEmpty()){
+    //   binaryString += stack.pop().toString() 
+    // }
+    // // 字符串形式
+    // console.log(binaryString)
+    // console.log( typeof binaryString)
+
+    
+    // 若要实现十进制对任意进制的转换
+    const stack = new Stack()
+    // 10 进制数
+    let number = 10
+    // 要转换的进制数
+    let base = 8
+    // 作为基数
+    const digest = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    // 余数
+    let rem 
+    let binaryString = ''
+    // 判断合理的进制
+    if( ! (base >= 2 && base <= 36) ){
+      // return ''
+      console.log('')
+    }
+    // 进栈
+    while(number > 0){
+      rem = Math.floor( number % base)
+      stack.push(rem)
+      number = Math.floor(number / base)
+    }
+    // 出栈
+    while(! stack.isEmpty()){
+      // 机制转换
+      binaryString += digest[stack.pop()]
+    }
+    console.log(binaryString)
+
+    
+  </script>
+</body>
+</html>

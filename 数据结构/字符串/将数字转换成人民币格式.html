@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let num = 12345678
+    console.log(num)
+
+    // 翻转字符串
+    // reverse（）方法是数组的方法
+    function re(num){
+       num += ""
+       return num.split('').reverse().join('')
+    }
+    
+    // console.log(reverse(num))
+    function toRMB(num){
+      let temp = ''
+      // i=1 因为要运算的是个数
+      for(let i=1; i<=re(num).length; i++) {
+        temp += re(num)[i-1]
+        // console.log(temp)
+        if(i % 3 == 0 && i != re(num).length ){
+          temp += ','
+        } 
+      }
+      // console.log(temp)
+      let res = re(temp)
+      return res
+    }
+
+    toRMB(num)
+    console.log(toRMB(num))
+
+  </script>
+</body>
+</html>

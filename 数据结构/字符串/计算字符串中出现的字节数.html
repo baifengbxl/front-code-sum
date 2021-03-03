@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    new  function (s) {
+      // 字符串是否为空
+      if( !arguments.length || !s){
+        return null
+      }
+      // 字符串为空串
+      if(s == ''){
+        return 0
+      }
+      // 存储长度的变量
+      let l = 0
+      for(let i=0; i<s.length; i++){
+        if(s.charCodeAt(i) > 255 ){
+          l += 2  // 超过255的字符unicode编码字节数为2
+        }else{
+          l += 1
+        }
+      }
+
+      // alert(l)
+      console.log(s + "----的字节数为：" + l) 
+      
+    }("hello world!!你好世界")
+
+  </script>
+  
+</body>
+</html>

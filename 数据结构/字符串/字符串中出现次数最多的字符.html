@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let str = 'asdfsssaaaaaaadsffssaaasa'
+    var obj = {}
+    for (let i=0; i<str.length; i++){
+      if(!obj[str.charAt(i)]){
+        obj[str.charAt(i)] = 1
+      }else{
+        obj[str.charAt(i)]++
+      }
+    }
+    // 获得obj ，属性名： 字符。 属性值：出现的次数
+    // console.log(obj)
+
+    // 遍历对象，找出出现次数最多的字符和字符出现的次数
+    let max = 0
+    let index 
+    for(let i in obj){
+      if(obj[i] > max){
+        max = obj[i]
+        index = i
+      }
+    }
+    console.log( "出现次数最多的字符为： "+ index)
+    console.log( "出现的次数为：" + max)
+    
+  </script>
+  
+</body>
+</html>
